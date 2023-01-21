@@ -1,39 +1,28 @@
-import { NgModule } from "@angular/core";
-import { CommonModule } from "@angular/common";
-import { BrowserModule } from "@angular/platform-browser";
-import { Routes, RouterModule } from "@angular/router";
-
-import { AdminLayoutComponent } from "./layouts/admin-layout/admin-layout.component";
-import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule, Routes } from '@angular/router';
+import { PagesComponent } from './pages/pages.component';
 
 const routes: Routes = [
   {
-    path: "",
-    redirectTo: "dashboard",
-    pathMatch: "full"
+    path: '',
+    redirectTo: 'dashboard',
+    pathMatch: 'full'
   },
   {
-    path: "",
-    component: AdminLayoutComponent,
+    path: '',
+    component: PagesComponent,
     children: [
       {
-        path: "",
-        loadChildren: () => import ("./layouts/admin-layout/admin-layout.module").then(m => m.AdminLayoutModule)
-      }
-    ]
-  }, {
-    path: "",
-    component: AuthLayoutComponent,
-    children: [
-      {
-        path: "",
-        loadChildren: () => import ("./layouts/auth-layout/auth-layout.module").then(m => m.AuthLayoutModule)
+        path: '',
+        loadChildren: () => import ('./pages/pages.module').then(m => m.PagesModule)
       }
     ]
   },
   {
-    path: "**",
-    redirectTo: "dashboard"
+    path: '**',
+    redirectTo: 'dashboard'
   }
 ];
 
@@ -47,4 +36,5 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule {
+}
