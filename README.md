@@ -152,8 +152,8 @@ black-dashboard-angular
 │   │       │   ├── typography.component.html
 │   │       │   └── typography.component.ts
 │   │       └── user
-│   │           ├── user.component.html
-│   │           └── user.component.ts
+│   │           ├── contact-us.component.html
+│   │           └── contact-us.component.ts
 │   ├── assets
 │   │   ├── css
 │   │   ├── demo

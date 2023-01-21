@@ -15,6 +15,12 @@ export const ROUTES: RouteInfo[] = [
     class: ''
   },
   {
+    path: '/contact-us',
+    title: 'Kontakt os',
+    icon: 'icon-single-02',
+    class: ''
+  },
+  {
     path: '/icons',
     title: 'Icons',
     icon: 'icon-atom',
@@ -30,13 +36,6 @@ export const ROUTES: RouteInfo[] = [
     path: '/notifications',
     title: 'Notifications',
     icon: 'icon-bell-55',
-    class: ''
-  },
-
-  {
-    path: '/user',
-    title: 'User Profile',
-    icon: 'icon-single-02',
     class: ''
   },
   {
