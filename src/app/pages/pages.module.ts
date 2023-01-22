@@ -14,6 +14,7 @@ import { TypographyComponent } from './typography/typography.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { MapComponent } from './map/map.component';
 import { PageRoutes } from './pages-routing.module';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 @NgModule({
   imports: [
@@ -31,7 +32,8 @@ import { PageRoutes } from './pages-routing.module';
     IconsComponent,
     TypographyComponent,
     NotificationsComponent,
-    MapComponent
+    MapComponent,
+    AboutUsComponent
   ]
 })
 export class PagesModule {
