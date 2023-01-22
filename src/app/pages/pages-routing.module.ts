@@ -6,11 +6,13 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { TablesComponent } from './tables/tables.component';
 import { TypographyComponent } from './typography/typography.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { ImagesComponent } from './images/images.component';
 
 export const PageRoutes: Routes = [
   {path: 'dashboard', component: DashboardComponent},
   {path: 'contact-us', component: ContactUsComponent},
   {path: 'about-us', component: AboutUsComponent},
+  {path: 'images', component: ImagesComponent},
   {path: 'icons', component: IconsComponent},
   {path: 'notifications', component: NotificationsComponent},
   {path: 'tables', component: TablesComponent},

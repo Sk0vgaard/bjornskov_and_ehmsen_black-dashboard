@@ -15,6 +15,7 @@ import { NotificationsComponent } from './notifications/notifications.component'
 import { FindUsComponent } from './find-us/find-us.component';
 import { PageRoutes } from './pages-routing.module';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { ImagesComponent } from './images/images.component';
 
 @NgModule({
   imports: [
@@ -33,7 +34,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
     TypographyComponent,
     NotificationsComponent,
     FindUsComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    ImagesComponent
   ]
 })
 export class PagesModule {
