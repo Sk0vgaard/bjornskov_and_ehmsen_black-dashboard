@@ -1,8 +1,63 @@
 <div class="content">
   <div class="row">
+
+    <div class="col-md-4">
+      <div class="card card-user">
+        <div class="card-body">
+          <p class="card-text"></p>
+          <div class="author">
+            <div class="block block-one"></div>
+            <div class="block block-two"></div>
+            <div class="block block-three"></div>
+            <div class="block block-four"></div>
+            <a href="javascript:void(0)">
+              <img alt="..." class="avatar" src="assets/img/emilyz.jpg"/>
+              <h5 class="title">Mark Bjørnskov</h5>
+            </a>
+            <p class="description">Mester</p>
+          </div>
+          <div class="card-description">
+            <h3 class="title text-primary" style="margin-bottom: 15px">
+              Skal vi hjælpe dig?
+            </h3>
+            <div class="typography-line">
+              <blockquote>
+                <p class="blockquote blockquote-danger" style="margin: 0">
+                  Bjørnskov & Ehmsen har nogle af de dygtigste og specialiserede håndværkere, som kan lave alt fra nybyg til snedker arbejde.
+                  <br>
+                  Kundetilfredshed er en prioritet hos Bjørnskov & Ehmsen, så du kan være sikker på at få et smukt og
+                  holdbart resultat.
+                  <br>
+                  <b (click)="callPhoneNo()" style="cursor: pointer"><u>Ring</u></b> eller <b><u>skriv</u></b> og få et uforpligtende tilbud og lad os hjælpe dig med dit næste tømreprojekt.
+                </p>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="button-container">
+            <button
+              class="btn btn-icon btn-round"
+              (click)="callPhoneNo()"
+            >
+              <i class="fa fa-phone"></i>
+            </button>
+            <button
+              class="btn btn-icon btn-round"
+              (click)="mailTo()"
+            >
+              <i class="fa fa-envelope"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="col-md-8">
       <div class="card">
-        <div class="card-header"><h5 class="title">Kontakt form</h5></div>
+        <div class="card-header">
+          <h3 class="card-title">Kontakt form</h3>
+        </div>
         <div class="card-body">
           <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
 
@@ -82,7 +137,6 @@
                   <textarea class="form-control"
                             formControlName="message"
                             placeholder="Indsæt en beskrivelse af projektet"
-                            rows="5"
                   ></textarea>
                 </div>
               </div>
@@ -93,54 +147,6 @@
           <button class="btn btn-fill btn-danger" type="submit" [disabled]="contactForm.invalid" (click)="onSubmit()">
             Save
           </button>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="col-md-4">
-      <div class="card card-user">
-        <div class="card-body">
-          <p class="card-text"></p>
-          <div class="author">
-            <div class="block block-one"></div>
-            <div class="block block-two"></div>
-            <div class="block block-three"></div>
-            <div class="block block-four"></div>
-            <a href="javascript:void(0)">
-              <img alt="..." class="avatar" src="assets/img/emilyz.jpg"/>
-
-              <h5 class="title">Mark Bjørnskov</h5>
-            </a>
-            <p class="description">Mester</p>
-          </div>
-          <div class="card-description">
-            Mark Bjørnskov startede som fejedreng for over 10 år siden og er sidenhen blevet uddannet hos Ehmsen.
-            <br>
-            Han overtog firmaet i 2022, hvor han nu har 18 ansatte.
-          </div>
-        </div>
-        <div class="card-footer">
-          <div class="button-container">
-            <button
-              class="btn btn-icon btn-round btn-facebook"
-              href="javascript:void(0)"
-            >
-              <i class="fab fa-facebook"> </i>
-            </button>
-            <button
-              class="btn btn-icon btn-round btn-twitter"
-              href="javascript:void(0)"
-            >
-              <i class="fab fa-twitter"> </i>
-            </button>
-            <button
-              class="btn btn-icon btn-round btn-google"
-              href="javascript:void(0)"
-            >
-              <i class="fab fa-google-plus"> </i>
-            </button>
-          </div>
         </div>
       </div>
     </div>

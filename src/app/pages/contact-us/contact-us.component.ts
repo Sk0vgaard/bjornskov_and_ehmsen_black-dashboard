@@ -6,6 +6,9 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   templateUrl: 'contact-us.component.html'
 })
 export class ContactUsComponent {
+  phoneNo = '+45 22 33 76 08';
+  emailTo = 'mark@bjørnskov-ehmsen.dk';
+
   public contactForm = new FormGroup({
     name: new FormControl('', Validators.required),
     phoneNumber: new FormControl('', [Validators.required, Validators.pattern('^[0-9]*$')]),
@@ -37,5 +40,13 @@ export class ContactUsComponent {
 
   get subject() {
     return this.contactForm.get('subject');
+  }
+
+  callPhoneNo() {
+    window.open(`tel:${this.phoneNo}`);
+  }
+
+  mailTo() {
+    window.open(`mailto:${this.emailTo}`);
   }
 }
