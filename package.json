@@ -10,7 +10,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm start",
-    "build:gh": "ng build --configuration production --deploy-url=https://sk0vgaard.github.io/bjornskov_and_ehmsen_black-dashboard/ --base-href=https://sk0vgaard.github.io/bjornskov_and_ehmsen-black-dashboard/",
+    "build:gh": "ng build --configuration production --deploy-url=https://sk0vgaard.github.io/bjornskov_and_ehmsen_black-dashboard/ --base-href=",
     "build:gh1": "ng build --configuration production --output-path docs --base-href /",
     "homepage": "."
   },
