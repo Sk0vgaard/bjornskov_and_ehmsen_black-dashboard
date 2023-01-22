@@ -12,7 +12,7 @@ import { TablesComponent } from './tables/tables.component';
 import { IconsComponent } from './icons/icons.component';
 import { TypographyComponent } from './typography/typography.component';
 import { NotificationsComponent } from './notifications/notifications.component';
-import { MapComponent } from './map/map.component';
+import { FindUsComponent } from './find-us/find-us.component';
 import { PageRoutes } from './pages-routing.module';
 import { AboutUsComponent } from './about-us/about-us.component';
 
@@ -32,7 +32,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
     IconsComponent,
     TypographyComponent,
     NotificationsComponent,
-    MapComponent,
+    FindUsComponent,
     AboutUsComponent
   ]
 })

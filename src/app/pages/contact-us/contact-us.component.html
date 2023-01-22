@@ -1,6 +1,8 @@
 <div class="content">
-  <div class="row">
 
+  <app-find-us></app-find-us>
+
+  <div class="row">
     <div class="col-md-4">
       <div class="card card-user">
         <div class="card-body">
@@ -23,12 +25,15 @@
             <div class="typography-line">
               <blockquote>
                 <p class="blockquote blockquote-danger" style="margin: 0">
-                  Bjørnskov & Ehmsen har nogle af de dygtigste og specialiserede håndværkere, som kan lave alt fra nybyg til snedker arbejde.
+                  Bjørnskov & Ehmsen har nogle af de dygtigste og specialiserede håndværkere, som kan lave alt fra nybyg
+                  til snedker arbejde.
                   <br>
                   Kundetilfredshed er en prioritet hos Bjørnskov & Ehmsen, så du kan være sikker på at få et smukt og
                   holdbart resultat.
                   <br>
-                  <b (click)="callPhoneNo()" style="cursor: pointer"><u>Ring</u></b> eller <b><u>skriv</u></b> og få et uforpligtende tilbud og lad os hjælpe dig med dit næste tømreprojekt.
+                  <b (click)="callPhoneNo()" style="cursor: pointer">
+                    <u>Ring</u></b> eller <b><u>skriv</u></b> og få et uforpligtende tilbud og lad os hjælpe dig med dit
+                  næste tømreprojekt.
                 </p>
               </blockquote>
             </div>
@@ -88,8 +93,14 @@
                   />
                 </div>
                 <div class="alert alert-danger" *ngIf="phoneNumber.invalid && phoneNumber.touched">
-                  <div *ngIf="phoneNumber.errors.required">Telefonnummer er nødvendigt for at kunne kontakte om
-                    eventuelle spørgsmål
+                  <div *ngIf="phoneNumber.errors.required">
+                    Telefonnummer er nødvendigt for at kunne kontakte om eventuelle spørgsmål
+                  </div>
+                  <div *ngIf="phoneNumber.errors?.minlength && phoneNumber.touched">
+                    Telefonnummeret er ikke langt nok.
+                  </div>
+                  <div *ngIf="phoneNumber.hasError('pattern') && phoneNumber.touched">
+                    Telefonnummeret skal bestå af <u>tal</u>.
                   </div>
                 </div>
               </div>

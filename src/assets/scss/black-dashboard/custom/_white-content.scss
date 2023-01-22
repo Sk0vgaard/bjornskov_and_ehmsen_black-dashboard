@@ -41,7 +41,7 @@
     background: $light-bg;
   }
 
-  h1, h2, h3, h4, h5, h6, p, ol li, ul li, pre {
+  h1, h2, h3, h4, h5, h6, p, ol li, ul li, pre, p {
     color: $black-states;
   }
 
@@ -271,7 +271,7 @@
    .full-page{
      background: $light-bg;
 
-     h1, h2, h3, h4, h5, h6, p, ol li, ul li, pre {
+     h1, h2, h3, h4, h5, h6, p, ol li, ul li, pre, p {
        color: $black-states;
      }
 

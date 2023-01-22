@@ -137,8 +137,8 @@ black-dashboard-angular
 │   │       │   ├── icons.component.html
 │   │       │   └── icons.component.ts
 │   │       ├── map
-│   │       │   ├── map.component.html
-│   │       │   └── map.component.ts
+│   │       │   ├── find-us.component.html
+│   │       │   └── find-us.component.ts
 │   │       ├── notifications
 │   │       │   ├── notifications.component.html
 │   │       │   └── notifications.component.ts

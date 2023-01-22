@@ -1,0 +1,78 @@
+<div class="row">
+  <div class="col-lg-3">
+    <div class="card card-chart">
+      <div class="card-header">
+        <h5 class="card-category">{{address}}</h5>
+        <h3 class="card-title">
+          <i class="fa-solid fa-location-dot tim-icons text-danger-states"></i>
+          Google Maps
+        </h3>
+      </div>
+      <div class="card-body">
+        <div class="typography-line" style="display: flex; justify-content: center">
+          <button class="btn btn-fill btn-danger" (click)="navigateToAddress()">
+            <i class="fa-solid fa-location-arrow"></i>
+            {{address}}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3">
+    <div class="card card-chart">
+      <div class="card-header">
+        <h5 class="card-category">Find os på Facebook</h5>
+        <h3 class="card-title">
+          <i class="tim-icons text-info fa-brands fa-facebook-f"> </i>
+          Facebook
+        </h3>
+      </div>
+      <div class="card-body">
+        <div class="typography-line" style="display: flex; justify-content: center">
+          <button class="btn btn-fill btn-info" (click)="openFacebook()">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            Følg os på Facebook
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3">
+    <div class="card card-chart">
+      <div class="card-header">
+        <h5 class="card-category">Find os på Instagram</h5>
+        <h3 class="card-title">
+          <i class="tim-icons text-success fa-brands fa-instagram"> </i>
+          Instagram
+        </h3>
+      </div>
+      <div class="card-body">
+        <div class="typography-line" style="display: flex; justify-content: center">
+          <button class="btn btn-fill btn-success" (click)="openInstagram()">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            Følg os på Instagram
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3">
+    <div class="card card-chart">
+      <div class="card-header">
+        <h5 class="card-category">Find os på LinkedIn</h5>
+        <h3 class="card-title">
+          <i class="fa-brands fa-linkedin-in tim-icons text-secondary"></i>
+          LinkedIn
+        </h3>
+      </div>
+      <div class="card-body">
+        <div class="typography-line" style="display: flex; justify-content: center">
+          <button class="btn btn-fill btn-linkedIn" (click)="openLinkedIn()">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            Følg os på LinkedIn
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
