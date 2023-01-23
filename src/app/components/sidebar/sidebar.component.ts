@@ -27,6 +27,12 @@ export const ROUTES: RouteInfo[] = [
     class: ''
   },
   {
+    path: '/info',
+    title: 'Info',
+    icon: 'icon-alert-circle-exc',
+    class: ''
+  },
+  {
     path: '/timeline',
     title: 'Tidslinje',
     icon: 'icon-spaceship',

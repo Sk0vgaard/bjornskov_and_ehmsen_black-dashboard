@@ -19,6 +19,7 @@ import { ImagesComponent } from './images/images.component';
 import { FrontPageComponent } from './front-page/front-page.component'
 import { TimelineComponent } from './timeline/timeline.component';
 import { CustomerSatisfactionComponent } from './customer-satisfaction/customer-satisfaction.component';
+import { InfoComponent } from './info/info.component';
 
 @NgModule({
   imports: [
@@ -41,7 +42,8 @@ import { CustomerSatisfactionComponent } from './customer-satisfaction/customer-
     ImagesComponent,
     FrontPageComponent,
     TimelineComponent,
-    CustomerSatisfactionComponent
+    CustomerSatisfactionComponent,
+    InfoComponent
   ]
 })
 export class PagesModule {
