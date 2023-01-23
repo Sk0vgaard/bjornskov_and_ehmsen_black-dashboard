@@ -16,6 +16,9 @@ import { FindUsComponent } from './find-us/find-us.component';
 import { PageRoutes } from './pages-routing.module';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ImagesComponent } from './images/images.component';
+import { FrontPageComponent } from './front-page/front-page.component'
+import { TimelineComponent } from './timeline/timeline.component';
+import { CustomerSatisfactionComponent } from './customer-satisfaction/customer-satisfaction.component';
 
 @NgModule({
   imports: [
@@ -35,7 +38,10 @@ import { ImagesComponent } from './images/images.component';
     NotificationsComponent,
     FindUsComponent,
     AboutUsComponent,
-    ImagesComponent
+    ImagesComponent,
+    FrontPageComponent,
+    TimelineComponent,
+    CustomerSatisfactionComponent
   ]
 })
 export class PagesModule {
