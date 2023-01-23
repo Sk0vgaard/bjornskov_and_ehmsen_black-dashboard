@@ -12,8 +12,8 @@
             <div class="block block-two"></div>
             <div class="block block-three"></div>
             <div class="block block-four"></div>
-            <a href="javascript:void(0)">
-              <img alt="..." class="avatar" src="assets/img/emilyz.jpg"/>
+            <a>
+              <img alt="" class="avatar" src="assets/img/emilyz.jpg"/>
               <h5 class="title">Mark Bjørnskov</h5>
             </a>
             <p class="description">Mester</p>
@@ -31,9 +31,16 @@
                   Kundetilfredshed er en prioritet hos Bjørnskov & Ehmsen, så du kan være sikker på at få et smukt og
                   holdbart resultat.
                   <br>
-                  <b (click)="callPhoneNo()" style="cursor: pointer">
-                    <u>Ring</u></b> eller <b><u>skriv</u></b> og få et uforpligtende tilbud og lad os hjælpe dig med dit
-                  næste tømreprojekt.
+                  <a (click)="callPhoneNo()" style="cursor: pointer">
+                    <b>
+                      <u>Ring</u>
+                    </b>
+                  </a>
+                  eller
+                  <a (click)="mailTo()" style="cursor: pointer">
+                    <b><u>skriv</u></b>
+                  </a>
+                  og få et uforpligtende tilbud og lad os hjælpe dig med dit næste tømreprojekt.
                 </h3>
               </blockquote>
             </div>
