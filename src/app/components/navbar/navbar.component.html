@@ -10,15 +10,17 @@
       </div>
       <h3 class="navbar-brand card-title" style="margin-bottom: 0"> {{ getTitle() }} </h3>
     </div>
-    <button style="margin-left: 0"
-            class="btn btn-icon btn-round navbar-toggler"
-            (click)="callPhoneNo()"
-    >
-      <i class="fa fa-phone"></i>
-    </button>
-    <img id="mobile-img" class="navbar-nav ml-auto navbar-toggler" style="padding: 0; height: 50px;" src="./assets/be_icons/be_logo.png"
-         alt=""/>
-
+    <div class="ml-auto row">
+      <button style="margin-left: 0; margin-top: 5px"
+              class="btn btn-icon btn-round navbar-toggler"
+              (click)="callPhoneNo()"
+      >
+        <i class="fa fa-phone"></i>
+      </button>
+      <img id="mobile-img" class="navbar-nav navbar-toggler" style="padding: 0; height: 50px;"
+           src="./assets/be_icons/be_logo.png"
+           alt=""/>
+    </div>
     <div class="navbar-collapse" [ngbCollapse]="isCollapsed">
       <div class="navbar-nav ml-auto ">
         <button class="btn btn-icon btn-round btn-hover"
