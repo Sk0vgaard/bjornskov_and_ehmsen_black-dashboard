@@ -7,7 +7,7 @@ import { PagesComponent } from './pages/pages.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'dashboard',
+    redirectTo: 'front-page',
     pathMatch: 'full'
   },
   {
@@ -22,7 +22,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: 'dashboard'
+    redirectTo: 'front-page'
   }
 ];
 

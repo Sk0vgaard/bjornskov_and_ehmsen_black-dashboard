@@ -1,16 +1,49 @@
 <div class="content">
   <div class="row">
-    <div class="col-12">
-      <div class="card card-chart">
-        <div class="card-header">
-          <div class="row">
-            <div class="col-sm-12 text-left">
-              <h2 class="card-title">Info</h2>
+    <ng-container *ngFor="let info of infos">
+      <div class="col-lg-3">
+        <div class="card card-chart">
+          <div class="card-header">
+            <h3 class="card-title">{{info.title}}</h3>
+          </div>
+          <div class="card-body">
+            <div class="typography-line">
+              <p style="padding-left: 10px; padding-right: 10px">
+                {{info.body}}
+              </p>
             </div>
           </div>
         </div>
-        <div class="card-body" style="padding-top: 0">
+      </div>
+    </ng-container>
+  </div>
 
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card card-chart">
+        <div class="card-header">
+          <h5 class="card-category">FAQ</h5>
+          <h3 class="card-title" style="margin-bottom: 0">
+            Ofte stillede spørgsmål
+          </h3>
+        </div>
+        <div class="card-body" style="padding-top: 0">
+          <div class="typography-line">
+            <p>
+            <div class="row mt-4" *ngFor="let faq of faqs; let i = index">
+              <div class="col-12" (click)="isCollapsed[i] = !isCollapsed[i]">
+                <button class="btn btn-link btn-collapse"
+                        [attr.aria-expanded]="isCollapsed[i]">
+                  {{ faq.title }}
+                </button>
+                <div [ngbCollapse]="!isCollapsed[i]">
+                  <p style="padding-left: 30px">
+                    {{ faq.body }}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

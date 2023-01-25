@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ContactService } from '../../services/contact.service';
 
 @Component({
   selector: 'app-contact-us',
   templateUrl: 'contact-us.component.html'
 })
 export class ContactUsComponent {
-  phoneNo = '+45 22 33 76 08';
-  emailTo = 'mark@bjørnskov-ehmsen.dk';
+
+  constructor(private contactService: ContactService) {
+  }
 
   public contactForm = new FormGroup({
     name: new FormControl('', Validators.required),
@@ -47,10 +49,10 @@ export class ContactUsComponent {
   }
 
   callPhoneNo() {
-    window.open(`tel:${this.phoneNo}`);
+    this.contactService.callBE();
   }
 
   mailTo() {
-    window.open(`mailto:${this.emailTo}`);
+    this.contactService.mailBE();
   }
 }

@@ -9,12 +9,32 @@
         </button>
       </div>
       <h3 class="navbar-brand card-title" style="margin-bottom: 0"> {{ getTitle() }} </h3>
-      <div class="navbar-toggler" style="padding: 0">
-        <img style="border-radius: 0" src="./assets/be_icons/be_web.png" alt=""/>
-      </div>
     </div>
+    <button style="margin-left: 0"
+            class="btn btn-icon btn-round ml-auto navbar-toggler"
+            (click)="callPhoneNo()"
+    >
+      <i class="fa fa-phone"></i>
+    </button>
+    <img id="mobile-img" class="navbar-nav ml-auto navbar-toggler" style="padding: 0; height: 50px;" src="./assets/be_icons/be_logo.png"
+         alt=""/>
+
     <div class="navbar-collapse" [ngbCollapse]="isCollapsed">
-      <img class="navbar-nav ml-auto" style="border-radius: 0" src="./assets/be_icons/be_web.png" alt=""/>
+      <div class="navbar-nav ml-auto ">
+        <button class="btn btn-icon btn-round btn-hover"
+                (click)="callPhoneNo()"
+        >
+          <i class="fa fa-phone"></i>
+        </button>
+        <button style="margin-right: 20px"
+                class="btn btn-icon btn-round btn-hover"
+                (click)="mailTo()"
+        >
+          <i class="fa fa-envelope"></i>
+        </button>
+        <img class="img-background" style="border-radius: 0" src="./assets/be_icons/be_web.png"
+             alt=""/>
+      </div>
     </div>
   </div>
 </nav>

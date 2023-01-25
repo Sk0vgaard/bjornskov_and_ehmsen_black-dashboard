@@ -3,6 +3,7 @@ import { ROUTES } from '../sidebar/sidebar.component';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ContactService } from '../../services/contact.service';
 
 @Component({
   selector: 'app-navbar',
@@ -23,7 +24,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   @HostListener('document:click', ['$event'])
   clickOutsideNav(event) {
     if (!this.element.nativeElement.contains(event.target) && this.sidebarVisible === true) {
-        this.sidebarToggle();
+      this.sidebarToggle();
     }
   }
 
@@ -31,7 +32,8 @@ export class NavbarComponent implements OnInit, OnDestroy {
     location: Location,
     private element: ElementRef,
     private router: Router,
-    private modalService: NgbModal
+    private modalService: NgbModal,
+    private contactService: ContactService
   ) {
     this.location = location;
     this.sidebarVisible = false;
@@ -181,7 +183,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
         return this.listTitles[item].title;
       }
     }
-    return 'front-page';
+    return 'Forside';
   }
 
   open(content) {
@@ -204,5 +206,13 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     window.removeEventListener('resize', this.updateColor);
+  }
+
+  callPhoneNo() {
+    this.contactService.callBE();
+  }
+
+  mailTo() {
+    this.contactService.mailBE();
   }
 }
