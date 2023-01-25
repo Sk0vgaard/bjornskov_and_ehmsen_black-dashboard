@@ -113,6 +113,10 @@
 
 }
 
+.btn-collapse {
+  @include btn-styles($main, $black-states);
+}
+
 .btn-info {
   @include btn-styles($info, $info-states);
 }
@@ -229,6 +233,10 @@
   box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
   transform: translateY(-1px);
   -webkit-transform: translateY(-1px);
+}
+
+.btn-hover:hover {
+  color: #f39200;
 }
 
 .btn-round {
