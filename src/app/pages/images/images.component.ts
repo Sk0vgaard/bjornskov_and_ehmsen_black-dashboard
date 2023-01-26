@@ -5,11 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './images.component.html',
 })
 export class ImagesComponent implements OnInit {
+  constructor() {}
 
-  constructor() {
-  }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

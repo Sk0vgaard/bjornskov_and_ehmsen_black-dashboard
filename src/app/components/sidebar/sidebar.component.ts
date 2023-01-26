@@ -12,95 +12,94 @@ export const ROUTES: RouteInfo[] = [
     path: '/front-page',
     title: 'Forside',
     icon: 'icon-heart-2',
-    class: ''
+    class: '',
   },
   {
     path: '/contact-us',
     title: 'Kontakt os',
     icon: 'icon-email-85',
-    class: ''
+    class: '',
   },
   {
     path: '/about-us',
     title: 'Hvem er vi',
     icon: 'icon-single-02',
-    class: ''
+    class: '',
   },
   {
     path: '/info',
     title: 'Info',
     icon: 'icon-alert-circle-exc',
-    class: ''
+    class: '',
   },
   {
     path: '/timeline',
     title: 'Tidslinje',
     icon: 'icon-spaceship',
-    class: ''
+    class: '',
   },
   {
     path: '/images',
     title: 'Billeder',
     icon: 'icon-image-02',
-    class: ''
+    class: '',
   },
   {
     path: '/customer-satisfaction',
     title: 'Kundetilfredhed',
     icon: 'icon-satisfied',
-    class: ''
+    class: '',
   },
   {
     path: '/',
     title: '-------------------',
     icon: '',
-    class: ''
+    class: '',
   },
   {
     path: '/dashboard',
     title: 'Dashboard',
     icon: 'icon-chart-pie-36',
-    class: ''
+    class: '',
   },
   {
     path: '/icons',
     title: 'Icons',
     icon: 'icon-atom',
-    class: ''
+    class: '',
   },
   {
     path: '/notifications',
     title: 'Notifications',
     icon: 'icon-bell-55',
-    class: ''
+    class: '',
   },
   {
     path: '/tables',
     title: 'Table List',
     icon: 'icon-puzzle-10',
-    class: ''
+    class: '',
   },
   {
     path: '/typography',
     title: 'Typography',
     icon: 'icon-align-center',
-    class: ''
-  }
+    class: '',
+  },
 ];
 
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.css']
+  styleUrls: ['./sidebar.component.css'],
 })
 export class SidebarComponent implements OnInit {
   menuItems: any[];
 
-  constructor() {
-  }
+  constructor() {}
 
   ngOnInit() {
-    this.menuItems = ROUTES.filter(menuItem => menuItem);
+    this.menuItems = ROUTES.filter((menuItem) => menuItem);
   }
 
   isMobileMenu() {

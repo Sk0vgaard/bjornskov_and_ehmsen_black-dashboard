@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-find-us',
-  templateUrl: 'find-us.component.html'
+  templateUrl: 'find-us.component.html',
 })
 export class FindUsComponent implements OnInit {
   address = 'Hededammen 9, 6705 Esbjerg Ø';
@@ -10,11 +10,9 @@ export class FindUsComponent implements OnInit {
   instagramUrl = 'https://www.instagram.com/';
   linkedinUrl = 'https://www.linkedin.com/feed/';
 
-  constructor() {
-  }
+  constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   navigateToAddress() {
     window.open(`https://www.google.com/maps/search/${encodeURI(this.address)}`);

@@ -4,23 +4,21 @@ import { ContactService } from '../../services/contact.service';
 
 @Component({
   selector: 'app-contact-us',
-  templateUrl: 'contact-us.component.html'
+  templateUrl: 'contact-us.component.html',
 })
 export class ContactUsComponent {
-
-  constructor(private contactService: ContactService) {
-  }
+  constructor(private contactService: ContactService) {}
 
   public contactForm = new FormGroup({
     name: new FormControl('', Validators.required),
     phoneNumber: new FormControl('', [
       Validators.required,
       Validators.pattern('^[0-9 ()+-]+$'),
-      Validators.minLength(8)
+      Validators.minLength(8),
     ]),
     email: new FormControl('', [Validators.required, Validators.email]),
     subject: new FormControl('', [Validators.required]),
-    message: new FormControl('')
+    message: new FormControl(''),
   });
 
   public onSubmit() {

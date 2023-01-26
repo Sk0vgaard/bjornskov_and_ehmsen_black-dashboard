@@ -3,17 +3,16 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-pages',
   templateUrl: './pages.component.html',
-  styleUrls: ['./pages.component.scss']
+  styleUrls: ['./pages.component.scss'],
 })
 export class PagesComponent {
-  public sidebarColor: string = 'red';
+  public sidebarColor = 'red';
 
-  constructor() {
-  }
+  constructor() {}
 
   changeSidebarColor(color) {
-    var sidebar = document.getElementsByClassName('sidebar')[0];
-    var mainPanel = document.getElementsByClassName('main-panel')[0];
+    const sidebar = document.getElementsByClassName('sidebar')[0];
+    const mainPanel = document.getElementsByClassName('main-panel')[0];
 
     this.sidebarColor = color;
 
@@ -26,7 +25,7 @@ export class PagesComponent {
   }
 
   changeDashboardColor(color) {
-    var body = document.getElementsByTagName('body')[0];
+    const body = document.getElementsByTagName('body')[0];
     if (body && color === 'white-content') {
       body.classList.add(color);
     } else if (body.classList.contains('white-content')) {

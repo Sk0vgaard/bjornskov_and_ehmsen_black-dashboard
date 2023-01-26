@@ -1,0 +1,8 @@
+package.json
+package-lock.json
+docs/**
+build/**
+.github
+documentation
+e2e
+node_modules

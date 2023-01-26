@@ -23,13 +23,10 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     NgbModule,
     RouterModule,
     AppRoutingModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
   ],
   declarations: [AppComponent, PagesComponent],
-  providers: [
-    {provide: LocationStrategy, useClass: HashLocationStrategy}
-  ],
-  bootstrap: [AppComponent]
+  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
+  bootstrap: [AppComponent],
 })
-export class AppModule {
-}
+export class AppModule {}

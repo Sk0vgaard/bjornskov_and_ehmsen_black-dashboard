@@ -1,18 +1,16 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ContactService {
-
-  constructor() { }
+  constructor() {}
 
   public callBE(): void {
-    window.open(`tel:+45 22 33 76 08`);
+    window.open('tel:+45 22 33 76 08');
   }
 
   public mailBE(): void {
-    console.log('test')
-    window.open(`mailto:mark@bjørnskov-ehmsen.dk`);
+    window.open('mailto:mark@bjørnskov-ehmsen.dk');
   }
 }

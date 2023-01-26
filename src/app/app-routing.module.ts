@@ -8,7 +8,7 @@ const routes: Routes = [
   {
     path: '',
     redirectTo: 'front-page',
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
   {
     path: '',
@@ -16,27 +16,24 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        loadChildren: () => import ('./pages/pages.module').then(m => m.PagesModule)
-      }
-    ]
+        loadChildren: () => import('./pages/pages.module').then((m) => m.PagesModule),
+      },
+    ],
   },
   {
     path: '**',
-    redirectTo: 'front-page'
-  }
+    redirectTo: 'front-page',
+  },
 ];
 
 @NgModule({
   imports: [
     CommonModule,
     BrowserModule,
-    RouterModule.forRoot(routes,
-      {
-        scrollPositionRestoration: 'enabled'
-      }
-    )
+    RouterModule.forRoot(routes, {
+      scrollPositionRestoration: 'enabled',
+    }),
   ],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule {
-}
+export class AppRoutingModule {}

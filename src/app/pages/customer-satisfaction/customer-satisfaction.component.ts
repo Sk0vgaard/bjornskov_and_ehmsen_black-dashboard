@@ -5,11 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './customer-satisfaction.component.html',
 })
 export class CustomerSatisfactionComponent implements OnInit {
+  constructor() {}
 
-  constructor() {
-  }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

@@ -8,7 +8,7 @@ import { ContactService } from '../../services/contact.service';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit, OnDestroy {
   private listTitles: any[];
@@ -41,7 +41,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   // function that adds color white/transparent to the navbar on resize (this is for the collapse)
   updateColor = () => {
-    var navbar = document.getElementsByClassName('navbar')[0];
+    const navbar = document.getElementsByClassName('navbar')[0];
     if (window.innerWidth < 993 && !this.isCollapsed) {
       navbar.classList.add('bg-white');
       navbar.classList.remove('navbar-transparent');
@@ -53,12 +53,12 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     window.addEventListener('resize', this.updateColor);
-    this.listTitles = ROUTES.filter(listTitle => listTitle);
+    this.listTitles = ROUTES.filter((listTitle) => listTitle);
     const navbar: HTMLElement = this.element.nativeElement;
     this.toggleButton = navbar.getElementsByClassName('navbar-toggler')[0];
-    this.router.events.subscribe(event => {
+    this.router.events.subscribe((event) => {
       this.sidebarClose();
-      var $layer: any = document.getElementsByClassName('close-layer')[0];
+      const $layer: any = document.getElementsByClassName('close-layer')[0];
       if ($layer) {
         $layer.remove();
         this.mobile_menu_visible = 0;
@@ -80,9 +80,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   sidebarOpen() {
     const toggleButton = this.toggleButton;
-    const mainPanel = <HTMLElement>(
-      document.getElementsByClassName('main-panel')[0]
-    );
+    const mainPanel = <HTMLElement>document.getElementsByClassName('main-panel')[0];
     const html = document.getElementsByTagName('html')[0];
     if (window.innerWidth < 991) {
       mainPanel.style.position = 'fixed';
@@ -100,9 +98,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   sidebarClose() {
     const html = document.getElementsByTagName('html')[0];
     this.toggleButton.classList.remove('toggled');
-    const mainPanel = <HTMLElement>(
-      document.getElementsByClassName('main-panel')[0]
-    );
+    const mainPanel = <HTMLElement>document.getElementsByClassName('main-panel')[0];
 
     if (window.innerWidth < 991) {
       setTimeout(function () {
@@ -116,7 +112,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   sidebarToggle() {
     // const toggleButton = this.toggleButton;
     // const html = document.getElementsByTagName('html')[0];
-    var $toggle = document.getElementsByClassName('navbar-toggler')[0];
+    const $toggle = document.getElementsByClassName('navbar-toggler')[0];
 
     if (this.sidebarVisible === false) {
       this.sidebarOpen();
@@ -147,9 +143,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
       if (html.querySelectorAll('.main-panel')) {
         document.getElementsByClassName('main-panel')[0].appendChild($layer);
       } else if (html.classList.contains('off-canvas-sidebar')) {
-        document
-          .getElementsByClassName('wrapper-full-page')[0]
-          .appendChild($layer);
+        document.getElementsByClassName('wrapper-full-page')[0].appendChild($layer);
       }
 
       setTimeout(function () {
@@ -157,7 +151,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
       }, 100);
 
       $layer.onclick = function () {
-        //asign a function
+        // asign a function
         html.classList.remove('nav-open');
         this.mobile_menu_visible = 0;
         $layer.classList.remove('visible');
@@ -173,12 +167,12 @@ export class NavbarComponent implements OnInit, OnDestroy {
   }
 
   getTitle() {
-    var titlee = this.location.prepareExternalUrl(this.location.path());
+    let titlee = this.location.prepareExternalUrl(this.location.path());
     if (titlee.charAt(0) === '#') {
       titlee = titlee.slice(1);
     }
 
-    for (var item = 0; item < this.listTitles.length; item++) {
+    for (let item = 0; item < this.listTitles.length; item++) {
       if (this.listTitles[item].path === titlee) {
         return this.listTitles[item].title;
       }
@@ -187,11 +181,14 @@ export class NavbarComponent implements OnInit, OnDestroy {
   }
 
   open(content) {
-    this.modalService.open(content, {windowClass: 'modal-search'}).result.then((result) => {
-      this.closeResult = `Closed with: ${result}`;
-    }, (reason) => {
-      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-    });
+    this.modalService.open(content, { windowClass: 'modal-search' }).result.then(
+      (result) => {
+        this.closeResult = `Closed with: ${result}`;
+      },
+      (reason) => {
+        this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+      }
+    );
   }
 
   private getDismissReason(reason: any): string {

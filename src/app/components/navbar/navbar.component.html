@@ -8,38 +8,44 @@
           <span class="navbar-toggler-bar bar3"> </span>
         </button>
       </div>
-      <h3 class="navbar-brand card-title" style="margin-bottom: 0"> {{ getTitle() }} </h3>
+      <h3 class="navbar-brand card-title" style="margin-bottom: 0">{{ getTitle() }}</h3>
     </div>
     <div class="ml-auto row">
-      <button style="margin-left: 0; margin-top: 5px"
-              class="btn btn-icon btn-round navbar-toggler"
-              (click)="callPhoneNo()"
+      <button
+        style="margin-left: 0; margin-top: 5px"
+        class="btn btn-icon btn-round navbar-toggler"
+        (click)="callPhoneNo()"
       >
         <i class="fa fa-phone"></i>
       </button>
-      <img id="mobile-img" class="navbar-nav navbar-toggler" style="padding: 0; height: 50px;"
-           src="./assets/be_icons/be_logo.png"
-           alt=""/>
+      <img
+        id="mobile-img"
+        class="navbar-nav navbar-toggler"
+        style="padding: 0; height: 50px"
+        src="./assets/be_icons/be_logo.png"
+        alt=""
+      />
     </div>
     <div class="navbar-collapse" [ngbCollapse]="isCollapsed">
-      <div class="navbar-nav ml-auto ">
-        <button class="btn btn-icon btn-round btn-hover"
-                (click)="callPhoneNo()"
-                placement="bottom"
-                ngbTooltip="+45 22 33 76 08"
+      <div class="navbar-nav ml-auto">
+        <button
+          class="btn btn-icon btn-round btn-hover"
+          (click)="callPhoneNo()"
+          placement="bottom"
+          ngbTooltip="+45 22 33 76 08"
         >
           <i class="fa fa-phone"></i>
         </button>
-        <button style="margin-right: 20px"
-                class="btn btn-icon btn-round btn-hover"
-                (click)="mailTo()"
-                placement="bottom"
-                ngbTooltip="mark@bjørnskov-ehmsen.dk"
+        <button
+          style="margin-right: 20px"
+          class="btn btn-icon btn-round btn-hover"
+          (click)="mailTo()"
+          placement="bottom"
+          ngbTooltip="mark@bjørnskov-ehmsen.dk"
         >
           <i class="fa fa-envelope"></i>
         </button>
-        <img class="img-background" style="border-radius: 0" src="./assets/be_icons/be_web.png"
-             alt=""/>
+        <img class="img-background" style="border-radius: 0" src="./assets/be_icons/be_web.png" alt="" />
       </div>
     </div>
   </div>

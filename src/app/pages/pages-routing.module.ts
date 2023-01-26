@@ -13,17 +13,17 @@ import { CustomerSatisfactionComponent } from './customer-satisfaction/customer-
 import { InfoComponent } from './info/info.component';
 
 export const PageRoutes: Routes = [
-  {path: 'front-page', component: FrontPageComponent},
-  {path: 'contact-us', component: ContactUsComponent},
-  {path: 'about-us', component: AboutUsComponent},
-  {path: 'info', component: InfoComponent},
-  {path: 'timeline', component: TimelineComponent},
-  {path: 'images', component: ImagesComponent},
-  {path: 'customer-satisfaction', component: CustomerSatisfactionComponent},
+  { path: 'front-page', component: FrontPageComponent },
+  { path: 'contact-us', component: ContactUsComponent },
+  { path: 'about-us', component: AboutUsComponent },
+  { path: 'info', component: InfoComponent },
+  { path: 'timeline', component: TimelineComponent },
+  { path: 'images', component: ImagesComponent },
+  { path: 'customer-satisfaction', component: CustomerSatisfactionComponent },
   //
-  {path: 'icons', component: IconsComponent},
-  {path: 'dashboard', component: DashboardComponent},
-  {path: 'notifications', component: NotificationsComponent},
-  {path: 'tables', component: TablesComponent},
-  {path: 'typography', component: TypographyComponent},
+  { path: 'icons', component: IconsComponent },
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'notifications', component: NotificationsComponent },
+  { path: 'tables', component: TablesComponent },
+  { path: 'typography', component: TypographyComponent },
 ];

@@ -5,11 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './timeline.component.html',
 })
 export class TimelineComponent implements OnInit {
+  constructor() {}
 
-  constructor() {
-  }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
