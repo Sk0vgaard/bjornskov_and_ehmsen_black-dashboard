@@ -4,8 +4,6 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class ContactService {
-  constructor() {}
-
   public callBE(): void {
     window.open('tel:+45 22 33 76 08');
   }

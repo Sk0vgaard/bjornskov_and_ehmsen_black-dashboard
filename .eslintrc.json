@@ -22,6 +22,9 @@
       "class-methods-use-this": "off",
       "simple-import-sort/imports": "error",
       "simple-import-sort/exports": "error",
+      "import/first": "error",
+      "import/newline-after-import": "error",
+      "import/no-duplicates": "error",
       "no-param-reassign": [2, { "props": false }],
       "max-len": [
         1,

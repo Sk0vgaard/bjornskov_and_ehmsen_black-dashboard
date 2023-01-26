@@ -1,11 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   selector: 'app-typography',
   templateUrl: 'typography.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TypographyComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit() {}
-}
+export class TypographyComponent {}

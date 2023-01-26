@@ -1,11 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   selector: 'app-about-us',
   templateUrl: './images.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ImagesComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit(): void {}
-}
+export class ImagesComponent {}

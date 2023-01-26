@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
 declare interface RouteInfo {
   path: string;
@@ -92,20 +92,16 @@ export const ROUTES: RouteInfo[] = [
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SidebarComponent implements OnInit {
   menuItems: any[];
 
-  constructor() {}
-
-  ngOnInit() {
+  public ngOnInit(): void {
     this.menuItems = ROUTES.filter((menuItem) => menuItem);
   }
 
-  isMobileMenu() {
-    if (window.innerWidth > 991) {
-      return false;
-    }
-    return true;
+  public isMobileMenu(): boolean {
+    return window.innerWidth <= 991;
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 export interface Info {
   title: string;
@@ -8,10 +8,9 @@ export interface Info {
 @Component({
   selector: 'app-info',
   templateUrl: './info.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class InfoComponent implements OnInit {
-
-  constructor() {}
+export class InfoComponent {
   public isCollapsed: boolean[] = [];
 
   infos: Info[] = [
@@ -69,6 +68,4 @@ export class InfoComponent implements OnInit {
         'Hvis der skulle ske ændringer ift. projektet, ville et revurderet tilbud være nødvendigt og derfor gældende. Derfor vil det originale bortfalde og det nyste tilbud gældende.',
     },
   ];
-
-  ngOnInit(): void {}
 }

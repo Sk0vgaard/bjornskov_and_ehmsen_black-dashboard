@@ -1,11 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   selector: 'app-tables',
   templateUrl: 'tables.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TablesComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit() {}
-}
+export class TablesComponent {}

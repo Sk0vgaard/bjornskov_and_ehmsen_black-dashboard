@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-notifications',
   templateUrl: 'notifications.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class NotificationsComponent implements OnInit {
+export class NotificationsComponent {
   staticAlertClosed = false;
   staticAlertClosed1 = false;
   staticAlertClosed2 = false;
@@ -17,7 +18,7 @@ export class NotificationsComponent implements OnInit {
 
   constructor(private toastr: ToastrService) {}
 
-  showNotification(from, align) {
+  public showNotification(from, align): void {
     const color = Math.floor(Math.random() * 5 + 1);
 
     switch (color) {
@@ -30,7 +31,7 @@ export class NotificationsComponent implements OnInit {
             closeButton: true,
             enableHtml: true,
             toastClass: 'alert alert-info alert-with-icon',
-            positionClass: 'toast-' + from + '-' + align,
+            positionClass: `toast-${from}-${align}`,
           }
         );
         break;
@@ -43,7 +44,7 @@ export class NotificationsComponent implements OnInit {
             closeButton: true,
             enableHtml: true,
             toastClass: 'alert alert-success alert-with-icon',
-            positionClass: 'toast-' + from + '-' + align,
+            positionClass: `toast-${from}-${align}`,
           }
         );
         break;
@@ -56,7 +57,7 @@ export class NotificationsComponent implements OnInit {
             closeButton: true,
             enableHtml: true,
             toastClass: 'alert alert-warning alert-with-icon',
-            positionClass: 'toast-' + from + '-' + align,
+            positionClass: `toast-${from}-${align}`,
           }
         );
         break;
@@ -69,7 +70,7 @@ export class NotificationsComponent implements OnInit {
             enableHtml: true,
             closeButton: true,
             toastClass: 'alert alert-danger alert-with-icon',
-            positionClass: 'toast-' + from + '-' + align,
+            positionClass: `toast-${from}-${align}`,
           }
         );
         break;
@@ -82,7 +83,7 @@ export class NotificationsComponent implements OnInit {
             closeButton: true,
             enableHtml: true,
             toastClass: 'alert alert-primary alert-with-icon',
-            positionClass: 'toast-' + from + '-' + align,
+            positionClass: `toast-${from}-${align}`,
           }
         );
         break;
@@ -90,6 +91,4 @@ export class NotificationsComponent implements OnInit {
         break;
     }
   }
-
-  ngOnInit() {}
 }

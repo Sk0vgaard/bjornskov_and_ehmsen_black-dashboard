@@ -1,10 +1,12 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+
 import { ContactService } from '../../services/contact.service';
 
 @Component({
   selector: 'app-contact-us',
   templateUrl: 'contact-us.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ContactUsComponent {
   constructor(private contactService: ContactService) {}
@@ -21,36 +23,36 @@ export class ContactUsComponent {
     message: new FormControl(''),
   });
 
-  public onSubmit() {
+  public onSubmit(): void {
     console.log(this.contactForm.value);
     // send contact data to server
   }
 
-  get name() {
+  public get name() {
     return this.contactForm.get('name');
   }
 
-  get phoneNumber() {
+  public get phoneNumber() {
     return this.contactForm.get('phoneNumber');
   }
 
-  get email() {
+  public get email() {
     return this.contactForm.get('email');
   }
 
-  get message() {
+  public get message() {
     return this.contactForm.get('message');
   }
 
-  get subject() {
+  public get subject() {
     return this.contactForm.get('subject');
   }
 
-  callPhoneNo() {
+  public callPhoneNo(): void {
     this.contactService.callBE();
   }
 
-  mailTo() {
+  public mailTo(): void {
     this.contactService.mailBE();
   }
 }

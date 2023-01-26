@@ -1,11 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   selector: 'app-icons',
   templateUrl: 'icons.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class IconsComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit() {}
-}
+export class IconsComponent {}

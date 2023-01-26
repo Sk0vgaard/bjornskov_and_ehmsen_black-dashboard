@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import Chart from 'chart.js';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: 'dashboard.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DashboardComponent implements OnInit {
   public canvas: any;
@@ -15,9 +16,7 @@ export class DashboardComponent implements OnInit {
   public clicked1 = false;
   public clicked2 = false;
 
-  constructor() {}
-
-  ngOnInit() {
+  public ngOnInit(): void {
     const gradientChartOptionsConfigurationWithTooltipBlue: any = {
       maintainAspectRatio: false,
       legend: {
@@ -483,7 +482,7 @@ export class DashboardComponent implements OnInit {
     });
   }
 
-  public updateOptions() {
+  public updateOptions(): void {
     this.myChartData.data.datasets[0].data = this.data;
     this.myChartData.update();
   }

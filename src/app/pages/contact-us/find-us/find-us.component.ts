@@ -1,32 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   selector: 'app-find-us',
   templateUrl: 'find-us.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FindUsComponent implements OnInit {
+export class FindUsComponent {
   address = 'Hededammen 9, 6705 Esbjerg Ø';
   facebookUrl = 'https://www.facebook.com/';
   instagramUrl = 'https://www.instagram.com/';
   linkedinUrl = 'https://www.linkedin.com/feed/';
 
-  constructor() {}
-
-  ngOnInit() {}
-
-  navigateToAddress() {
+  public navigateToAddress(): void {
     window.open(`https://www.google.com/maps/search/${encodeURI(this.address)}`);
   }
 
-  openFacebook() {
+  public openFacebook(): void {
     window.open(this.facebookUrl, '_blank');
   }
 
-  openInstagram() {
+  public openInstagram(): void {
     window.open(this.instagramUrl, '_blank');
   }
 
-  openLinkedIn() {
+  public openLinkedIn(): void {
     window.open(this.linkedinUrl, '_blank');
   }
 }

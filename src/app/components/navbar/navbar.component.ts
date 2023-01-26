@@ -1,14 +1,16 @@
-import { Component, ElementRef, HostListener, OnDestroy, OnInit } from '@angular/core';
-import { ROUTES } from '../sidebar/sidebar.component';
 import { Location } from '@angular/common';
+import { ChangeDetectionStrategy, Component, ElementRef, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
 import { ContactService } from '../../services/contact.service';
+import { ROUTES } from '../sidebar/sidebar.component';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavbarComponent implements OnInit, OnDestroy {
   private listTitles: any[];
@@ -51,7 +53,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
     }
   };
 
-  ngOnInit() {
+  public ngOnInit() {
     window.addEventListener('resize', this.updateColor);
     this.listTitles = ROUTES.filter((listTitle) => listTitle);
     const navbar: HTMLElement = this.element.nativeElement;
@@ -66,7 +68,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
     });
   }
 
-  collapse() {
+  public collapse() {
     this.isCollapsed = !this.isCollapsed;
     const navbar = document.getElementsByTagName('nav')[0];
     if (!this.isCollapsed) {
@@ -78,8 +80,8 @@ export class NavbarComponent implements OnInit, OnDestroy {
     }
   }
 
-  sidebarOpen() {
-    const toggleButton = this.toggleButton;
+  public sidebarOpen() {
+    const { toggleButton } = this;
     const mainPanel = <HTMLElement>document.getElementsByClassName('main-panel')[0];
     const html = document.getElementsByTagName('html')[0];
     if (window.innerWidth < 991) {
@@ -95,7 +97,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
     this.sidebarVisible = true;
   }
 
-  sidebarClose() {
+  public sidebarClose() {
     const html = document.getElementsByTagName('html')[0];
     this.toggleButton.classList.remove('toggled');
     const mainPanel = <HTMLElement>document.getElementsByClassName('main-panel')[0];
@@ -109,7 +111,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
     html.classList.remove('nav-open');
   }
 
-  sidebarToggle() {
+  public sidebarToggle() {
     // const toggleButton = this.toggleButton;
     // const html = document.getElementsByTagName('html')[0];
     const $toggle = document.getElementsByClassName('navbar-toggler')[0];
@@ -166,7 +168,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
     }
   }
 
-  getTitle() {
+  public getTitle() {
     let titlee = this.location.prepareExternalUrl(this.location.path());
     if (titlee.charAt(0) === '#') {
       titlee = titlee.slice(1);
@@ -180,7 +182,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
     return 'Forside';
   }
 
-  open(content) {
+  public open(content) {
     this.modalService.open(content, { windowClass: 'modal-search' }).result.then(
       (result) => {
         this.closeResult = `Closed with: ${result}`;
@@ -194,22 +196,22 @@ export class NavbarComponent implements OnInit, OnDestroy {
   private getDismissReason(reason: any): string {
     if (reason === ModalDismissReasons.ESC) {
       return 'by pressing ESC';
-    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-      return 'by clicking on a backdrop';
-    } else {
-      return `with: ${reason}`;
     }
+    if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    }
+    return `with: ${reason}`;
   }
 
-  ngOnDestroy() {
+  public ngOnDestroy(): void {
     window.removeEventListener('resize', this.updateColor);
   }
 
-  callPhoneNo() {
+  public callPhoneNo(): void {
     this.contactService.callBE();
   }
 
-  mailTo() {
+  public mailTo(): void {
     this.contactService.mailBE();
   }
 }
