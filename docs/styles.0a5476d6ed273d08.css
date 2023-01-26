@@ -11984,12 +11984,9 @@ img {
 .navbar .btn {
   margin: 0 5px 0 10px;
 }
-.navbar.navbar-absolute {
-  position: absolute;
+.navbar.navbar-fixed {
+  position: fixed;
   z-index: 1050;
-}
-.navbar.navbar-transparent {
-  background: transparent !important;
 }
 .navbar.bg-white .navbar-nav .search-bar.input-group i {
   color: #222a42;
@@ -13510,7 +13507,6 @@ table.tablesorter thead tr .header {
   float: right;
   width: 100%;
   min-height: 100vh;
-  border-top: 2px solid #f39200;
   background: linear-gradient(#1e1e2f, #1e1e24);
   transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
 }

@@ -13429,7 +13429,7 @@ img {
   margin: 0 5px 0 10px;
 }
 
-.navbar.navbar-absolute {
+.navbar.navbar-fixed {
   position: absolute;
   z-index: 1050;
 }
