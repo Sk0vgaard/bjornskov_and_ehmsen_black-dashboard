@@ -118,7 +118,7 @@
 }
 
 .btn-info {
-  @include btn-styles($info, $info-states);
+  @include btn-styles($info-states, $info);
 }
 
 .btn-warning {
