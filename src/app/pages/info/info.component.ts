@@ -10,11 +10,9 @@ export interface Info {
   templateUrl: './info.component.html',
 })
 export class InfoComponent implements OnInit {
-  public isCollapsed: boolean[] = [];
 
   constructor() {}
-
-  ngOnInit(): void {}
+  public isCollapsed: boolean[] = [];
 
   infos: Info[] = [
     {
@@ -71,4 +69,6 @@ export class InfoComponent implements OnInit {
         'Hvis der skulle ske ændringer ift. projektet, ville et revurderet tilbud være nødvendigt og derfor gældende. Derfor vil det originale bortfalde og det nyste tilbud gældende.',
     },
   ];
+
+  ngOnInit(): void {}
 }
