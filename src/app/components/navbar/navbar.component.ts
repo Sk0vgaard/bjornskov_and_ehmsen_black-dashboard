@@ -24,7 +24,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   closeResult: string;
 
   @HostListener('document:click', ['$event'])
-  clickOutsideNav(event) {
+  public clickOutsideNav(event): void {
     if (!this.element.nativeElement.contains(event.target) && this.sidebarVisible === true) {
       this.sidebarToggle();
     }
@@ -53,10 +53,11 @@ export class NavbarComponent implements OnInit, OnDestroy {
     }
   };
 
-  public ngOnInit() {
+  public ngOnInit(): void {
     window.addEventListener('resize', this.updateColor);
     this.listTitles = ROUTES.filter((listTitle) => listTitle);
     const navbar: HTMLElement = this.element.nativeElement;
+    // eslint-disable-next-line prefer-destructuring
     this.toggleButton = navbar.getElementsByClassName('navbar-toggler')[0];
     this.router.events.subscribe((event) => {
       this.sidebarClose();
@@ -68,7 +69,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
     });
   }
 
-  public collapse() {
+  public collapse(): void {
     this.isCollapsed = !this.isCollapsed;
     const navbar = document.getElementsByTagName('nav')[0];
     if (!this.isCollapsed) {
@@ -80,7 +81,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
     }
   }
 
-  public sidebarOpen() {
+  public sidebarOpen(): void {
     const { toggleButton } = this;
     const mainPanel = <HTMLElement>document.getElementsByClassName('main-panel')[0];
     const html = document.getElementsByTagName('html')[0];
@@ -97,7 +98,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
     this.sidebarVisible = true;
   }
 
-  public sidebarClose() {
+  public sidebarClose(): void {
     const html = document.getElementsByTagName('html')[0];
     this.toggleButton.classList.remove('toggled');
     const mainPanel = <HTMLElement>document.getElementsByClassName('main-panel')[0];
@@ -111,7 +112,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
     html.classList.remove('nav-open');
   }
 
-  public sidebarToggle() {
+  public sidebarToggle(): void {
     // const toggleButton = this.toggleButton;
     // const html = document.getElementsByTagName('html')[0];
     const $toggle = document.getElementsByClassName('navbar-toggler')[0];
@@ -168,7 +169,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
     }
   }
 
-  public getTitle() {
+  public getTitle(): string {
     let titlee = this.location.prepareExternalUrl(this.location.path());
     if (titlee.charAt(0) === '#') {
       titlee = titlee.slice(1);
@@ -182,7 +183,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
     return 'Forside';
   }
 
-  public open(content) {
+  public open(content): void {
     this.modalService.open(content, { windowClass: 'modal-search' }).result.then(
       (result) => {
         this.closeResult = `Closed with: ${result}`;
