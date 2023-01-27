@@ -221,6 +221,7 @@ button.toast-close-button {
   --teal: #11cdef;
   --cyan: #2bffc6;
   --main: #f39200;
+  --background: #27293D;
   --white: #ffffff;
   --gray: #6c757d;
   --gray-dark: #32325d;
@@ -10100,6 +10101,78 @@ fieldset[disabled] .navbar .navbar-nav > a.btn.active {
   box-shadow: none;
 }
 
+.btn-price {
+  background: #212529;
+  background-image: linear-gradient(to bottom left, #212529, #525f7f, #212529);
+  background-size: 210% 210%;
+  background-position: top right;
+  background-color: #212529;
+  transition: all 0.15s ease;
+  box-shadow: none;
+  color: #ffffff;
+}
+.btn-price.animation-on-hover:hover {
+  background-position: bottom left;
+  transition: 0.3s ease-in-out;
+}
+.btn-price:hover, .btn-price:focus, .btn-price:active, .btn-price.active, .btn-price:active:focus, .btn-price:active:hover, .btn-price.active:focus, .btn-price.active:hover {
+  background-color: #525f7f !important;
+  background-image: linear-gradient(to bottom left, #212529, #525f7f, #212529) !important;
+  background-image: -moz-linear-gradient(to bottom left, #212529, #525f7f, #212529) !important;
+  color: #ffffff;
+  box-shadow: none;
+}
+.btn-price:active {
+  box-shadow: none !important;
+  transform: translateY(1px) !important;
+  transition: all 0.15s ease;
+}
+.btn-price:not([data-action]):hover {
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+  transform: translateY(-1px);
+  -webkit-transform: translateY(-1px);
+}
+.btn-price.disabled, .btn-price.disabled:hover, .btn-price.disabled:focus, .btn-price.disabled.focus, .btn-price.disabled:active, .btn-price.disabled.active, .btn-price:disabled, .btn-price:disabled:hover, .btn-price:disabled:focus, .btn-price:disabled.focus, .btn-price:disabled:active, .btn-price:disabled.active, .btn-price[disabled], .btn-price[disabled]:hover, .btn-price[disabled]:focus, .btn-price[disabled].focus, .btn-price[disabled]:active, .btn-price[disabled].active, fieldset[disabled] .btn-price, fieldset[disabled] .btn-price:hover, fieldset[disabled] .btn-price:focus, fieldset[disabled] .btn-price.focus, fieldset[disabled] .btn-price:active, fieldset[disabled] .btn-price.active {
+  background-color: #212529;
+  border-color: #212529;
+}
+.btn-price.btn-simple {
+  color: #212529;
+  border-color: #212529;
+  background: transparent;
+}
+.btn-price.btn-simple:hover, .btn-price.btn-simple:focus, .btn-price.btn-simple:active, .btn-price.btn-simple:not(:disabled):not(.disabled):active {
+  color: #212529;
+  border-color: #212529;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none;
+}
+.btn-price.btn-simple.active {
+  border-color: #212529 !important;
+}
+.btn-price.btn-simple.active:hover, .btn-price.btn-simple.active:focus, .btn-price.btn-simple.active:active, .btn-price.btn-simple.active:not(:disabled):not(.disabled):active {
+  color: #ffffff;
+  border-color: #212529;
+  background-image: linear-gradient(to bottom left, #212529, #525f7f, #212529) !important;
+  background-image: -moz-linear-gradient(to bottom left, #212529, #525f7f, #212529) !important;
+  background-color: #525f7f !important;
+  box-shadow: none;
+}
+.btn-price.btn-link {
+  color: #212529;
+}
+.btn-price.btn-link:hover, .btn-price.btn-link:focus, .btn-price.btn-link:active {
+  background-color: transparent !important;
+  background-image: none !important;
+  color: #ffffff !important;
+  text-decoration: none;
+  box-shadow: none;
+}
+.btn-price:hover, .btn-price:focus, .btn-price.focus, .btn-price:active, .btn-price.active {
+  background: transparent;
+}
+
 .btn-info {
   background: #3358f4;
   background-image: linear-gradient(to bottom left, #3358f4, #1d8cf8, #3358f4);
@@ -14956,6 +15029,83 @@ Copyright (c) 2015 Daniel Eden
 }
 .white-content .img-background {
   background-color: #212529;
+}
+.white-content .btn-price {
+  background: #adb5bd;
+  background-image: linear-gradient(to bottom left, #adb5bd, #f6f9fc, #adb5bd);
+  background-size: 210% 210%;
+  background-position: top right;
+  background-color: #adb5bd;
+  transition: all 0.15s ease;
+  box-shadow: none;
+  color: #ffffff;
+}
+.white-content .btn-price.animation-on-hover:hover {
+  background-position: bottom left;
+  transition: 0.3s ease-in-out;
+}
+.white-content .btn-price:hover, .white-content .btn-price:focus, .white-content .btn-price:active, .white-content .btn-price.active, .white-content .btn-price:active:focus, .white-content .btn-price:active:hover, .white-content .btn-price.active:focus, .white-content .btn-price.active:hover {
+  background-color: #f6f9fc !important;
+  background-image: linear-gradient(to bottom left, #adb5bd, #f6f9fc, #adb5bd) !important;
+  background-image: -moz-linear-gradient(to bottom left, #adb5bd, #f6f9fc, #adb5bd) !important;
+  color: #ffffff;
+  box-shadow: none;
+}
+.white-content .btn-price:active {
+  box-shadow: none !important;
+  transform: translateY(1px) !important;
+  transition: all 0.15s ease;
+}
+.white-content .btn-price:not([data-action]):hover {
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+  transform: translateY(-1px);
+  -webkit-transform: translateY(-1px);
+}
+.white-content .btn-price.disabled, .white-content .btn-price.disabled:hover, .white-content .btn-price.disabled:focus, .white-content .btn-price.disabled.focus, .white-content .btn-price.disabled:active, .white-content .btn-price.disabled.active, .white-content .btn-price:disabled, .white-content .btn-price:disabled:hover, .white-content .btn-price:disabled:focus, .white-content .btn-price:disabled.focus, .white-content .btn-price:disabled:active, .white-content .btn-price:disabled.active, .white-content .btn-price[disabled], .white-content .btn-price[disabled]:hover, .white-content .btn-price[disabled]:focus, .white-content .btn-price[disabled].focus, .white-content .btn-price[disabled]:active, .white-content .btn-price[disabled].active, fieldset[disabled] .white-content .btn-price, fieldset[disabled] .white-content .btn-price:hover, fieldset[disabled] .white-content .btn-price:focus, fieldset[disabled] .white-content .btn-price.focus, fieldset[disabled] .white-content .btn-price:active, fieldset[disabled] .white-content .btn-price.active {
+  background-color: #adb5bd;
+  border-color: #adb5bd;
+}
+.white-content .btn-price.btn-simple {
+  color: #adb5bd;
+  border-color: #adb5bd;
+  background: transparent;
+}
+.white-content .btn-price.btn-simple:hover, .white-content .btn-price.btn-simple:focus, .white-content .btn-price.btn-simple:active, .white-content .btn-price.btn-simple:not(:disabled):not(.disabled):active {
+  color: #adb5bd;
+  border-color: #adb5bd;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none;
+}
+.white-content .btn-price.btn-simple.active {
+  border-color: #adb5bd !important;
+}
+.white-content .btn-price.btn-simple.active:hover, .white-content .btn-price.btn-simple.active:focus, .white-content .btn-price.btn-simple.active:active, .white-content .btn-price.btn-simple.active:not(:disabled):not(.disabled):active {
+  color: #ffffff;
+  border-color: #adb5bd;
+  background-image: linear-gradient(to bottom left, #adb5bd, #f6f9fc, #adb5bd) !important;
+  background-image: -moz-linear-gradient(to bottom left, #adb5bd, #f6f9fc, #adb5bd) !important;
+  background-color: #f6f9fc !important;
+  box-shadow: none;
+}
+.white-content .btn-price.btn-link {
+  color: #adb5bd;
+}
+.white-content .btn-price.btn-link:hover, .white-content .btn-price.btn-link:focus, .white-content .btn-price.btn-link:active {
+  background-color: transparent !important;
+  background-image: none !important;
+  color: #ffffff !important;
+  text-decoration: none;
+  box-shadow: none;
+}
+.white-content .btn-price:hover, .white-content .btn-price:focus, .white-content .btn-price.focus, .white-content .btn-price:active, .white-content .btn-price.active {
+  background: transparent;
+}
+.white-content .btn-price-h3 {
+  color: #212529 !important;
+}
+.white-content .btn-price-h5 {
+  color: #32325d !important;
 }
 .white-content .card:not(.card-white) {
   background: #ffffff;
