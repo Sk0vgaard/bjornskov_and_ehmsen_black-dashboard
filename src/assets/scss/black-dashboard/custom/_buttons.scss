@@ -115,6 +115,18 @@
   @include btn-styles($main, $black-states);
 }
 
+.btn-price {
+  @include btn-styles($dark, $gray-700);
+  &:hover,
+  &:focus,
+  &.focus,
+  &:active,
+  &.active {
+    background: $transparent-bg;
+  }
+}
+
+
 .btn-info {
   @include btn-styles($info-states, $info);
 }

@@ -9,6 +9,6 @@ export class ContactService {
   }
 
   public mailBE(): void {
-    window.open('mailto:mark@bjørnskov-ehmsen.dk');
+    window.open('mailto:info@bjørnskov-ehmsen.dk');
   }
 }
