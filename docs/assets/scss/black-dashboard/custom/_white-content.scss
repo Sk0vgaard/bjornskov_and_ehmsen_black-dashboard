@@ -5,9 +5,11 @@
     color: $black-states;
   }
 
-  .navbar.navbar-transparent .navbar-toggler-bar {
-    background: $black-states;
-  }
+  //.navbar.navbar-transparent .navbar-toggler-bar {
+  //  background: $black-states;
+  //  color: whitesmoke
+  //}
+
   .navbar.navbar-transparent .navbar-nav li a:not(.dropdown-item) {
     color: $black-states;
     & i {

@@ -14776,9 +14776,6 @@ Copyright (c) 2015 Daniel Eden
 .white-content .navbar.navbar-transparent .navbar-brand {
   color: #1d253b;
 }
-.white-content .navbar.navbar-transparent .navbar-toggler-bar {
-  background: #1d253b;
-}
 .white-content .navbar.navbar-transparent .navbar-nav li a:not(.dropdown-item) {
   color: #1d253b;
 }
