@@ -14,25 +14,15 @@
       </div>
     </div>
   </div>
-  <swiper
-    [effect]="'cube'"
-    [grabCursor]="true"
-    [cubeEffect]="{
-      shadow: true,
-      slideShadows: true,
-      shadowOffset: 20,
-      shadowScale: 0.94
-    }"
-    [pagination]="true"
-    class="mySwiper"
+  <swiper [config]="config"
+          class="mySwiper"
   >
     <ng-container *ngFor="let image of images | async">
+      <h3>{{image.category}}</h3>
       <ng-template swiperSlide>
-        <h3>{{image.category}}</h3>
-        <img [src]="'assets/img/'+ image.path" alt=""/>
+        <img [src]="'assets/img/'+ image.fileName" alt=""/>
       </ng-template>
     </ng-container>
-
   </swiper>
 
 
