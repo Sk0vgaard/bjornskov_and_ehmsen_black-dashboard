@@ -1,7 +1,7 @@
 <div class="content">
   <div class="row">
     <div class="col-12">
-      <div class="card card-chart">
+      <div class="card">
         <div class="card-header">
           <div class="row">
             <div class="col-sm-12 text-left">
@@ -18,12 +18,10 @@
           class="mySwiper"
   >
     <ng-container *ngFor="let image of images | async">
-      <h3>{{image.category}}</h3>
       <ng-template swiperSlide>
         <img [src]="'assets/img/'+ image.fileName" alt=""/>
       </ng-template>
+
     </ng-container>
   </swiper>
-
-
 </div>

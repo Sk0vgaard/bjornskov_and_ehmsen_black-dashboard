@@ -3,21 +3,24 @@
 @import "swiper/scss/pagination";
 @import 'swiper/scss/navigation';
 
-.swiper {
-  width: 500px;
-  height: 500px;
-  position: absolute;
-  left: 50%;
-  top: 40%;
-  margin-left: -150px;
-  margin-top: -150px;
+@media screen and (min-width: 992px) {
+  .swiper {
+    width: 500px;
+    height: 500px;
+    top: 40%;
+    margin-left: -150px;
+    margin-top: -150px;
+    left: 50%;
+    position: absolute;
+  }
 }
 
 .swiper-slide {
   display: flex;
   align-items: center;
   justify-content: center;
-
+  background-position: center;
+  background-size: cover;
   img {
     max-width: 100%;
     max-height: 100%;
@@ -27,11 +30,6 @@
 .swiper-pagination-bullet {
   background-color: #1A1E34;
   opacity: unset;
-}
-
-.swiper-slide {
-  background-position: center;
-  background-size: cover;
 }
 
 .swiper-slide img {
