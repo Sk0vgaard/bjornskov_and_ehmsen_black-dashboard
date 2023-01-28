@@ -1,0 +1,77 @@
+[
+  {
+    "id": 1,
+    "category": "Angular",
+    "path": "angular.jpg"
+  },
+  {
+    "id": 2,
+    "category": "Angular",
+    "path": "angular2-logo-red.png"
+  },
+  {
+    "id": 3,
+    "category": "Angular",
+    "path": "angular2-logo-white.png"
+  },
+  {
+    "id": 4,
+    "category": "Anime",
+    "path": "anime3.png"
+  },
+  {
+    "id": 5,
+    "category": "Anime",
+    "path": "anime6.png"
+  },
+  {
+    "id": 6,
+    "category": "Apple",
+    "path": "apple-icon.png"
+  },
+  {
+    "id": 7,
+    "category": "Argon",
+    "path": "argon-white.png"
+  },
+  {
+    "id": 8,
+    "category": "Background",
+    "path": "bg5.jpg"
+  },
+  {
+    "id": 9,
+    "category": "Default",
+    "path": "default-avatar.png"
+  },
+  {
+    "id": 10,
+    "category": "People",
+    "path": "emilyz.jpg"
+  },
+  {
+    "id": 11,
+    "category": "Favicon",
+    "path": "favicon.png"
+  },
+  {
+    "id": 12,
+    "category": "Header",
+    "path": "header.jpg"
+  },
+  {
+    "id": 13,
+    "category": "Picture",
+    "path": "img_3115.jpg"
+  },
+  {
+    "id": 14,
+    "category": "People",
+    "path": "james.jpg"
+  },
+  {
+    "id": 15,
+    "category": "People",
+    "path": "mike.jpg"
+  }
+]

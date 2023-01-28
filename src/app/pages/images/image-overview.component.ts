@@ -1,0 +1,25 @@
+import { ChangeDetectionStrategy, Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Observable } from 'rxjs';
+// import Swiper core and required modules
+import SwiperCore, { EffectCube, Pagination } from 'swiper';
+
+import { ImageModel } from '../../models/image.model';
+import { ImageService } from '../../services/image.service';
+// install Swiper modules
+SwiperCore.use([EffectCube, Pagination]);
+
+@Component({
+  selector: 'app-about-us',
+  templateUrl: './image-overview.component.html',
+  styleUrls: ['./image-overview.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None,
+})
+export class ImageOverviewComponent implements OnInit {
+  public images: Observable<ImageModel[]>;
+  constructor(private imageService: ImageService) {}
+
+  public ngOnInit(): void {
+    this.images = this.imageService.getOverviewImages();
+  }
+}

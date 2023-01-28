@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SwiperModule } from 'swiper/angular';
 
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
@@ -12,7 +13,7 @@ import { CustomerSatisfactionComponent } from './customer-satisfaction/customer-
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FrontPageComponent } from './front-page/front-page.component';
 import { IconsComponent } from './icons/icons.component';
-import { ImagesComponent } from './images/images.component';
+import { ImageOverviewComponent } from './images/image-overview.component';
 import { InfoComponent } from './info/info.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { PageRoutes } from './pages-routing.module';
@@ -28,6 +29,7 @@ import { TypographyComponent } from './typography/typography.component';
     HttpClientModule,
     NgbModule,
     ReactiveFormsModule,
+    SwiperModule,
   ],
   declarations: [
     DashboardComponent,
@@ -38,7 +40,7 @@ import { TypographyComponent } from './typography/typography.component';
     NotificationsComponent,
     FindUsComponent,
     AboutUsComponent,
-    ImagesComponent,
+    ImageOverviewComponent,
     FrontPageComponent,
     TimelineComponent,
     CustomerSatisfactionComponent,

@@ -1,0 +1,27 @@
+@import "swiper/scss";
+@import "swiper/scss/effect-cube";
+@import "swiper/scss/pagination";
+
+.swiper {
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  margin-left: -150px;
+  margin-top: -150px;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #EB7700;
+}
