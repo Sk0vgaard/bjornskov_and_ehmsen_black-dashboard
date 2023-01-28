@@ -1,10 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
-export interface Info {
-  category?: string;
-  title: string;
-  body: string;
-}
+import { CardInfoModel } from '../../models/card-info.model';
 
 @Component({
   selector: 'app-info',
@@ -14,14 +10,14 @@ export interface Info {
 export class InfoComponent {
   public isCollapsed: boolean[] = [];
 
-  infos: Info[] = [
+  infos: CardInfoModel[] = [
     {
       title: 'Hvorfor vælge os?',
       body: 'Vores tømrere har mange års erfaring i branchen og er dygtige i alle aspekter af tømrerarbejde, lige fra snedker arbejde til lægning af sildebens gulv (der findes ikke det vi ikke gøre i tømrearbejde). Vi er også stolte af vores fremragende kundeservice og opmærksomhed på detaljer.',
     },
   ];
 
-  prices: Info[] = [
+  prices: CardInfoModel[] = [
     {
       category: '07:00 - 15:00 / 15:00-24:00',
       title: 'Hverdage',
@@ -49,7 +45,7 @@ export class InfoComponent {
     },
   ];
 
-  faqs: Info[] = [
+  faqs: CardInfoModel[] = [
     {
       title: 'Hvorfor vælge Hovedentreprise?',
       body:

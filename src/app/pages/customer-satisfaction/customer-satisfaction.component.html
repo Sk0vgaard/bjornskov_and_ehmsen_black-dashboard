@@ -5,12 +5,28 @@
         <div class="card-header">
           <div class="row">
             <div class="col-sm-12 text-left">
-              <h2 class="card-title">Kundetilfredshed</h2>
+              <h2 class="card-title">I Bjørnskov & Ehmsen går vi op i vores kunders tilfredshed</h2>
             </div>
           </div>
         </div>
-        <div class="card-body" style="padding-top: 0"></div>
       </div>
     </div>
+  </div>
+  <div class="row">
+    <ng-container *ngFor="let price of customerSatifactions; let i = index">
+      <div class="col-lg-4">
+        <div class="card card-chart">
+          <div class="card-header btn-price" (click)="isCollapsed[i] = !isCollapsed[i]" style="cursor: pointer">
+            <h5 class="card-category btn-price-h5">{{ price.category }}</h5>
+            <h3 class="card-title btn-price-h3">{{ price.title }}</h3>
+          </div>
+          <div class="card-body">
+            <div class="typography-line" [ngbCollapse]="!isCollapsed[i]">
+              <p style="padding-left: 15px" [innerHTML]="price.body"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
   </div>
 </div>
