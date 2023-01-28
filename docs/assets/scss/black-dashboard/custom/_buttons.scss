@@ -116,7 +116,7 @@
 }
 
 .btn-price {
-  @include btn-styles($dark, $gray-700);
+  @include btn-styles($background, $gray-700);
   &:hover,
   &:focus,
   &.focus,
