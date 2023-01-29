@@ -813,7 +813,7 @@ $close-font-size: $font-size-base * 1.5 !default;
 $close-font-weight: $font-weight-bold !default;
 $close-bg: transparent !default;
 $close-hover-bg: transparent !default;
-$close-color: rgba(0, 0, 0, 0.6);
+$close-color: rgb(243, 146, 0);
 $close-hover-color: rgba(0, 0, 0, 0.9);
 $close-text-shadow: none !default;
 
@@ -944,7 +944,7 @@ $modal-header-border-color: $gray-200 !default;
 $modal-footer-border-color: $modal-header-border-color !default;
 $modal-header-border-width: $modal-content-border-width !default;
 $modal-footer-border-width: $modal-header-border-width !default;
-$modal-header-padding: 24px 24px 0 24px !default;
+$modal-header-padding: 24px 24px 24px 24px !default;
 
 // Progress bars
 

@@ -5294,7 +5294,7 @@ input[type=button].btn-block {
   font-size: 1.3125rem;
   font-weight: 600;
   line-height: 1;
-  color: rgba(0, 0, 0, 0.6);
+  color: rgb(243, 146, 0);
   text-shadow: none;
   opacity: 0.5;
 }
@@ -5302,7 +5302,7 @@ input[type=button].btn-block {
   cursor: pointer;
 }
 .close:not(:disabled):not(.disabled):hover, .close:not(:disabled):not(.disabled):focus {
-  color: rgba(0, 0, 0, 0.6);
+  color: rgb(243, 146, 0);
   text-decoration: none;
   opacity: 0.75;
 }
@@ -5398,14 +5398,15 @@ button.close {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  padding: 24px 24px 0 24px;
+  padding: 24px 24px 24px 24px;
+  background-color: #27293D;
   border-bottom: 1px solid #e9ecef;
   border-top-left-radius: 0.2857rem;
   border-top-right-radius: 0.2857rem;
 }
 .modal-header .close {
-  padding: 24px 24px 0 24px;
-  margin: -24px 24px 0 24px -24px 24px 0 24px -24px 24px 0 24px auto;
+  padding: 24px 24px 24px 24px;
+  margin: -24px 24px 24px 24px -24px 24px 24px 24px -24px 24px 24px 24px auto;
 }
 
 .modal-title {
@@ -5416,13 +5417,19 @@ button.close {
 .modal-body {
   position: relative;
   flex: 1 1 auto;
+  background-color: #27293D;
   padding: 24px 24px 16px 24px;
+}
+
+.background-color-default {
+  background-color: #27293D;
 }
 
 .modal-footer {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  background-color: #27293D;
   padding: 24px 24px 16px 24px;
   border-top: 1px solid #e9ecef;
 }
@@ -15027,8 +15034,8 @@ Copyright (c) 2015 Daniel Eden
 .white-content .linkedin-color {
   color: #6eb5f9 !important;
 }
-.white-content .img-background {
-  background-color: #212529;
+.white-content .background-color-white-content {
+  background-color: whitesmoke;
 }
 .white-content .btn-price {
   background: #adb5bd;
