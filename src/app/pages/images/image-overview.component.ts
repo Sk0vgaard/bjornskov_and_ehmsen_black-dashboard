@@ -37,4 +37,8 @@ export class ImageOverviewComponent implements OnInit {
   public ngOnInit(): void {
     this.images = this.imageService.getOverviewImages();
   }
+
+  public openImageCategory(category: string): void {
+    console.log(category);
+  }
 }

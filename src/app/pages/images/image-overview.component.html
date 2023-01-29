@@ -5,7 +5,9 @@
         <div class="card-header">
           <div class="row">
             <div class="col-sm-12 text-left">
-              <h2 class="card-title">Herunder kan du se nogle billeder af de mange projekter vi laver</h2>
+              <h5 class="card-category">Klik på et af billederne få at se flere i den kategori</h5>
+              <h2 class="card-title">Vi går altid 100% ind i vores projekter. Her kan i se nogle af vores resultater
+                💪</h2>
             </div>
           </div>
         </div>
@@ -19,7 +21,8 @@
   >
     <ng-container *ngFor="let image of images | async">
       <ng-template swiperSlide>
-        <img [src]="'assets/img/'+ image.fileName" alt=""/>
+        <img class="swiper-img" [src]="'assets/img/'+ image.fileName" alt="" (click)="openImageCategory(image.category)"
+             style="cursor: pointer"/>
       </ng-template>
 
     </ng-container>
