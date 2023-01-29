@@ -20,6 +20,7 @@ import { PageRoutes } from './pages-routing.module';
 import { TablesComponent } from './tables/tables.component';
 import { TimelineComponent } from './timeline/timeline.component';
 import { TypographyComponent } from './typography/typography.component';
+import { ImageDetailsComponent } from './images/image-details/image-details.component';
 
 @NgModule({
   imports: [
@@ -45,6 +46,7 @@ import { TypographyComponent } from './typography/typography.component';
     TimelineComponent,
     CustomerSatisfactionComponent,
     InfoComponent,
+    ImageDetailsComponent,
   ],
 })
 export class PagesModule {}

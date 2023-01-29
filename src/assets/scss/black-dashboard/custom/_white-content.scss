@@ -184,9 +184,13 @@
     color: #6eb5f9 !important;
   }
 
-  .img-background {
-    background-color: $dark;
+  .background-color-white-content {
+    background-color: whitesmoke;
   }
+
+  //.modal-content .modal-body p {
+  //  color: #222a42;
+  //}
 
   .btn-price {
     @include btn-styles($gray-500, $gray-100);

@@ -1,10 +1,12 @@
 import { ChangeDetectionStrategy, Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
 import { Observable } from 'rxjs';
 // import Swiper core and required modules
 import SwiperCore, { EffectCube, FreeMode, Navigation, Pagination, SwiperOptions } from 'swiper';
 
 import { ImageModel } from '../../models/image.model';
 import { ImageService } from '../../services/image.service';
+import { ImageDetailsComponent } from './image-details/image-details.component';
 // install Swiper modules
 SwiperCore.use([EffectCube, Pagination, Navigation, FreeMode]);
 
@@ -32,13 +34,18 @@ export class ImageOverviewComponent implements OnInit {
     scrollbar: { draggable: true },
   };
 
-  constructor(private imageService: ImageService) {}
+  constructor(private imageService: ImageService, private modalService: NgbModal) {}
 
   public ngOnInit(): void {
     this.images = this.imageService.getOverviewImages();
   }
 
-  public openImageCategory(category: string): void {
-    console.log(category);
+  public openImageCategory(imageModel: ImageModel): void {
+    console.log(imageModel);
+    const modalOptions: NgbModalOptions = {
+      size: 'lg',
+    };
+    const modalRef = this.modalService.open(ImageDetailsComponent, modalOptions);
+    modalRef.componentInstance.imageModel = imageModel;
   }
 }
