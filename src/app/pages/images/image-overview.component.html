@@ -21,8 +21,11 @@
   >
     <ng-container *ngFor="let image of images | async">
       <ng-template swiperSlide>
-        <img class="swiper-img" [src]="'assets/img/'+ image.fileName" alt="" (click)="openImageCategory(image.category)"
-             style="cursor: pointer"/>
+        <img class="swiper-img"
+             style="cursor: pointer"
+             [src]="'assets/img/'+ image.fileName"
+             alt=""
+             (click)="openImageCategory(image.category)"/>
       </ng-template>
 
     </ng-container>
