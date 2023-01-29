@@ -1,8 +1,10 @@
+import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Observable } from 'rxjs';
 // import Swiper core and required modules
 import SwiperCore, { EffectCube, FreeMode, Navigation, Pagination, SwiperOptions } from 'swiper';
+import { SwiperModule } from 'swiper/angular';
 
 import { ImageModel } from '../../models/image.model';
 import { ImageService } from '../../services/image.service';
@@ -14,6 +16,8 @@ SwiperCore.use([EffectCube, Pagination, Navigation, FreeMode]);
   selector: 'app-about-us',
   templateUrl: './image-overview.component.html',
   styleUrls: ['./image-overview.component.scss'],
+  standalone: true,
+  imports: [CommonModule, SwiperModule, ImageDetailsComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
 })
@@ -42,10 +46,7 @@ export class ImageOverviewComponent implements OnInit {
 
   public openImageCategory(imageModel: ImageModel): void {
     console.log(imageModel);
-    const modalOptions: NgbModalOptions = {
-      size: 'lg',
-    };
-    const modalRef = this.modalService.open(ImageDetailsComponent, modalOptions);
+    const modalRef = this.modalService.open(ImageDetailsComponent, { fullscreen: true });
     modalRef.componentInstance.imageModel = imageModel;
   }
 }

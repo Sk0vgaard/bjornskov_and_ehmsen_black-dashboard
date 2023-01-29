@@ -17,11 +17,11 @@
     </div>
   </div>
   <swiper [config]="config"
-          class="mySwiper"
+          class="swiper1"
   >
     <ng-container *ngFor="let image of images | async">
-      <ng-template swiperSlide>
-        <img class="swiper-img"
+      <ng-template swiperSlide class="swiper-slide1">
+        <img class="swiper-img1 img-category"
              style="cursor: pointer"
              [src]="'assets/img/'+ image.fileName"
              alt=""
