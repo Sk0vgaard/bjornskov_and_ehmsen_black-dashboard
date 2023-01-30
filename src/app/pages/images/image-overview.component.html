@@ -20,6 +20,7 @@
             class="swiper1">
       <ng-container *ngFor="let image of images | async">
         <ng-template swiperSlide class="swiper-slide1">
+          <h3 class="card-title">{{image.category}}</h3>
           <img class="swiper-img1 img-category"
                style="cursor: pointer"
                [src]="'assets/img/'+ image.fileName"
