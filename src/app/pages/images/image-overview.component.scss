@@ -3,14 +3,14 @@
 @import "swiper/scss/pagination";
 @import 'swiper/scss/navigation';
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1200px) {
   .swiper1 {
     width: 500px;
     height: 500px;
     top: 40%;
     margin-left: -150px;
     margin-top: -150px;
-    left: 50%;
+    left: 45%;
     position: absolute;
   }
 }

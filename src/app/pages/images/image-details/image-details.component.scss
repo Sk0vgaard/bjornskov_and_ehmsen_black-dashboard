@@ -1,26 +1,26 @@
-//@import "swiper/css";
-//@import "swiper/css/free-mode";
-//@import "swiper/css/navigation";
-//@import "swiper/css/thumbs";
-//
+
 ngb-modal-backdrop {
   z-index: 1 !important;
+}
+
+.modal.show .modal-dialog {
+  transform: none;
+}
+
+.modal {
+  --bs-modal-zindex: 1055;
+  position: fixed;
+  z-index: var(--bs-modal-zindex);
 }
 
 .padding-top {
   padding-top: 15px !important;
 }
-@media screen and (min-width: 992px) {
-  .swiper2 {
-    //width: 75%;
-    //position: unset !important;
-  }
-}
 
 .swiper-slide2 {
   text-align: center;
   font-size: 18px;
-  background: #fff;
+  background: #27293DFF;
 
   /* Center slide text vertically */
   display: -webkit-box;
@@ -37,18 +37,16 @@ ngb-modal-backdrop {
   align-items: center;
 }
 
+.modal-lg {
+  max-width: 630px;
+}
+
 .swiper-slide2 img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-
-//body {
-//  background: #000;
-//  color: #000;
-//}
-
 
 .swiper-slide2 {
   background-size: cover;

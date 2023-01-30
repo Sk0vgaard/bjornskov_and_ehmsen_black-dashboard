@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
 import { Observable } from 'rxjs';
 // import Swiper core and required modules
 import SwiperCore, { EffectCube, FreeMode, Navigation, Pagination, SwiperOptions } from 'swiper';
@@ -46,7 +46,10 @@ export class ImageOverviewComponent implements OnInit {
 
   public openImageCategory(imageModel: ImageModel): void {
     console.log(imageModel);
-    const modalRef = this.modalService.open(ImageDetailsComponent, { fullscreen: true });
+    const modalOptions: NgbModalOptions = {
+      size: 'lg',
+    };
+    const modalRef = this.modalService.open(ImageDetailsComponent, modalOptions);
     modalRef.componentInstance.imageModel = imageModel;
   }
 }

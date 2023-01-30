@@ -16,18 +16,16 @@
       </div>
     </div>
   </div>
-  <swiper [config]="config"
-          class="swiper1"
-  >
-    <ng-container *ngFor="let image of images | async">
-      <ng-template swiperSlide class="swiper-slide1">
-        <img class="swiper-img1 img-category"
-             style="cursor: pointer"
-             [src]="'assets/img/'+ image.fileName"
-             alt=""
-             (click)="openImageCategory(image)"/>
-      </ng-template>
-
-    </ng-container>
-  </swiper>
+    <swiper [config]="config"
+            class="swiper1">
+      <ng-container *ngFor="let image of images | async">
+        <ng-template swiperSlide class="swiper-slide1">
+          <img class="swiper-img1 img-category"
+               style="cursor: pointer"
+               [src]="'assets/img/'+ image.fileName"
+               alt=""
+               (click)="openImageCategory(image)"/>
+        </ng-template>
+      </ng-container>
+    </swiper>
 </div>
