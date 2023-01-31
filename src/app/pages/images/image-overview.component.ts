@@ -48,6 +48,7 @@ export class ImageOverviewComponent implements OnInit {
     console.log(imageModel);
     const modalOptions: NgbModalOptions = {
       size: 'lg',
+      centered: true,
     };
     const modalRef = this.modalService.open(ImageDetailsComponent, modalOptions);
     modalRef.componentInstance.imageModel = imageModel;
