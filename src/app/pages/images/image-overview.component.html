@@ -16,6 +16,12 @@
       </div>
     </div>
   </div>
+  <ul>
+    <li *ngFor="let image of fireImages | async">
+      1: {{image.category}}
+    </li>
+  </ul>
+
     <swiper [config]="config"
             class="swiper1">
       <ng-container *ngFor="let image of images | async">

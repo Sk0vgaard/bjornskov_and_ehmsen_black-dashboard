@@ -23,6 +23,8 @@ SwiperCore.use([EffectCube, Pagination, Navigation, FreeMode]);
 })
 export class ImageOverviewComponent implements OnInit {
   public images: Observable<ImageModel[]>;
+  public fireImages: Observable<ImageModel[]>;
+
   config: SwiperOptions = {
     effect: 'cube',
     grabCursor: true,
@@ -42,6 +44,7 @@ export class ImageOverviewComponent implements OnInit {
 
   public ngOnInit(): void {
     this.images = this.imageService.getOverviewImages();
+    this.fireImages = this.imageService.getOverviewPictures();
   }
 
   public openImageCategory(imageModel: ImageModel): void {
