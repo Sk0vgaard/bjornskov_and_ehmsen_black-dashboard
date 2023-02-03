@@ -1,5 +1,6 @@
 export interface ImageModel {
-  id: number;
+  id: string;
   category: string;
+  image: string;
   fileName: string;
 }

@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
 import { Observable } from 'rxjs';
 // import Swiper core and required modules
@@ -23,6 +24,7 @@ SwiperCore.use([EffectCube, Pagination, Navigation, FreeMode]);
 })
 export class ImageOverviewComponent implements OnInit {
   public images: Observable<ImageModel[]>;
+  public overviewImages: Observable<any[]>;
   public fireImages: Observable<ImageModel[]>;
 
   config: SwiperOptions = {
@@ -40,11 +42,16 @@ export class ImageOverviewComponent implements OnInit {
     scrollbar: { draggable: true },
   };
 
-  constructor(private imageService: ImageService, private modalService: NgbModal) {}
+  constructor(
+    private imageService: ImageService,
+    private modalService: NgbModal,
+    private firestore: AngularFirestore
+  ) {}
 
   public ngOnInit(): void {
     this.images = this.imageService.getOverviewImages();
     this.fireImages = this.imageService.getOverviewPictures();
+    this.overviewImages = this.imageService.getImagesByFolder('image-overview/');
   }
 
   public openImageCategory(imageModel: ImageModel): void {
@@ -55,5 +62,16 @@ export class ImageOverviewComponent implements OnInit {
     };
     const modalRef = this.modalService.open(ImageDetailsComponent, modalOptions);
     modalRef.componentInstance.imageModel = imageModel;
+  }
+
+  public addCategory(): void {
+    const imageModel: ImageModel = {
+      category: 'floors',
+      image: 'someIMAGE',
+      fileName: 'Filename',
+      id: this.firestore.createId(),
+    };
+
+    this.imageService.addCategory(imageModel);
   }
 }
