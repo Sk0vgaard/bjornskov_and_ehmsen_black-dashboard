@@ -23,9 +23,8 @@ SwiperCore.use([EffectCube, Pagination, Navigation, FreeMode]);
   encapsulation: ViewEncapsulation.None,
 })
 export class ImageOverviewComponent implements OnInit {
-  public images: Observable<ImageModel[]>;
-  public overviewImages: Observable<any[]>;
-  public fireImages: Observable<ImageModel[]>;
+  public fireImages$: Observable<ImageModel[]>;
+  public overviewImages$: Observable<string[]>;
 
   config: SwiperOptions = {
     effect: 'cube',
@@ -49,9 +48,8 @@ export class ImageOverviewComponent implements OnInit {
   ) {}
 
   public ngOnInit(): void {
-    this.images = this.imageService.getOverviewImages();
-    this.fireImages = this.imageService.getOverviewPictures();
-    this.overviewImages = this.imageService.getImagesByFolder('image-overview/');
+    this.fireImages$ = this.imageService.getOverviewPictures();
+    this.overviewImages$ = this.imageService.getImagesByFolder('image-overview/');
   }
 
   public openImageCategory(imageModel: ImageModel): void {
@@ -68,7 +66,7 @@ export class ImageOverviewComponent implements OnInit {
     const imageModel: ImageModel = {
       category: 'floors',
       image: 'someIMAGE',
-      fileName: 'Filename',
+      fileName: '7050.Jpg',
       id: this.firestore.createId(),
     };
 

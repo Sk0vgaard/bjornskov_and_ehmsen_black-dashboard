@@ -21,29 +21,16 @@
   <button (click)="addCategory()">add category</button>
 
   <ul>
-    <li *ngFor="let image of fireImages | async">
-      1: {{image.category}}
+    <li *ngFor="let image of fireImages$ | async">
+      1: {{image.fileName}}
     </li>
   </ul>
 
-<!--    <swiper [config]="config"-->
-<!--            class="swiper1">-->
-<!--      <ng-container *ngFor="let image of images | async">-->
-<!--        <ng-template swiperSlide class="swiper-slide1">-->
-<!--          <h3 class="card-title">{{image.category}}</h3>-->
-<!--          <img class="swiper-img1 img-category"-->
-<!--               style="cursor: pointer"-->
-<!--               [src]="'assets/img/'+ image.fileName"-->
-<!--               alt=""-->
-<!--               (click)="openImageCategory(image)"/>-->
-<!--        </ng-template>-->
-<!--      </ng-container>-->
-<!--    </swiper>-->
-
     <swiper [config]="config"
             class="swiper1">
-      <ng-container *ngFor="let image of overviewImages | async">
+      <ng-container *ngFor="let image of overviewImages$ | async">
         <ng-template swiperSlide class="swiper-slide1">
+          <h3 class="card-title" style="margin-bottom: 10px">Some Title</h3>
           <img class="swiper-img1 img-category"
                style="cursor: pointer"
                [src]="image"
