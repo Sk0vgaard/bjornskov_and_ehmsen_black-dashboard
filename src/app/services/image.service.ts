@@ -21,18 +21,23 @@ export class FireFireStorageModel {
   providedIn: 'root',
 })
 export class ImageService {
-  constructor(private http: HttpClient, private firestore: AngularFirestore, private afStorage: AngularFireStorage) {}
+  constructor(private http: HttpClient, private db: AngularFirestore, private afStorage: AngularFireStorage) {}
 
-  public getOverviewImages(): Observable<ImageModel[]> {
-    return this.http.get<ImageModel[]>('assets/images.json');
+  // public getOverviewImages(): Observable<ImageModel[]> {
+  //   return this.http.get<ImageModel[]>('assets/images.json');
+  // }
+
+  public getFileUrl(folderPath: string): Observable<any> {
+    const ref = this.afStorage.ref(folderPath);
+    return ref.getDownloadURL();
   }
 
-  public getOverviewPictures(): Observable<ImageModel[]> {
-    return this.firestore.collection<ImageModel>(FirestoreDbModel.IMAGE_OVERVIEW_COLLECTION).valueChanges();
+  public getOverviewImages(): Observable<ImageModel[]> {
+    return this.db.collection<ImageModel>(FirestoreDbModel.IMAGE_OVERVIEW_COLLECTION).valueChanges();
   }
 
   public addCategory(imageModel: ImageModel): any {
-    return this.firestore
+    return this.db
       .collection<ImageModel>(FirestoreDbModel.IMAGE_OVERVIEW_COLLECTION)
       .doc(imageModel.category)
       .set(imageModel);

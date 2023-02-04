@@ -1,8 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
-import { Observable } from 'rxjs';
+import { forkJoin, map, Observable, switchMap } from 'rxjs';
 // import Swiper core and required modules
 import SwiperCore, { EffectCube, FreeMode, Navigation, Pagination, SwiperOptions } from 'swiper';
 import { SwiperModule } from 'swiper/angular';
@@ -23,8 +22,8 @@ SwiperCore.use([EffectCube, Pagination, Navigation, FreeMode]);
   encapsulation: ViewEncapsulation.None,
 })
 export class ImageOverviewComponent implements OnInit {
-  public fireImages$: Observable<ImageModel[]>;
-  public overviewImages$: Observable<string[]>;
+  public imageCategories$: Observable<ImageModel[]>;
+  // public overviewImages$: Observable<string[]>;
 
   config: SwiperOptions = {
     effect: 'cube',
@@ -41,35 +40,43 @@ export class ImageOverviewComponent implements OnInit {
     scrollbar: { draggable: true },
   };
 
-  constructor(
-    private imageService: ImageService,
-    private modalService: NgbModal,
-    private firestore: AngularFirestore
-  ) {}
+  constructor(private imageService: ImageService, private modalService: NgbModal) {}
 
   public ngOnInit(): void {
-    this.fireImages$ = this.imageService.getOverviewPictures();
-    this.overviewImages$ = this.imageService.getImagesByFolder('image-overview/');
+    this.imageCategories$ = this.imageService.getOverviewImages().pipe(
+      switchMap((imageModels: ImageModel[]) => {
+        return forkJoin(
+          imageModels.map((imageModel: ImageModel) => {
+            return this.imageService.getFileUrl(`image-overview/${imageModel.fileName}`).pipe(
+              map((url) => {
+                imageModel.url = url;
+                return imageModel;
+              })
+            );
+          })
+        );
+      })
+    );
+    // this.overviewImages$ = this.imageService.getImagesByFolder('image-overview/');
   }
 
-  public openImageCategory(categoryName: string): void {
-    console.log('openImageCategory', categoryName);
+  public openImageCategory(imageModel: ImageModel): void {
     const modalOptions: NgbModalOptions = {
       size: 'lg',
       centered: true,
     };
     const modalRef = this.modalService.open(ImageDetailsComponent, modalOptions);
-    modalRef.componentInstance.categoryName = categoryName;
+    modalRef.componentInstance.imageModel = imageModel;
   }
 
-  public addCategory(): void {
-    const imageModel: ImageModel = {
-      category: 'floors',
-      image: 'someIMAGE',
-      fileName: '7050.Jpg',
-      id: this.firestore.createId(),
-    };
-
-    this.imageService.addCategory(imageModel);
-  }
+  // public addCategory(): void {
+  //   const imageModel: ImageModel = {
+  //     category: 'floors',
+  //     image: 'someIMAGE',
+  //     fileName: '7050.Jpg',
+  //     id: this.firestore.createId(),
+  //   };
+  //
+  //   this.imageService.addCategory(imageModel);
+  // }
 }

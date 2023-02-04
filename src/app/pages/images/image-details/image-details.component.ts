@@ -1,9 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { Observable } from 'rxjs';
 // import Swiper core and required modules
 import SwiperCore, { FreeMode, Navigation, Thumbs } from 'swiper';
 import { SwiperModule } from 'swiper/angular';
+
+import { ImageModel } from '../../../models/image.model';
+import { ImageService } from '../../../services/image.service';
 
 // install Swiper modules
 SwiperCore.use([FreeMode, Navigation, Thumbs]);
@@ -18,13 +22,15 @@ SwiperCore.use([FreeMode, Navigation, Thumbs]);
   encapsulation: ViewEncapsulation.None,
 })
 export class ImageDetailsComponent implements OnInit {
-  @Input() categoryName: string;
+  @Input() imageModel: ImageModel;
+  public images$: Observable<string[]>;
 
   public thumbsSwiper: any;
 
-  constructor(public activeModal: NgbActiveModal) {}
+  constructor(public activeModal: NgbActiveModal, private imageService: ImageService) {}
 
   public ngOnInit(): void {
-    console.log(this.categoryName);
+    console.log('ImageDetails: ', this.imageModel);
+    this.images$ = this.imageService.getImagesByFolder(`images/${this.imageModel.category.toLowerCase()}`);
   }
 }
