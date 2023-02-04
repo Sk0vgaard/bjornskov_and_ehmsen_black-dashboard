@@ -9,6 +9,7 @@ import { SwiperModule } from 'swiper/angular';
 import { ImageModel } from '../../models/image.model';
 import { ImageService } from '../../services/image.service';
 import { ImageDetailsComponent } from './image-details/image-details.component';
+import { FirestoreDbEnum } from './shared/firestore-db.enum';
 // install Swiper modules
 SwiperCore.use([EffectCube, Pagination, Navigation, FreeMode]);
 
@@ -47,7 +48,7 @@ export class ImageOverviewComponent implements OnInit {
       switchMap((imageModels: ImageModel[]) => {
         return forkJoin(
           imageModels.map((imageModel: ImageModel) => {
-            return this.imageService.getFileUrl(`image-overview/${imageModel.fileName}`).pipe(
+            return this.imageService.getFileUrl(`${FirestoreDbEnum.IMAGE_OVERVIEW}/${imageModel.fileName}`).pipe(
               map((url) => {
                 imageModel.url = url;
                 return imageModel;

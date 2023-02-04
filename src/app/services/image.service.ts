@@ -6,16 +6,7 @@ import { AngularFireStorage } from '@angular/fire/compat/storage';
 import { from, mergeMap, Observable } from 'rxjs';
 
 import { ImageModel } from '../models/image.model';
-
-export class FirestoreDbModel {
-  static IMAGES_COLLECTION = 'images';
-  static IMAGE_OVERVIEW_COLLECTION = 'image-overview';
-}
-
-export class FireFireStorageModel {
-  static OVERVIEW_IMAGES = 'image-overview';
-  static FISH_IMAGES = 'images/fish/';
-}
+import { FirestoreDbEnum } from '../pages/images/shared/firestore-db.enum';
 
 @Injectable({
   providedIn: 'root',
@@ -33,14 +24,11 @@ export class ImageService {
   }
 
   public getOverviewImages(): Observable<ImageModel[]> {
-    return this.db.collection<ImageModel>(FirestoreDbModel.IMAGE_OVERVIEW_COLLECTION).valueChanges();
+    return this.db.collection<ImageModel>(FirestoreDbEnum.IMAGE_OVERVIEW).valueChanges();
   }
 
   public addCategory(imageModel: ImageModel): any {
-    return this.db
-      .collection<ImageModel>(FirestoreDbModel.IMAGE_OVERVIEW_COLLECTION)
-      .doc(imageModel.category)
-      .set(imageModel);
+    return this.db.collection<ImageModel>(FirestoreDbEnum.IMAGE_OVERVIEW).doc(imageModel.category).set(imageModel);
   }
 
   public getImagesByFolder(folderPath: string): Observable<string[]> {
