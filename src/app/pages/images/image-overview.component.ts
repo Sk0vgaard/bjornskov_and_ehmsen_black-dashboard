@@ -52,14 +52,14 @@ export class ImageOverviewComponent implements OnInit {
     this.overviewImages$ = this.imageService.getImagesByFolder('image-overview/');
   }
 
-  public openImageCategory(imageModel: ImageModel): void {
-    console.log(imageModel);
+  public openImageCategory(categoryName: string): void {
+    console.log('openImageCategory', categoryName);
     const modalOptions: NgbModalOptions = {
       size: 'lg',
       centered: true,
     };
     const modalRef = this.modalService.open(ImageDetailsComponent, modalOptions);
-    modalRef.componentInstance.imageModel = imageModel;
+    modalRef.componentInstance.categoryName = categoryName;
   }
 
   public addCategory(): void {

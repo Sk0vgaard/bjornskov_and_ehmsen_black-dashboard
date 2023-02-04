@@ -5,8 +5,6 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import SwiperCore, { FreeMode, Navigation, Thumbs } from 'swiper';
 import { SwiperModule } from 'swiper/angular';
 
-import { ImageModel } from '../../../models/image.model';
-
 // install Swiper modules
 SwiperCore.use([FreeMode, Navigation, Thumbs]);
 
@@ -20,13 +18,13 @@ SwiperCore.use([FreeMode, Navigation, Thumbs]);
   encapsulation: ViewEncapsulation.None,
 })
 export class ImageDetailsComponent implements OnInit {
-  @Input() imageModel: ImageModel;
+  @Input() categoryName: string;
 
   public thumbsSwiper: any;
 
   constructor(public activeModal: NgbActiveModal) {}
 
   public ngOnInit(): void {
-    console.log(this.imageModel);
+    console.log(this.categoryName);
   }
 }
