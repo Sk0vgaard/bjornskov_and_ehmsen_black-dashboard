@@ -155,7 +155,7 @@
           <button
             class="btn btn-fill btn-danger"
             type="submit"
-            [disabled]="contactForm.invalid"
+            [disabled]="contactForm.invalid || isSubmitting"
             (click)="onSubmit()"
           >
             Send besked

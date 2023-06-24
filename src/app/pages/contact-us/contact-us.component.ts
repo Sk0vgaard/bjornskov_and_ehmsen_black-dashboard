@@ -1,6 +1,9 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
+import { ToastrService } from 'ngx-toastr';
 
+import { environment } from '../../../environments/environment';
 import { ContactService } from '../../services/contact.service';
 
 @Component({
@@ -9,7 +12,9 @@ import { ContactService } from '../../services/contact.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ContactUsComponent {
-  constructor(private contactService: ContactService) {}
+  public isSubmitting: boolean;
+
+  constructor(private contactService: ContactService, private toastr: ToastrService) {}
 
   public contactForm = new FormGroup({
     name: new FormControl('', Validators.required),
@@ -24,8 +29,27 @@ export class ContactUsComponent {
   });
 
   public onSubmit(): void {
-    console.log(this.contactForm.value);
-    // send contact data to server
+    this.isSubmitting = true;
+    emailjs
+      .send(
+        environment.emailjs.SERVICE_ID,
+        environment.emailjs.TEMPLATE_ID,
+        this.contactForm.value,
+        environment.emailjs.PUBLIC_KEY
+      )
+      .then(
+        (result: EmailJSResponseStatus) => {
+          console.log('SUCCESS!', result.status, result.text);
+          this.toastr.success('Din beskeden er blevet sendt');
+          this.contactForm.reset();
+          this.isSubmitting = false;
+        },
+        (error) => {
+          console.log('FAILED...', error);
+          this.toastr.error('Noget gik galt - Prøv igen senere, eller send direkte til: "info@bjornskov-ehmsen.dk"');
+          this.isSubmitting = false;
+        }
+      );
   }
 
   public get name() {
