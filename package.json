@@ -25,6 +25,7 @@
     "build:gh": "ng build --configuration production --deploy-url=https://sk0vgaard.github.io/bjornskov_and_ehmsen_black-dashboard/ --base-href=",
     "build:prod": "ng build --configuration production",
     "copy404": "ln -s index.html 404.html",
+    "firebase:deploy": "ng build --configuration production && firebase deploy --only hosting",
     "homepage": "."
   },
   "private": false,

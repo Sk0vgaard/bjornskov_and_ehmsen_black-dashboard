@@ -32,60 +32,62 @@ export const ROUTES: RouteInfo[] = [
     icon: 'icon-alert-circle-exc',
     class: '',
   },
-  {
-    path: '/timeline',
-    title: 'Tidslinje',
-    icon: 'icon-spaceship',
-    class: '',
-  },
-  {
-    path: '/images',
-    title: 'Billeder',
-    icon: 'icon-image-02',
-    class: '',
-  },
+  // TODO: Add when timeline has been provided from the firm
+  // {
+  //   path: '/timeline',
+  //   title: 'Tidslinje',
+  //   icon: 'icon-spaceship',
+  //   class: '',
+  // },
+  // TODO: Add when images has been provided
+  // {
+  //   path: '/images',
+  //   title: 'Billeder',
+  //   icon: 'icon-image-02',
+  //   class: '',
+  // },
   {
     path: '/customer-satisfaction',
     title: 'Kundetilfredhed',
     icon: 'icon-satisfied',
     class: '',
   },
-  {
-    path: '/',
-    title: '-------------------',
-    icon: '',
-    class: '',
-  },
-  {
-    path: '/dashboard',
-    title: 'Dashboard',
-    icon: 'icon-chart-pie-36',
-    class: '',
-  },
-  {
-    path: '/icons',
-    title: 'Icons',
-    icon: 'icon-atom',
-    class: '',
-  },
-  {
-    path: '/notifications',
-    title: 'Notifications',
-    icon: 'icon-bell-55',
-    class: '',
-  },
-  {
-    path: '/tables',
-    title: 'Table List',
-    icon: 'icon-puzzle-10',
-    class: '',
-  },
-  {
-    path: '/typography',
-    title: 'Typography',
-    icon: 'icon-align-center',
-    class: '',
-  },
+  // {
+  //   path: '/',
+  //   title: '-------------------',
+  //   icon: '',
+  //   class: '',
+  // },
+  // {
+  //   path: '/dashboard',
+  //   title: 'Dashboard',
+  //   icon: 'icon-chart-pie-36',
+  //   class: '',
+  // },
+  // {
+  //   path: '/icons',
+  //   title: 'Icons',
+  //   icon: 'icon-atom',
+  //   class: '',
+  // },
+  // {
+  //   path: '/notifications',
+  //   title: 'Notifications',
+  //   icon: 'icon-bell-55',
+  //   class: '',
+  // },
+  // {
+  //   path: '/tables',
+  //   title: 'Table List',
+  //   icon: 'icon-puzzle-10',
+  //   class: '',
+  // },
+  // {
+  //   path: '/typography',
+  //   title: 'Typography',
+  //   icon: 'icon-align-center',
+  //   class: '',
+  // },
 ];
 
 @Component({

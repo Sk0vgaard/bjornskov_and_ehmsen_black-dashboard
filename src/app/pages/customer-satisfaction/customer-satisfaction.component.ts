@@ -28,15 +28,16 @@ export class CustomerSatisfactionComponent {
         'Derfor tog jeg kontakt til Bjørnskov og Ehmsen, hvor de hurtigt fik lavet et flot skur, som børnene nu sover trygt under. <br>' +
         'Tak fordi at i var så hurtige 🤩',
     },
-    {
-      category: '',
-      title: '',
-      body: '',
-    },
-    {
-      category: '',
-      title: '',
-      body: '',
-    },
+    // TODO: Add more satisfaction
+    // {
+    //   category: '',
+    //   title: '',
+    //   body: '',
+    // },
+    // {
+    //   category: '',
+    //   title: '',
+    //   body: '',
+    // },
   ];
 }
