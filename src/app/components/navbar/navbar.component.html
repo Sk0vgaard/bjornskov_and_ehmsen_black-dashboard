@@ -2,7 +2,7 @@
   <div class="container-fluid" style="padding-right: 0">
     <div class="navbar-wrapper">
       <div class="navbar-toggle d-inline">
-        <button class="navbar-toggler" type="button" (click)="sidebarToggle()">
+        <button (click)="sidebarToggle()" class="navbar-toggler" type="button">
           <span class="navbar-toggler-bar bar1"> </span>
           <span class="navbar-toggler-bar bar2"> </span>
           <span class="navbar-toggler-bar bar3"> </span>
@@ -12,40 +12,42 @@
     </div>
     <div class="ml-auto row">
       <button
-        style="margin-left: 0; margin-top: 5px"
-        class="btn btn-icon btn-round navbar-toggler"
         (click)="callPhoneNo()"
+        class="btn btn-icon btn-round navbar-toggler"
+        style="margin-left: 0; margin-top: 5px"
       >
         <i class="fa fa-phone"></i>
       </button>
       <img
-        id="mobile-img"
-        class="navbar-nav navbar-toggler"
-        style="padding: 0; height: 50px"
-        src="./assets/be_icons/be_logo.png"
         alt=""
+        class="navbar-nav navbar-toggler"
+        id="mobile-img"
+        src="./assets/be_icons/be_logo.png"
+        style="padding: 0; height: 50px"
       />
     </div>
-    <div class="navbar-collapse" [ngbCollapse]="isCollapsed">
+    <div [ngbCollapse]="isCollapsed" class="navbar-collapse">
       <div class="navbar-nav ml-auto">
         <button
-          class="btn btn-icon btn-round btn-hover"
           (click)="callPhoneNo()"
-          placement="bottom"
+          class="btn btn-icon btn-round btn-hover"
+          aria-label="call"
           ngbTooltip="+45 22 33 76 08"
+          placement="bottom"
         >
           <i class="fa fa-phone"></i>
         </button>
         <button
-          style="margin-right: 20px"
-          class="btn btn-icon btn-round btn-hover"
           (click)="mailTo()"
-          placement="bottom"
+          class="btn btn-icon btn-round btn-hover"
+          aria-label="mail"
           ngbTooltip="info@bjørnskov-ehmsen.dk"
+          placement="bottom"
+          style="margin-right: 20px"
         >
           <i class="fa fa-envelope"></i>
         </button>
-        <img style="border-radius: 0" src="./assets/be_icons/be_web.png" alt="" />
+        <img alt="" src="./assets/be_icons/be_web.png" style="border-radius: 0"/>
       </div>
     </div>
   </div>
