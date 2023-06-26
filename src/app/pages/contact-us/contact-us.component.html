@@ -12,7 +12,7 @@
             <div class="block block-three"></div>
             <div class="block block-four"></div>
             <a>
-              <img alt="" class="avatar" src="assets/be_images/mark.png" />
+              <img alt="" class="avatar" src="assets/be_images/mark.png"/>
               <h5 class="title">Mark Bjørnskov</h5>
             </a>
             <p class="description">Mester</p>
@@ -20,44 +20,42 @@
           <div class="card-description">
             <h3 class="title text-primary" style="margin-bottom: 15px">Skal vi hjælpe dig?</h3>
             <div class="typography-line">
-              <blockquote>
-                <h3 class="blockquote card-title" style="margin: 0">
-                  Bjørnskov & Ehmsen har nogle af de dygtigste og specialiserede håndværkere, som kan lave alt fra nybyg
-                  til snedker arbejde.
-                  <br />
-                  Kundetilfredshed er en prioritet hos Bjørnskov & Ehmsen, så du kan være sikker på at få et smukt og
-                  holdbart resultat.
-                  <br />
-                  <a (click)="callPhoneNo()" style="cursor: pointer">
-                    <b>
-                      <u>Ring</u>
-                    </b>
-                  </a>
-                  eller
-                  <a (click)="mailTo()" style="cursor: pointer">
-                    <b><u>skriv</u></b>
-                  </a>
-                  og få et uforpligtende tilbud og lad os hjælpe dig med dit næste tømreprojekt.
-                </h3>
-              </blockquote>
+              <p>
+                Bjørnskov & Ehmsen har nogle af de dygtigste og specialiserede håndværkere, som kan lave alt fra nybyg
+                til snedker arbejde.
+                <br/>
+                Kundetilfredshed er en prioritet hos Bjørnskov & Ehmsen, så du kan være sikker på at få et smukt og
+                holdbart resultat.
+                <br/>
+                <a (click)="callPhoneNo()" style="cursor: pointer">
+                  <b>
+                    <u>Ring</u>
+                  </b>
+                </a>
+                eller
+                <a (click)="mailTo()" style="cursor: pointer">
+                  <b><u>skriv</u></b>
+                </a>
+                og få et uforpligtende tilbud og lad os hjælpe dig med dit næste tømreprojekt.
+              </p>
             </div>
           </div>
         </div>
         <div class="card-footer">
           <div class="button-container">
             <button
-              class="btn btn-icon btn-round btn-hover"
               (click)="callPhoneNo()"
-              placement="top"
+              class="btn btn-icon btn-round btn-hover"
               ngbTooltip="+45 22 33 76 08"
+              placement="top"
             >
               <i class="fa fa-phone"></i>
             </button>
             <button
-              class="btn btn-icon btn-round btn-hover"
               (click)="mailTo()"
-              placement="top"
+              class="btn btn-icon btn-round btn-hover"
               ngbTooltip="info@bjørnskov-ehmsen.dk"
+              placement="top"
             >
               <i class="fa fa-envelope"></i>
             </button>
@@ -72,14 +70,14 @@
           <h3 class="card-title">Kontakt form</h3>
         </div>
         <div class="card-body">
-          <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+          <form (ngSubmit)="onSubmit()" [formGroup]="contactForm">
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
                   <label> Navn* </label>
-                  <input formControlName="name" name="name" required class="form-control" placeholder="Dit navn" />
+                  <input class="form-control" formControlName="name" name="name" placeholder="Dit navn" required/>
                 </div>
-                <div class="alert alert-danger" *ngIf="name.invalid && name.touched">
+                <div *ngIf="name.invalid && name.touched" class="alert alert-danger">
                   <div *ngIf="name.errors.required">Navn skal være udfyldt</div>
                 </div>
               </div>
@@ -89,9 +87,9 @@
               <div class="col-md-6 pr-md-1">
                 <div class="form-group">
                   <label> Telefonnummer* </label>
-                  <input formControlName="phoneNumber" required class="form-control" placeholder="Telefonnummer" />
+                  <input class="form-control" formControlName="phoneNumber" placeholder="Telefonnummer" required/>
                 </div>
-                <div class="alert alert-danger" *ngIf="phoneNumber.invalid && phoneNumber.touched">
+                <div *ngIf="phoneNumber.invalid && phoneNumber.touched" class="alert alert-danger">
                   <div *ngIf="phoneNumber.errors.required">
                     Telefonnummer er nødvendigt for at kunne kontakte om eventuelle spørgsmål
                   </div>
@@ -107,18 +105,18 @@
                 <div class="form-group">
                   <label> Email addresse* </label>
                   <input
-                    formControlName="email"
-                    required
                     class="form-control"
+                    formControlName="email"
                     placeholder="mail@hotmail.com"
+                    required
                     type="email"
                   />
                 </div>
-                <div class="alert alert-danger" *ngIf="email.invalid && email.touched">
+                <div *ngIf="email.invalid && email.touched" class="alert alert-danger">
                   <div *ngIf="email.errors.required">Email adresse skal være udfyldt</div>
                   <div *ngIf="email.errors.email">
                     Din email udfylder ikke kravene for en email
-                    <br />
+                    <br/>
                     Eksempel: '<b>mail@hotmail.com</b>'
                   </div>
                 </div>
@@ -129,9 +127,9 @@
               <div class="col-md-6 pr-md-1">
                 <div class="form-group">
                   <label> Emne* </label>
-                  <input formControlName="subject" class="form-control" placeholder="Emne" type="text" />
+                  <input class="form-control" formControlName="subject" placeholder="Emne" type="text"/>
                 </div>
-                <div class="alert alert-danger" *ngIf="subject.invalid && subject.touched">
+                <div *ngIf="subject.invalid && subject.touched" class="alert alert-danger">
                   <div *ngIf="subject.errors.required">Fortæl os hvad emnet omhandler</div>
                 </div>
               </div>
@@ -153,10 +151,10 @@
         </div>
         <div class="card-footer">
           <button
+            (click)="onSubmit()"
+            [disabled]="contactForm.invalid || isSubmitting"
             class="btn btn-fill btn-danger"
             type="submit"
-            [disabled]="contactForm.invalid || isSubmitting"
-            (click)="onSubmit()"
           >
             Send besked
           </button>

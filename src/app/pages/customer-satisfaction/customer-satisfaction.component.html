@@ -16,13 +16,13 @@
     <ng-container *ngFor="let price of customerSatifactions; let i = index">
       <div class="col-lg-4">
         <div class="card card-chart">
-          <div class="card-header btn-price" (click)="isCollapsed[i] = !isCollapsed[i]" style="cursor: pointer">
+          <div (click)="isCollapsed[i] = !isCollapsed[i]" class="card-header btn-price" style="cursor: pointer">
             <h5 class="card-category btn-price-h5">{{ price.category }}</h5>
             <h3 class="card-title btn-price-h3">{{ price.title }}</h3>
           </div>
           <div class="card-body">
-            <div class="typography-line" [ngbCollapse]="!isCollapsed[i]">
-              <p style="padding-left: 15px" [innerHTML]="price.body"></p>
+            <div [ngbCollapse]="!isCollapsed[i]" class="typography-line">
+              <p [innerHTML]="price.body" style="padding-left: 15px"></p>
             </div>
           </div>
         </div>
