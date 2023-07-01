@@ -28,7 +28,7 @@ export const ROUTES: RouteInfo[] = [
   },
   {
     path: '/info',
-    title: 'Info / Pris',
+    title: 'FAQ',
     icon: 'icon-alert-circle-exc',
     class: '',
   },
