@@ -11,6 +11,7 @@ import { FindUsComponent } from './contact-us/find-us/find-us.component';
 import { CustomerSatisfactionComponent } from './customer-satisfaction/customer-satisfaction.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FrontPageComponent } from './front-page/front-page.component';
+import { ValuesComponent } from './front-page/values/values.component';
 import { IconsComponent } from './icons/icons.component';
 import { InfoComponent } from './info/info.component';
 import { NotificationsComponent } from './notifications/notifications.component';
@@ -41,6 +42,7 @@ import { TypographyComponent } from './typography/typography.component';
     TimelineComponent,
     CustomerSatisfactionComponent,
     InfoComponent,
+    ValuesComponent,
   ],
 })
 export class PagesModule {}
