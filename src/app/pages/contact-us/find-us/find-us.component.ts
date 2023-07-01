@@ -7,7 +7,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 })
 export class FindUsComponent {
   address = 'Hededammen 9, 6705 Esbjerg Ø';
-  facebookUrl = 'https://www.facebook.com/';
+  facebookUrl = 'https://www.facebook.com/profile.php?id=100089879839188';
   instagramUrl = 'https://www.instagram.com/';
   linkedinUrl = 'https://www.linkedin.com/feed/';
 
