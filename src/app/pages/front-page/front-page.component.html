@@ -8,8 +8,8 @@
         <div class="card-body">
           <div class="typography-line">
             <p class="center-text">
-              <!-- Her kan du tilføje et billede -->
-              <img alt="Bjørnskov & Ehmsen image" class="img" src="path-to-your-image">
+              <!--TODO: Add a image of all the workers in B&E -->
+              <!--<img alt="Bjørnskov & Ehmsen image" class="img" src="path-to-your-image">-->
               Hvis du vælger os som din samarbejdspartner i byggeprojektet, vil du møde et byggefirma, som påtager sig
               ansvaret for alle byggeprocesserne, alt imens vi prioriterer at kundens behov er i fokus.
               <br>
@@ -48,74 +48,24 @@
       <div class="row">
         <div class="col-lg-4">
           <div class="card card-chart">
-            <div class="card-header">
-              <h3 class="card-title center-text"><strong>Tømrer / Snedkerarbejde</strong></h3>
-            </div>
-            <div class="card-body">
-              <div class="typography-line">
-                <div class="card-body-center">
-                  <img alt="Tømrer/Snedkerarbejde image" src="assets/be_icons/be_carpenter.png">
-                </div>
-                <p class="center-text">
-                  Hos Bjørnskov & Ehmsen er vores tømrer & snedkerarbejde mangfoldigt og dækker et bredt spektrum. Vi
-                  håndterer alle former for tømrer og snedkerprojekter, uanset størrelse, og vores hovedmål. Vores
-                  abition er at sikre topresultater af højeste kvalitet. Uanset omfanget af opgaven, er vores engagement
-                  i at udføre vores arbejde med et skarpt fokus på kommunikation, præcision og nøjagtighed, så du får
-                  den bedst mulige oplevelse, samt kan være med hele vejen igennem.
-                </p>
-              </div>
-            </div>
+            <app-primary-working-area [primaryWorkingAreaModel]="carpenterModel"></app-primary-working-area>
           </div>
         </div>
         <div class="col-lg-4">
           <div class="card card-chart">
-            <div class="card-header">
-              <h3 class="card-title center-text"><strong>Hoved- og totalentreprise</strong></h3>
-            </div>
-            <div class="card-body">
-              <div class="typography-line">
-                <div class="card-body-center">
-                  <img alt="Hoved- og totalentreprise image" class="img " src="assets/be_images/be_enterprise.jpg">
-                </div>
-                <p class="center-text">
-                  Bjørnskov & Ehmsen tilbyder to hovedtyper af entrepriser: hovedentreprise og totalentreprise. I en
-                  hovedentreprise overtager vi ansvaret for det meste af arbejdet, mens bygherren stiller tegnings- og
-                  beskrivelsesmateriale til rådighed. I en totalentreprise håndterer vi hele processen fra planlægning
-                  til endelig færdiggørelse. Uanset hvilken entrepriseform du vælger, garanterer vi tydelige aftaler
-                  vedrørende arbejdets omfang, tidslinje og budget for at sikre en professionel og pålidelig
-                  byggeproces.
-                </p>
-              </div>
-            </div>
+            <app-primary-working-area [primaryWorkingAreaModel]="enterpriseModel"></app-primary-working-area>
           </div>
         </div>
         <div class="col-lg-4">
           <div class="card card-chart">
-            <div class="card-header">
-              <h3 class="card-title center-text"><strong>Privat & Erhverv</strong></h3>
-            </div>
-            <div class="card-body">
-              <div class="typography-line">
-                <div class="card-body-center">
-                  <img alt="Privat & Erhverv image" class="img" src="assets/be_images/be_private-commercial_building.jpg">
-                </div>
-                <p class="center-text">
-                  Hos Bjørnskov & Ehmsen trækker vi på mange års erfaring inden for tømrerbranchen, og denne erfaring
-                  anvendes til at levere alle former for tømreropgaver på en professionel måde til vores kunder. Vi
-                  tager stolthed i at yde førsteklasses kvalitet, da vi er passionerede omkring vores håndværk og ønsker
-                  at sikre tilfredse og loyale kunder. Vi bestræber os konstant på at indgå i et tæt samarbejde med
-                  vores kunder, tage hensyn til deres præferencer og behov, alt imens vi opretholder en høj standard for
-                  vores tømrerarbejde.
-                </p>
-              </div>
-            </div>
+            <app-primary-working-area [primaryWorkingAreaModel]="privateAndCorporateModel"></app-primary-working-area>
           </div>
         </div>
       </div>
       <div class="card card-chart">
         <div class="card-header">
           <h5 class="card-category">Hvad gør vi anderledes?</h5>
-          <h1 class="card-title center-text" style="padding-bottom: 20px"><b>Vores Værdier</b></h1>
+          <h1 class="card-title center-text"><b>Vores Værdier</b></h1>
         </div>
         <div class="row">
           <div class="col-lg-4 typography-line center-text">

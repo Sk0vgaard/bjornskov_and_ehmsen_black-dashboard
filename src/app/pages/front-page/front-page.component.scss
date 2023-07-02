@@ -1,25 +1,16 @@
-.card-body-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 10px;
-
-  .img {
-    border-radius: 20%;
-    max-width: 350px;
-    max-height: 350px;
-  }
-}
-
 .center-text {
   text-align: center;
 }
 
-.h3-values {
-  margin-bottom: 15px;
-}
-
-.card-value-padding {
-  padding-left: 5px;
-  padding-right: 5px;
+@media (min-width: 992px) {
+  .row {
+    display: flex;
+  }
+  .row .col-lg-4 {
+    display: flex;
+    flex-direction: column;
+  }
+  .row .col-lg-4 .card {
+    flex-grow: 1;
+  }
 }

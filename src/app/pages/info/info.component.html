@@ -8,7 +8,7 @@
           </div>
           <div class="card-body">
             <div class="typography-line">
-              <p [innerHTML]="info.body">
+              <p [innerHTML]="info.description">
               </p>
             </div>
           </div>
@@ -39,7 +39,7 @@
                   {{ faq.title }}
                 </button>
                 <div [ngbCollapse]="!isCollapsed[i]">
-                  <p style="padding-left: 15px" [innerHTML]="faq.body">
+                  <p style="padding-left: 15px" [innerHTML]="faq.description">
                   </p>
                 </div>
               </div>

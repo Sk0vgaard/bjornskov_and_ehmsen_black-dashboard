@@ -5,7 +5,7 @@
   </div>
   <div class="card-body">
     <div [ngbCollapse]="!isCollapsed" class="typography-line">
-      <p [innerHTML]="cardInfoModel.body" class="card-body-text"></p>
+      <p [innerHTML]="cardInfoModel.description" class="card-body-text"></p>
     </div>
     <div class="center-icon">
       <ng-container *ngIf="isCollapsed">

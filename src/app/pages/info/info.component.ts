@@ -13,7 +13,8 @@ export class InfoComponent {
   infos: CardInfoModel[] = [
     {
       title: 'Hvorfor vælge os?',
-      body: 'Vores tømrere har mange års erfaring i branchen og er dygtige i alle aspekter af tømrerarbejde, lige fra snedker arbejde til lægning af sildebens gulv (der findes ikke det vi ikke gøre i tømrearbejde). Vi er også stolte af vores fremragende kundeservice og opmærksomhed på detaljer.',
+      description:
+        'Vores tømrere har mange års erfaring i branchen og er dygtige i alle aspekter af tømrerarbejde, lige fra snedker arbejde til lægning af sildebens gulv (der findes ikke det vi ikke gøre i tømrearbejde). Vi er også stolte af vores fremragende kundeservice og opmærksomhed på detaljer.',
     },
   ];
 
@@ -21,7 +22,7 @@ export class InfoComponent {
     {
       category: '07:00 - 15:00 / 15:00-24:00',
       title: 'Hverdage',
-      body:
+      description:
         'Imellem 07:00 - 15:00 er prisen: <br>' +
         'Kr. 495,-/time <br><br>' +
         'Hvis arbejdet skal udføres efter lukketid er prisen: <br>' +
@@ -31,7 +32,7 @@ export class InfoComponent {
     {
       category: '07:00 - 15:00 / 15:00-24:00',
       title: 'Weekender',
-      body:
+      description:
         'Imellem 07:00 - 15:00 er prisen: <br>' +
         'Kr. 649,-/time <br><br>' +
         'Hvis arbejdet skal udføres efter lukketid er prisen: <br>' +
@@ -41,31 +42,32 @@ export class InfoComponent {
     {
       category: 'Du kan altid aftale en fast pris med os',
       title: 'Aftalt fast pris',
-      body: 'Hvis du ønsker en fast pris, så kontakt os og få et gratis og uforpligtende tilbud',
+      description: 'Hvis du ønsker en fast pris, så kontakt os og få et gratis og uforpligtende tilbud',
     },
   ];
 
   faqs: CardInfoModel[] = [
     {
       title: 'Hvorfor vælge Hovedentreprise?',
-      body:
+      description:
         'Vi anbefaler klart hovedentreprise til renoveringsprojker, da det involvere flere faggrupper. <br><br> ' +
         'Byggesager kan være tidskrævende og omfattende, så vi står gerne som tovholder for byggeprocessen.',
     },
     {
       title: 'Hvad koster det at renovere?',
-      body: 'Vi tilbyder gratis prisoverslag for alle vores projekter. Prisen vil variere afhængigt af omfanget og kompleksiteten af projektet.',
+      description:
+        'Vi tilbyder gratis prisoverslag for alle vores projekter. Prisen vil variere afhængigt af omfanget og kompleksiteten af projektet.',
     },
     {
       title: 'Er overslag/besigtigelse gratis?',
-      body:
+      description:
         'Et overslag/besigtigelse er altid gratis. <br><br>' +
         'Ved større projekter/entrepriser kan det dog være en nødvendighed, at komme og se projektet inden, for at give så et realistisk bud. <br><br>' +
         'Dette kan aftales nærmere under en eventuel samtale.',
     },
     {
       title: 'Får jeg et skriftligt tilbud?',
-      body:
+      description:
         'JA. Vi sender altid et skriftligt tilbud på mail efter besigtigelsen. <br><br>' +
         'Det går dog ofte hurtigere, hvis noget af forarbejdet allerede er lavet, såsom: <br>' +
         '- Tegninger <br>' +
@@ -74,11 +76,12 @@ export class InfoComponent {
     },
     {
       title: 'Hvordan acceptere jeg tilbuddet?',
-      body: 'Når du har modtaget tilbuddet. Er det vigtigt at du forstår det. Vi gennemgår gerne tilbuddet med dig, hvis du skulle have nogle spørgsmål.',
+      description:
+        'Når du har modtaget tilbuddet. Er det vigtigt at du forstår det. Vi gennemgår gerne tilbuddet med dig, hvis du skulle have nogle spørgsmål.',
     },
     {
       title: 'Hvad kan I hjælpe med?',
-      body:
+      description:
         'Der er stort set ikke det vi ikke gør i tømrearbejde! <br><br> ' +
         'Vi kan bl.a. tilbyde: <br>' +
         '- Skillevægge <br>' +

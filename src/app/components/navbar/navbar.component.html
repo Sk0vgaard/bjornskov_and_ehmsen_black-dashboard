@@ -3,7 +3,7 @@
   <div class="container-fluid" style="padding-right: 0">
     <div class="navbar-wrapper">
       <div class="navbar-toggle d-inline">
-        <button (click)="sidebarToggle()" class="navbar-toggler" type="button">
+        <button (click)="sidebarToggle()" class="navbar-toggler" type="button" id="menu-button" aria-label="menu button">
           <span class="navbar-toggler-bar bar1"> </span>
           <span class="navbar-toggler-bar bar2"> </span>
           <span class="navbar-toggler-bar bar3"> </span>
@@ -16,6 +16,7 @@
         (click)="callPhoneNo()"
         class="btn btn-icon btn-round navbar-toggler"
         style="margin-left: 0; margin-top: 5px"
+        id="phone-button" aria-label="phoneIcon"
       >
         <i class="fa fa-phone"></i>
       </button>

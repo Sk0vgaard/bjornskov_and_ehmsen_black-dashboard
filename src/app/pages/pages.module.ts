@@ -15,6 +15,7 @@ import { CustomerSatisfactionComponent } from './customer-satisfactions/customer
 import { CustomerSatisfactionsComponent } from './customer-satisfactions/customer-satisfactions.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FrontPageComponent } from './front-page/front-page.component';
+import { PrimaryWorkingAreaComponent } from './front-page/primary-working-area/primary-working-area.component';
 import { ValuesComponent } from './front-page/values/values.component';
 import { IconsComponent } from './icons/icons.component';
 import { InfoComponent } from './info/info.component';
@@ -50,6 +51,7 @@ import { TypographyComponent } from './typography/typography.component';
     InfoComponent,
     ValuesComponent,
     CollapsedComponent,
+    PrimaryWorkingAreaComponent,
   ],
 })
 export class PagesModule {}
