@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 import SwiperCore, { FreeMode, Navigation, Thumbs } from 'swiper';
 import { SwiperModule } from 'swiper/angular';
 
-import { ImageModel } from '../../../models/image.model';
+import { ImageModel } from '../../../_models/image.model';
 import { ImageService } from '../../../services/image.service';
 
 // install Swiper modules

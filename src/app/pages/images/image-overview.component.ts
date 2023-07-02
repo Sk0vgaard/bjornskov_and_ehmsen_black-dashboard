@@ -6,7 +6,7 @@ import { forkJoin, map, Observable, switchMap } from 'rxjs';
 import SwiperCore, { EffectCube, FreeMode, Navigation, Pagination, SwiperOptions } from 'swiper';
 import { SwiperModule } from 'swiper/angular';
 
-import { ImageModel } from '../../models/image.model';
+import { ImageModel } from '../../_models/image.model';
 import { ImageService } from '../../services/image.service';
 import { ImageDetailsComponent } from './image-details/image-details.component';
 import { FirestoreDbEnum } from './shared/firestore-db.enum';

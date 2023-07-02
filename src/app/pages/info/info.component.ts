@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
-import { CardInfoModel } from '../../models/card-info.model';
+import { CardInfoModel } from '../../_models/card-info.model';
 
 @Component({
   selector: 'app-info',

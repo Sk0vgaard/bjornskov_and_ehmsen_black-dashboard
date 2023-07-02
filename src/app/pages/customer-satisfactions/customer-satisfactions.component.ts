@@ -1,16 +1,14 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
-import { CardInfoModel } from '../../models/card-info.model';
+import { CardInfoModel } from '../../_models/card-info.model';
 
 @Component({
-  selector: 'app-customer-satisfaction',
-  templateUrl: './customer-satisfaction.component.html',
+  selector: 'app-customer-satisfactions',
+  templateUrl: './customer-satisfactions.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CustomerSatisfactionComponent {
-  public isCollapsed: boolean[] = [];
-
-  customerSatifactions: CardInfoModel[] = [
+export class CustomerSatisfactionsComponent {
+  customerSatisfactions: CardInfoModel[] = [
     {
       category: 'Mathias Skovgaard',
       title: 'Kvalitet der overgår alle andre',

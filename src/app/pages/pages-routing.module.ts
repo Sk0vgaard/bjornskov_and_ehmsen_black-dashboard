@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
-import { CustomerSatisfactionComponent } from './customer-satisfaction/customer-satisfaction.component';
+import { CustomerSatisfactionsComponent } from './customer-satisfactions/customer-satisfactions.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FrontPageComponent } from './front-page/front-page.component';
 import { IconsComponent } from './icons/icons.component';
@@ -20,7 +20,7 @@ export const PageRoutes: Routes = [
   { path: 'info', component: InfoComponent },
   { path: 'timeline', component: TimelineComponent },
   { path: 'images', component: ImageOverviewComponent },
-  { path: 'customer-satisfaction', component: CustomerSatisfactionComponent },
+  { path: 'customer-satisfaction', component: CustomerSatisfactionsComponent },
   //
   { path: 'icons', component: IconsComponent },
   { path: 'dashboard', component: DashboardComponent },

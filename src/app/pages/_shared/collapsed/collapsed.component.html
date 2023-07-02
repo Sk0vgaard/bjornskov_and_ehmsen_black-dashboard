@@ -1,0 +1,19 @@
+<div (click)="isCollapsed = !isCollapsed" class="card card-chart">
+  <div class="card-header btn-price pointer">
+    <h5 class="card-category">{{ cardInfoModel.category }}</h5>
+    <h3 class="card-title">{{ cardInfoModel.title }}</h3>
+  </div>
+  <div class="card-body">
+    <div [ngbCollapse]="!isCollapsed" class="typography-line">
+      <p [innerHTML]="cardInfoModel.body" class="card-body-text"></p>
+    </div>
+    <div class="center-icon">
+      <ng-container *ngIf="isCollapsed">
+        <fa-icon [icon]="faChevronUp"></fa-icon>
+      </ng-container>
+      <ng-container *ngIf="!isCollapsed">
+        <fa-icon [icon]="faChevronDown"></fa-icon>
+      </ng-container>
+    </div>
+  </div>
+</div>

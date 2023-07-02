@@ -18,20 +18,8 @@
   </div>
 
   <div class="row">
-    <ng-container *ngFor="let price of prices; let priceIndex = priceIndex">
-      <div class="col-lg-4">
-        <div class="card card-chart">
-          <div class="card-header btn-price" (click)="isCollapsed[priceIndex] = !isCollapsed[priceIndex]" style="cursor: pointer">
-            <h5 class="card-category btn-price-h5">{{ price.category }}</h5>
-            <h3 class="card-title btn-price-h3">{{ price.title }}</h3>
-          </div>
-          <div class="card-body">
-            <div class="typography-line" [ngbCollapse]="!isCollapsed[priceIndex]">
-                <p style="padding-left: 15px" [innerHTML]="price.body"></p>
-            </div>
-          </div>
-        </div>
-      </div>
+    <ng-container *ngFor="let price of prices">
+      <app-collapsed class="col-lg-4" [cardInfoModel]="price"></app-collapsed>
     </ng-container>
   </div>
 
