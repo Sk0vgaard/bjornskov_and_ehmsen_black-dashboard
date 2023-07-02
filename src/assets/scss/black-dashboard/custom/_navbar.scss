@@ -1,5 +1,5 @@
 .navbar {
-  padding: 10px 30px 10px 15px;
+  padding: 5px 30px 5px 15px;
   width: 100%;
   z-index: 1050;
   background: $navbar-color;
@@ -271,7 +271,7 @@
       width: 22px;
       height: 1px;
       border-radius: 1px;
-      background: $white;
+      background: $main;
 
       &.navbar-kebab {
         height: 4px;

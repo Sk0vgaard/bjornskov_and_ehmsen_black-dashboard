@@ -7,7 +7,7 @@ import SwiperCore, { FreeMode, Navigation, Thumbs } from 'swiper';
 import { SwiperModule } from 'swiper/angular';
 
 import { ImageModel } from '../../../_models/image.model';
-import { ImageService } from '../../../services/image.service';
+import { ImageService } from '../../../_services/image.service';
 
 // install Swiper modules
 SwiperCore.use([FreeMode, Navigation, Thumbs]);

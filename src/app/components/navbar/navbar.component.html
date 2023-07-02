@@ -1,4 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-fixed navbar-transparent">
+<nav [ngStyle]="(isDarkTheme | async) ? {'background': '#27293D'} : {'background': '#FFFFFF'}"
+     class="navbar navbar-expand-lg navbar-fixed navbar-transparent">
   <div class="container-fluid" style="padding-right: 0">
     <div class="navbar-wrapper">
       <div class="navbar-toggle d-inline">
@@ -8,7 +9,7 @@
           <span class="navbar-toggler-bar bar3"> </span>
         </button>
       </div>
-      <h3 class="navbar-brand card-title" style="margin-bottom: 0; color: whitesmoke !important;">{{ getTitle() }}</h3>
+      <h3 class="navbar-brand card-title" style="margin-bottom: 0;">{{ getTitle() }}</h3>
     </div>
     <div class="ml-auto row">
       <button
@@ -19,7 +20,7 @@
         <i class="fa fa-phone"></i>
       </button>
       <img
-        alt=""
+        alt="'Bjørnskov & Ehmsen logo'"
         class="navbar-nav navbar-toggler"
         id="mobile-img"
         src="./assets/be_icons/be_logo.png"
@@ -27,11 +28,11 @@
       />
     </div>
     <div [ngbCollapse]="isCollapsed" class="navbar-collapse">
-      <div class="navbar-nav ml-auto">
+      <div class="navbar-nav ml-auto" style="display: flex; align-items: center; justify-content: center;">
         <button
           (click)="callPhoneNo()"
-          class="btn btn-icon btn-round btn-hover"
           aria-label="call"
+          class="btn btn-icon btn-round btn-hover"
           ngbTooltip="+45 22 33 76 08"
           placement="bottom"
         >
@@ -39,15 +40,19 @@
         </button>
         <button
           (click)="mailTo()"
-          class="btn btn-icon btn-round btn-hover"
           aria-label="mail"
+          class="btn btn-icon btn-round btn-hover"
           ngbTooltip="info@bjørnskov-ehmsen.dk"
           placement="bottom"
           style="margin-right: 20px"
         >
           <i class="fa fa-envelope"></i>
         </button>
-        <img alt="" src="./assets/be_icons/be_web.png" style="border-radius: 0"/>
+        <div [ngStyle]="(isDarkTheme | async) ? {'background': 'none'} : {'background': '#27293D'}"
+             style="padding: 5px">
+          <img alt="'Bjørnskov & Ehmsen image'"
+               src="./assets/be_icons/be_web.png" style="border-radius: 0"/>
+        </div>
       </div>
     </div>
   </div>

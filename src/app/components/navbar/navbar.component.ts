@@ -2,8 +2,10 @@ import { Location } from '@angular/common';
 import { ChangeDetectionStrategy, Component, ElementRef, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Observable } from 'rxjs';
 
-import { ContactService } from '../../services/contact.service';
+import { ContactService } from '../../_services/contact.service';
+import { ThemeService } from '../../_services/theme.service';
 import { ROUTES } from '../sidebar/sidebar.component';
 
 @Component({
@@ -20,6 +22,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   private sidebarVisible: boolean;
 
   public isCollapsed = true;
+  public isDarkTheme: Observable<boolean>;
 
   closeResult: string;
 
@@ -35,10 +38,12 @@ export class NavbarComponent implements OnInit, OnDestroy {
     private element: ElementRef,
     private router: Router,
     private modalService: NgbModal,
-    private contactService: ContactService
+    private contactService: ContactService,
+    private themeService: ThemeService
   ) {
     this.location = location;
     this.sidebarVisible = false;
+    this.isDarkTheme = this.themeService.theme$;
   }
 
   // function that adds color white/transparent to the navbar on resize (this is for the collapse)

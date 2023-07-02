@@ -1,5 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
+import { ThemeService } from '../../_services/theme.service';
+
 declare interface RouteInfo {
   path: string;
   title: string;
@@ -99,11 +101,29 @@ export const ROUTES: RouteInfo[] = [
 export class SidebarComponent implements OnInit {
   menuItems: any[];
 
+  constructor(private themeService: ThemeService) {}
+
   public ngOnInit(): void {
     this.menuItems = ROUTES.filter((menuItem) => menuItem);
   }
 
   public isMobileMenu(): boolean {
     return window.innerWidth <= 991;
+  }
+
+  public switchTheme($event: Event): void {
+    const isDarkTheme = ($event.target as HTMLInputElement).checked;
+    this.themeService.switchTheme(isDarkTheme);
+
+    return isDarkTheme ? this.changeDashboardColor('black-content') : this.changeDashboardColor('white-content');
+  }
+
+  public changeDashboardColor(color): void {
+    const body = document.getElementsByTagName('body')[0];
+    if (body && color === 'white-content') {
+      body.classList.add(color);
+    } else if (body.classList.contains('white-content')) {
+      body.classList.remove('white-content');
+    }
   }
 }

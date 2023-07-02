@@ -4,7 +4,7 @@ import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
 import { ToastrService } from 'ngx-toastr';
 
 import { environment } from '../../../environments/environment';
-import { ContactService } from '../../services/contact.service';
+import { ContactService } from '../../_services/contact.service';
 
 @Component({
   selector: 'app-contact-us',
@@ -52,24 +52,24 @@ export class ContactUsComponent {
       );
   }
 
-  public get name() {
-    return this.contactForm.get('name');
+  public get name(): FormControl {
+    return this.contactForm.get('name') as FormControl;
   }
 
-  public get phoneNumber() {
-    return this.contactForm.get('phoneNumber');
+  public get phoneNumber(): FormControl {
+    return this.contactForm.get('phoneNumber') as FormControl;
   }
 
-  public get email() {
-    return this.contactForm.get('email');
+  public get email(): FormControl {
+    return this.contactForm.get('email') as FormControl;
   }
 
-  public get message() {
-    return this.contactForm.get('message');
+  public get message(): FormControl {
+    return this.contactForm.get('message') as FormControl;
   }
 
-  public get subject() {
-    return this.contactForm.get('subject');
+  public get subject(): FormControl {
+    return this.contactForm.get('subject') as FormControl;
   }
 
   public callPhoneNo(): void {

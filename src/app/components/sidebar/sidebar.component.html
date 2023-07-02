@@ -1,13 +1,21 @@
-<div [routerLink]="'/front-page'" class="logo" style="cursor: pointer">
-  <img alt="" src="./assets/be_icons/be_web.png" style="border-radius: 0"/>
-</div>
 <div class="sidebar-wrapper">
-  <ul class="nav">
-    <li *ngFor="let menuItem of menuItems" class="{{ menuItem.class }} nav-item" routerLinkActive="active">
-      <a [routerLink]="[menuItem.path]">
-        <i class="tim-icons {{ menuItem.icon }}"></i>
-        <p class="menu-item-size">{{ menuItem.title }}</p>
-      </a>
-    </li>
-  </ul>
+  <div [routerLink]="'/front-page'" class="logo" style="cursor: pointer">
+    <img alt="" src="./assets/be_icons/be_web.png" style="border-radius: 0"/>
+  </div>
+  <div>
+    <ul class="nav">
+      <li *ngFor="let menuItem of menuItems" class="{{ menuItem.class }} nav-item" routerLinkActive="active">
+        <a [routerLink]="[menuItem.path]">
+          <i class="tim-icons {{ menuItem.icon }}"></i>
+          <p class="menu-item-size">{{ menuItem.title }}</p>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="theme-button-placement">
+    <label class="switch">
+      <input type="checkbox" id="themeSwitch" (change)="switchTheme($event)" checked>
+      <span class="slider round"></span>
+    </label>
+  </div>
 </div>

@@ -7,7 +7,7 @@ import SwiperCore, { EffectCube, FreeMode, Navigation, Pagination, SwiperOptions
 import { SwiperModule } from 'swiper/angular';
 
 import { ImageModel } from '../../_models/image.model';
-import { ImageService } from '../../services/image.service';
+import { ImageService } from '../../_services/image.service';
 import { ImageDetailsComponent } from './image-details/image-details.component';
 import { FirestoreDbEnum } from './shared/firestore-db.enum';
 // install Swiper modules
