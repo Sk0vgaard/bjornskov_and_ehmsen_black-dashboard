@@ -11,7 +11,7 @@ import { PrimaryWorkingAreaModel } from '../../_models/primary-working-area.mode
 export class FrontPageComponent {
   public introModel: PrimaryWorkingAreaModel = {
     cardModel: {
-      title: 'Tømrer / Snedker / Maskinsnedker / Betonarbejder',
+      title: 'Tømrer / Snedker / Maskinsnedker / Betonarbejde',
       description:
         'Uanset om dine tømrebehov, store som små, privat eller erhverv, står vi hos Bjørnskov & Ehmsen klar til at imødekomme dine forventninger. Vi gør din vision til virkelighed, fra idé til fuldendt projekt, og har altid stolthed i at levere vores arbejde præcist og med højeste kvalitetsstandard. Vi har vores hjemsted i Esbjerg Ø, men vores rækkevidde er landsdækkende - vores løsninger og produkter kan findes i hele Danmark. Med en betydelig portefølje af succesfulde projekter i Vestjylland, står vi stærkt i vores engagement og ekspertise.' +
         '<br>\n' +
