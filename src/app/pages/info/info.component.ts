@@ -14,35 +14,25 @@ export class InfoComponent {
     {
       title: 'Hvorfor vælge os?',
       description:
-        'Vores tømrere har mange års erfaring i branchen og er dygtige i alle aspekter af tømrerarbejde, lige fra snedker arbejde til lægning af sildebens gulv (der findes ikke det vi ikke gøre i tømrearbejde). Vi er også stolte af vores fremragende kundeservice og opmærksomhed på detaljer.',
+        'Vores tømrere har mange års erfaring i branchen og er dygtige i alle alle aspekter. Vi bredre os over et stort område indenfor træfaget. Vi er jydskehåndværkere der har benene plantet solidt i den jyskemuld. Hos os er en aftale en aftale. Vi er stolte af vores kundeservice, samt opmærksomhed på detaljer.',
     },
   ];
 
   prices: CardInfoModel[] = [
     {
-      category: '07:00 - 15:00 / 15:00-24:00',
+      category: '07:00 - 15:45 / eller efter aftale',
       title: 'Hverdage',
-      description:
-        'Imellem 07:00 - 15:00 er prisen: <br>' +
-        'Kr. 495,-/time <br><br>' +
-        'Hvis arbejdet skal udføres efter lukketid er prisen: <br>' +
-        'Kr. 595,-/time <br><br>' +
-        'Dette er eksklusiv moms',
+      description: 'Imellem 07:00 - 15:45 er prisen: <br> Kr. 450,-/time <br><br> <i>Eksklusiv moms</i>',
     },
     {
-      category: '07:00 - 15:00 / 15:00-24:00',
+      category: 'Arbejde i weekender?',
       title: 'Weekender',
-      description:
-        'Imellem 07:00 - 15:00 er prisen: <br>' +
-        'Kr. 649,-/time <br><br>' +
-        'Hvis arbejdet skal udføres efter lukketid er prisen: <br>' +
-        'Kr. 749,-/time <br><br>' +
-        'Dette er eksklusiv moms',
+      description: 'Hvis du ønsker arbejde i weekenden kan dette også arrangeres.',
     },
     {
       category: 'Du kan altid aftale en fast pris med os',
-      title: 'Aftalt fast pris',
-      description: 'Hvis du ønsker en fast pris, så kontakt os og få et gratis og uforpligtende tilbud',
+      title: 'Aftalt Fast Pris',
+      description: 'Hvis du ønsker en fast pris, så kontakt os og få et gratis og uforpligtende tilbud.',
     },
   ];
 
@@ -50,7 +40,7 @@ export class InfoComponent {
     {
       title: 'Hvorfor vælge Hovedentreprise?',
       description:
-        'Vi anbefaler klart hovedentreprise til renoveringsprojker, da det involvere flere faggrupper. <br><br> ' +
+        'Vi anbefaler klart hovedentreprise til renoveringsprojker, da det involverer flere faggrupper. <br><br> ' +
         'Byggesager kan være tidskrævende og omfattende, så vi står gerne som tovholder for byggeprocessen.',
     },
     {
@@ -62,7 +52,7 @@ export class InfoComponent {
       title: 'Er overslag/besigtigelse gratis?',
       description:
         'Et overslag/besigtigelse er altid gratis. <br><br>' +
-        'Ved større projekter/entrepriser kan det dog være en nødvendighed, at komme og se projektet inden, for at give så et realistisk bud. <br><br>' +
+        'Ved større projekter/entrepriser kan det dog være en nødvendighed, at komme og se projektet inden, for at give et realistisk bud. <br><br>' +
         'Dette kan aftales nærmere under en eventuel samtale.',
     },
     {
@@ -91,7 +81,7 @@ export class InfoComponent {
         '- Gulvlægning <br>' +
         '- Terrasse <br>' +
         '- Snedkerarbejde <br>' +
-        '- Opsætning af blokelementer <br>' +
+        '- Opsætning af betonelementer <br>' +
         '- <i>Og meget meget mere!</i>',
     },
   ];
