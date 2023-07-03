@@ -6,8 +6,6 @@
         <div class="card-body-center">
             <img alt="{{primaryWorkingAreaModel.imageAlt}}" src="{{primaryWorkingAreaModel.imageUrl}}">
         </div>
-        <p class="center-text">
-          {{primaryWorkingAreaModel.cardModel.description}}
-        </p>
+        <p class="center-text" [innerHTML]="primaryWorkingAreaModel.cardModel.description"></p>
     </div>
 </div>
