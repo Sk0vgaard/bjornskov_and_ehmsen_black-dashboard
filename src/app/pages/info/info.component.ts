@@ -72,7 +72,7 @@ export class InfoComponent {
     {
       title: 'Hvad kan I hjælpe med?',
       description:
-        'Der er stort set ikke det vi ikke gør i tømrearbejde! <br><br> ' +
+        'Der er stort set ikke det vi ikke gør i tømrerarbejde! <br><br> ' +
         'Vi kan bl.a. tilbyde: <br>' +
         '- Skillevægge <br>' +
         '- Montering/Udskiftning af døre & vinduer (Vi producere selv vores vinduer og døre)<br>' +
