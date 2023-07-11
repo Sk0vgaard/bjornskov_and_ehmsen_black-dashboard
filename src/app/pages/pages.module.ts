@@ -13,17 +13,18 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { FindUsComponent } from './contact-us/find-us/find-us.component';
 import { CustomerSatisfactionComponent } from './customer-satisfactions/customer-satisfaction/customer-satisfaction.component';
 import { CustomerSatisfactionsComponent } from './customer-satisfactions/customer-satisfactions.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { FrontPageComponent } from './front-page/front-page.component';
 import { PrimaryWorkingAreaComponent } from './front-page/primary-working-area/primary-working-area.component';
 import { ValuesComponent } from './front-page/values/values.component';
-import { IconsComponent } from './icons/icons.component';
 import { InfoComponent } from './info/info.component';
-import { NotificationsComponent } from './notifications/notifications.component';
 import { PageRoutes } from './pages-routing.module';
-import { TablesComponent } from './tables/tables.component';
 import { TimelineComponent } from './timeline/timeline.component';
-import { TypographyComponent } from './typography/typography.component';
+import { DashboardComponent } from './unused/dashboard/dashboard.component';
+import { IconsComponent } from './unused/icons/icons.component';
+import { NotificationsComponent } from './unused/notifications/notifications.component';
+import { TablesComponent } from './unused/tables/tables.component';
+import { TypographyComponent } from './unused/typography/typography.component';
+import { ServicesComponent } from './services/services.component';
 
 @NgModule({
   imports: [
@@ -52,6 +53,7 @@ import { TypographyComponent } from './typography/typography.component';
     ValuesComponent,
     CollapsedComponent,
     PrimaryWorkingAreaComponent,
+    ServicesComponent,
   ],
 })
 export class PagesModule {}

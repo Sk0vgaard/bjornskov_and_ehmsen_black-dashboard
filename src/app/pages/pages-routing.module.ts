@@ -3,15 +3,15 @@ import { Routes } from '@angular/router';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { CustomerSatisfactionsComponent } from './customer-satisfactions/customer-satisfactions.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { FrontPageComponent } from './front-page/front-page.component';
-import { IconsComponent } from './icons/icons.component';
 import { ImageOverviewComponent } from './images/image-overview.component';
 import { InfoComponent } from './info/info.component';
-import { NotificationsComponent } from './notifications/notifications.component';
-import { TablesComponent } from './tables/tables.component';
 import { TimelineComponent } from './timeline/timeline.component';
-import { TypographyComponent } from './typography/typography.component';
+import { DashboardComponent } from './unused/dashboard/dashboard.component';
+import { IconsComponent } from './unused/icons/icons.component';
+import { NotificationsComponent } from './unused/notifications/notifications.component';
+import { TablesComponent } from './unused/tables/tables.component';
+import { TypographyComponent } from './unused/typography/typography.component';
 
 export const PageRoutes: Routes = [
   { path: 'front-page', component: FrontPageComponent },
