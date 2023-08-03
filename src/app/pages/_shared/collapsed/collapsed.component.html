@@ -5,7 +5,13 @@
   </div>
   <div class="card-body">
     <div [ngbCollapse]="!isCollapsed" class="typography-line">
-      <p [innerHTML]="cardInfoModel.description" class="card-body-text"></p>
+      <ng-container *ngIf="cardInfoModel.imgModel">
+        <div class="card-body text-center" style="padding-top: 0">
+          <img alt="{{cardInfoModel.imgModel.imgAlt}}" src="{{cardInfoModel.imgModel.imgSrc}}"
+               style="height:{{cardInfoModel.imgModel.imgWidth}}">
+        </div>
+      </ng-container>
+      <p [innerHTML]="cardInfoModel.description" class="card-body-text text-center"></p>
     </div>
     <div class="center-icon">
       <ng-container *ngIf="isCollapsed">

@@ -1,16 +1,11 @@
-<div class="content">
+<div class="content" style="padding-top: 0">
   <div class="row">
     <div class="col-12">
-      <div class="card card-chart">
-        <div class="card-header">
-          <div class="row">
-            <div class="col-sm-12 text-left">
-              <h2 class="card-title">Tidslinje</h2>
-            </div>
-          </div>
+        <div class="card-body" style="padding-top: 0">
+          <ng-container *ngFor="let timeline of timelineEvents">
+            <app-collapsed class="col-lg-4" [cardInfoModel]="timeline"></app-collapsed>
+          </ng-container>
         </div>
-        <div class="card-body" style="padding-top: 0"></div>
       </div>
     </div>
-  </div>
 </div>
