@@ -3,17 +3,29 @@
     <h5 class="card-category">{{ cardInfoModel.category }}</h5>
     <h3 class="card-title">{{ cardInfoModel.title }}</h3>
   </div>
-  <div class="card-body">
+  <div (click)="$event.stopPropagation()" class="card-body">
     <div [ngbCollapse]="!isCollapsed" class="typography-line">
       <ng-container *ngIf="cardInfoModel.imgModel">
-        <div class="card-body text-center" style="padding-top: 0">
-          <img alt="{{cardInfoModel.imgModel.imgAlt}}" src="{{cardInfoModel.imgModel.imgSrc}}"
-               style="height:{{cardInfoModel.imgModel.imgWidth}}">
+        <div class="card-body text-center no-padding-top">
+          <img [ngStyle]="{'width': cardInfoModel.imgModel.imgWidth + 'px'}"
+               alt="{{cardInfoModel.imgModel.imgAlt}}"
+               src="{{cardInfoModel.imgModel.imgSrc}}">
         </div>
       </ng-container>
       <p [innerHTML]="cardInfoModel.description" class="card-body-text text-center"></p>
+      <ng-container *ngIf="cardInfoModel.linkModels">
+        <br>
+        <ng-container *ngFor="let linkModel of cardInfoModel.linkModels">
+          <div class="card-body-text text-center">
+            <a class="pointer text-color" href="{{linkModel.link}}" target="_blank">
+              {{linkModel.linkText}}
+            </a>
+          </div>
+          <br>
+        </ng-container>
+      </ng-container>
     </div>
-    <div class="center-icon">
+    <div (click)="isCollapsed = !isCollapsed" class="center-icon pointer">
       <ng-container *ngIf="isCollapsed">
         <fa-icon [icon]="faChevronUp"></fa-icon>
       </ng-container>

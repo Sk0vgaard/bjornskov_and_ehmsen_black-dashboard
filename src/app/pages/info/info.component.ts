@@ -22,7 +22,7 @@ export class InfoComponent {
     {
       category: '07:00 - 15:45 / eller efter aftale',
       title: 'Hverdage',
-      description: 'Imellem 07:00 - 15:45 er prisen: <br> Kr. 450,-/time <br><br> <i>Eksklusiv moms</i>',
+      description: 'Imellem 07:00 - 15:45 er prisen: <br> Kr. 495,-/time <br><br> <i>Eksklusiv moms</i>',
     },
     {
       category: 'Arbejde i weekender?',
