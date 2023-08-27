@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
 import { forkJoin, map, Observable, switchMap } from 'rxjs';
 // import Swiper core and required modules
@@ -18,7 +19,7 @@ SwiperCore.use([EffectCube, Pagination, Navigation, FreeMode]);
   templateUrl: './image-overview.component.html',
   styleUrls: ['./image-overview.component.scss'],
   standalone: true,
-  imports: [CommonModule, SwiperModule, ImageDetailsComponent],
+  imports: [CommonModule, SwiperModule, ImageDetailsComponent, RouterLink],
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
 })
