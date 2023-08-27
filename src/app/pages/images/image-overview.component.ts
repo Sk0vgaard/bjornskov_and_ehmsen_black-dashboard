@@ -6,7 +6,7 @@ import { forkJoin, map, Observable, switchMap } from 'rxjs';
 import SwiperCore, { EffectCube, FreeMode, Navigation, Pagination, SwiperOptions } from 'swiper';
 import { SwiperModule } from 'swiper/angular';
 
-import { ImageModel } from '../../_models/image.model';
+import { FirestoreImageModel } from '../../_models/firestore-image.model';
 import { ImageService } from '../../_services/image.service';
 import { FirestoreDbEnum } from './firestore-db.enum';
 import { ImageDetailsComponent } from './image-details/image-details.component';
@@ -23,7 +23,7 @@ SwiperCore.use([EffectCube, Pagination, Navigation, FreeMode]);
   encapsulation: ViewEncapsulation.None,
 })
 export class ImageOverviewComponent implements OnInit {
-  public imageCategories$: Observable<ImageModel[]>;
+  public imageCategories$: Observable<FirestoreImageModel[]>;
 
   config: SwiperOptions = {
     effect: 'cube',
@@ -44,9 +44,9 @@ export class ImageOverviewComponent implements OnInit {
 
   public ngOnInit(): void {
     this.imageCategories$ = this.imageService.getOverviewImages().pipe(
-      switchMap((imageModels: ImageModel[]) => {
+      switchMap((imageModels: FirestoreImageModel[]) => {
         return forkJoin(
-          imageModels.map((imageModel: ImageModel) => {
+          imageModels.map((imageModel: FirestoreImageModel) => {
             return this.imageService.getFileUrl(`${FirestoreDbEnum.IMAGE_OVERVIEW}/${imageModel.fileName}`).pipe(
               map((url) => {
                 imageModel.url = url;
@@ -59,7 +59,7 @@ export class ImageOverviewComponent implements OnInit {
     );
   }
 
-  public openImageCategory(imageModel: ImageModel): void {
+  public openImageCategory(imageModel: FirestoreImageModel): void {
     const modalOptions: NgbModalOptions = {
       size: 'lg',
       centered: true,

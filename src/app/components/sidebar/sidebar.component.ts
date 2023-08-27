@@ -29,15 +29,21 @@ export const ROUTES: RouteInfo[] = [
     class: '',
   },
   {
-    path: '/info',
-    title: 'FAQ',
-    icon: 'icon-alert-circle-exc',
+    path: '/services',
+    title: 'Vi Tilbyder',
+    icon: 'icon-settings',
     class: '',
   },
   {
     path: '/images',
     title: 'Billeder',
     icon: 'icon-image-02',
+    class: '',
+  },
+  {
+    path: '/info',
+    title: 'FAQ',
+    icon: 'icon-alert-circle-exc',
     class: '',
   },
   {

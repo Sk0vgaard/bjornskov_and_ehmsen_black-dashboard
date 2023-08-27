@@ -5,7 +5,7 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
 import { from, mergeMap, Observable } from 'rxjs';
 
-import { ImageModel } from '../_models/image.model';
+import { FirestoreImageModel } from '../_models/firestore-image.model';
 import { FirestoreDbEnum } from '../pages/images/firestore-db.enum';
 
 @Injectable({
@@ -14,8 +14,8 @@ import { FirestoreDbEnum } from '../pages/images/firestore-db.enum';
 export class ImageService {
   constructor(private http: HttpClient, private db: AngularFirestore, private afStorage: AngularFireStorage) {}
 
-  // public getOverviewImages(): Observable<ImageModel[]> {
-  //   return this.http.get<ImageModel[]>('assets/images.json');
+  // public getOverviewImages(): Observable<FirestoreImageModel[]> {
+  //   return this.http.get<FirestoreImageModel[]>('assets/images.json');
   // }
 
   public getFileUrl(folderPath: string): Observable<any> {
@@ -23,12 +23,15 @@ export class ImageService {
     return ref.getDownloadURL();
   }
 
-  public getOverviewImages(): Observable<ImageModel[]> {
-    return this.db.collection<ImageModel>(FirestoreDbEnum.IMAGE_OVERVIEW).valueChanges();
+  public getOverviewImages(): Observable<FirestoreImageModel[]> {
+    return this.db.collection<FirestoreImageModel>(FirestoreDbEnum.IMAGE_OVERVIEW).valueChanges();
   }
 
-  public addCategory(imageModel: ImageModel): any {
-    return this.db.collection<ImageModel>(FirestoreDbEnum.IMAGE_OVERVIEW).doc(imageModel.category).set(imageModel);
+  public addCategory(imageModel: FirestoreImageModel): any {
+    return this.db
+      .collection<FirestoreImageModel>(FirestoreDbEnum.IMAGE_OVERVIEW)
+      .doc(imageModel.category)
+      .set(imageModel);
   }
 
   public getImagesByFolder(folderPath: string): Observable<string[]> {

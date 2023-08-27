@@ -7,6 +7,7 @@ import { CustomerSatisfactionsComponent } from './customer-satisfactions/custome
 import { FrontPageComponent } from './front-page/front-page.component';
 import { ImageOverviewComponent } from './images/image-overview.component';
 import { InfoComponent } from './info/info.component';
+import { ServicesComponent } from './services/services.component';
 import { DashboardComponent } from './unused/dashboard/dashboard.component';
 import { IconsComponent } from './unused/icons/icons.component';
 import { NotificationsComponent } from './unused/notifications/notifications.component';
@@ -19,6 +20,7 @@ export const PageRoutes: Routes = [
   { path: 'about-us', component: AboutUsComponent },
   { path: 'info', component: InfoComponent },
   { path: 'timeline', component: TimelineComponent },
+  { path: 'services', component: ServicesComponent },
   { path: 'images', component: ImageOverviewComponent },
   { path: 'customer-satisfaction', component: CustomerSatisfactionsComponent },
   //

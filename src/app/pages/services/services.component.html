@@ -1,1 +1,44 @@
-<p>services works!</p>
+<div class="content">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card card-chart">
+        <div class="card-header">
+          <h3 class="card-title">Dit Projekt, Vores Ekspertise: Se Hvad Vi Kan Tilbyde</h3>
+        </div>
+        <div class="card-body">
+          <div class="typography-line">
+            <p>
+              Hos Bjørnskov & Ehmsen er vi mere end bare tømrere og snedkere; vi er dine håndværksmæssige allierede i enhver byggeproces. Med en erfaring, der strækker sig over mange år, er der næsten ingen grænser for, hvad vi kan tilbyde inden for tømrer- og snedkerarbejde.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="card card-chart">
+        <div class="card-header">
+          <h4 class="card-title">Vores tjenester inkluderer, men er ikke begrænset til:</h4>
+        </div>
+        <div class="card-body">
+          <div class="typography-line">
+            <ng-container *ngFor="let service of services">
+              <ul>
+                <li>
+                  <b>{{service.subject}}</b>: {{service.description}}
+                </li>
+              </ul>
+            </ng-container>
+            <h5>
+              Uanset din bygge- eller renoveringsplan er vi klar til at tage udfordringen op. Kontakt os i dag for et uforpligtende tilbud!
+              <br>
+              <br>
+              <div class="card-body-text text-center">
+                <a class="pointer" routerLink="/images">
+                  Kig forbi vores billed sektion og blev inspireret
+                </a>
+              </div>
+            </h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

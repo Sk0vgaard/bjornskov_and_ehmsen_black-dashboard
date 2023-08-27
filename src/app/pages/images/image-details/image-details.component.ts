@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 import SwiperCore, { FreeMode, Navigation, Thumbs } from 'swiper';
 import { SwiperModule } from 'swiper/angular';
 
-import { ImageModel } from '../../../_models/image.model';
+import { FirestoreImageModel } from '../../../_models/firestore-image.model';
 import { ImageService } from '../../../_services/image.service';
 
 // install Swiper modules
@@ -22,7 +22,7 @@ SwiperCore.use([FreeMode, Navigation, Thumbs]);
   encapsulation: ViewEncapsulation.None,
 })
 export class ImageDetailsComponent implements OnInit {
-  @Input() imageModel: ImageModel;
+  @Input() imageModel: FirestoreImageModel;
   public images$: Observable<string[]>;
 
   public thumbsSwiper: any;

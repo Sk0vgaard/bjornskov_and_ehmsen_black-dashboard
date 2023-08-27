@@ -1,41 +1,39 @@
 <div class="content">
   <div class="row">
-    <div class="col-12">
-      <div class="card">
+    <div class="col-lg-12">
+      <div class="card card-chart">
         <div class="card-header">
-          <div class="row">
-            <div class="col-sm-12 text-left">
-              <h5 class="card-category">Klik på et af billederne få at se flere i den kategori</h5>
-              <h2 class="card-title">Vi går altid 100% ind i vores projekter. Her kan i se nogle af vores resultater
-                💪</h2>
-            </div>
-          </div>
+          <h1 class="card-title">Vores Arbejde i Billeder</h1>
         </div>
-        <div class="card-body" style="padding-top: 0">
+        <div class="card-body">
+          <div class="typography-line">
+            <p>
+              Velkommen til Bjørnskov & Ehmsens billedgalleri! Her kan du dykke ned i vores omfattende portefølje og se
+              nærmere på nogle af de projekter, vi har haft fornøjelsen af at arbejde på. Vores galleri er inddelt i
+              flere kategorier for at gøre det lettere for dig at finde præcis den type arbejde, du er interesseret i.
+              Fra snedkerarbejde og døre & vinduer til specialarbejde og renoveringer – vi har det hele.
+              <br>
+              Klik på en af kategorierne nedenfor for at udforske mere.
+              <br>
+              Hver kategori indeholder en række billeder, der giver dig et dybere indblik i den kvalitet og
+              detaljerigdom, vi stræber efter i hvert enkelt projekt.
+            </p>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
-
-<!--  <button (click)="addCategory()">add category</button>-->
-
-  <!--  <ul>-->
-  <!--    <li *ngFor="let image of imageCategories$ | async">-->
-  <!--      1: {{image.fileName}}-->
-  <!--    </li>-->
-  <!--  </ul>-->
-
   <swiper [config]="config"
           class="swiper1">
     <ng-container *ngFor="let image of imageCategories$ | async">
-      <ng-template swiperSlide class="swiper-slide1">
+      <ng-template class="swiper-slide1" swiperSlide>
         <h3 class="card-title" style="margin-bottom: 10px">{{image.category}}</h3>
-        <img class="swiper-img1 img-category"
-             style="cursor: pointer"
+        <img (click)="openImageCategory(image)"
              [src]="image.url"
              alt=""
-             (click)="openImageCategory(image)"/>
+             class="swiper-img1 img-category"
+             style="cursor: pointer"/>
       </ng-template>
     </ng-container>
   </swiper>
