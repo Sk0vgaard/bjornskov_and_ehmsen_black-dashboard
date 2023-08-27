@@ -34,7 +34,7 @@ const cookieConfig: NgcCookieConsentConfig = {
       border: 'transparent',
     },
   },
-  type: 'opt-out',
+  type: 'info',
   content: {
     message: 'This website uses cookies to ensure you get the best experience on our website.',
     dismiss: 'Got it!',
