@@ -8,8 +8,7 @@
           </div>
           <div class="card-body">
             <div class="typography-line">
-              <p [innerHTML]="info.description">
-              </p>
+              <p [innerHTML]="info.description"></p>
             </div>
           </div>
         </div>
@@ -39,8 +38,10 @@
                   {{ faq.title }}
                 </button>
                 <div [ngbCollapse]="!isCollapsed[i]">
-                  <p style="padding-left: 15px" [innerHTML]="faq.description">
-                  </p>
+                  <p style="padding-left: 15px" [innerHTML]="faq.description"></p>
+                  <ng-container *ngIf="faq.route">
+                    <a (click)="$event.stopPropagation()" routerLink="{{faq.route}}"><i>- Se mere her</i></a>
+                  </ng-container>
                 </div>
               </div>
             </div>

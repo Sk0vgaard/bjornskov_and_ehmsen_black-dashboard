@@ -5,6 +5,7 @@ export interface CardInfoModel {
   category?: string;
   title: string;
   description: string;
+  route?: string;
   linkModels?: LinkModel[];
   imgModel?: CardImageModel;
 }

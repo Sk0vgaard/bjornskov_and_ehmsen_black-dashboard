@@ -81,8 +81,8 @@ export class InfoComponent {
         '- Gulvlægning <br>' +
         '- Terrasse <br>' +
         '- Snedkerarbejde <br>' +
-        '- Opsætning af betonelementer <br>' +
-        '- <i>Og meget meget mere!</i>',
+        '- Opsætning af betonelementer',
+      route: '/services',
     },
   ];
 }
