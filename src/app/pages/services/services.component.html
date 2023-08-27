@@ -22,12 +22,12 @@
             <ng-container *ngFor="let service of services">
               <ul>
                 <li>
-                  <b>{{service.subject}}</b>: {{service.description}}
+                  <b>{{service.subject}}</b>: <p [innerHTML]="service.description"></p>
                 </li>
               </ul>
             </ng-container>
             <h5>
-              Uanset din bygge- eller renoveringsplan er vi klar til at tage udfordringen op. Kontakt os i dag for et uforpligtende tilbud!
+              Uanset din bygge- eller renoveringsplan er vi klar til at tage udfordringen op. <a class="pointer" routerLink="/contact-us"> Kontakt os i dag for et uforpligtende tilbud!</a>
               <br>
               <br>
               <div class="card-body-text text-center">

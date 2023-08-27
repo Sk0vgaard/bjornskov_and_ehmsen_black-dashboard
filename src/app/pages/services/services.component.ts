@@ -43,12 +43,20 @@ export class ServicesComponent {
       description: 'Skræddersyede møbler og indretning',
     },
     {
-      subject: 'Opsætning af Betonelementer',
-      description: 'Robuste og pålidelige konstruktioner til både erhverv og privat',
+      subject: 'Tag',
+      description:
+        'Tagrenovering: Giv dit eksisterende tag nyt liv med vores specialiserede renoveringstjenester </br>' +
+        'Tagvinduer & Velux: Forøg lys og luft i dit hjem med professionelt installeret tagvinduer </br>' +
+        'Tagisolering: Forbedr din energieffektivitet og komfort med vores moderne tagisoleringsteknikker </br>' +
+        '<i>- Hos os arbejder vi med alle former for tagtyper.</i>',
     },
     {
       subject: 'Loftisolering',
       description: 'Forbedre dit hjems energieffektivitet',
+    },
+    {
+      subject: 'Udvendig Beklædning',
+      description: 'Opgrader dit hjem med nyt facadebeklædning, der matcher din stil og beskytter mod vejret',
     },
     {
       subject: 'Energirenovering',
@@ -59,12 +67,12 @@ export class ServicesComponent {
       description: 'Maksimer pladsen med skræddersyede opbevaringsløsninger',
     },
     {
-      subject: 'Udvendig Beklædning',
-      description: 'Opgrader dit hjem med nyt facadebeklædning, der matcher din stil og beskytter mod vejret',
-    },
-    {
       subject: 'Inventar til Erhverv',
       description: 'Vi leverer skræddersyede inventarløsninger til caféer, butikker, og kontorer',
+    },
+    {
+      subject: 'Opsætning af Betonelementer',
+      description: 'Robuste og pålidelige konstruktioner til både erhverv og privat',
     },
     {
       subject: 'Special Arbejde',
