@@ -6,7 +6,7 @@ import { AngularFireStorage } from '@angular/fire/compat/storage';
 import { from, mergeMap, Observable } from 'rxjs';
 
 import { ImageModel } from '../_models/image.model';
-import { FirestoreDbEnum } from '../pages/images/shared/firestore-db.enum';
+import { FirestoreDbEnum } from '../pages/images/firestore-db.enum';
 
 @Injectable({
   providedIn: 'root',

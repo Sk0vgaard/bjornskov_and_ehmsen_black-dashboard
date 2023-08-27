@@ -31,6 +31,6 @@ export class ImageDetailsComponent implements OnInit {
 
   public ngOnInit(): void {
     console.log('ImageDetails: ', this.imageModel);
-    this.images$ = this.imageService.getImagesByFolder(`images/${this.imageModel.category.toLowerCase()}`);
+    this.images$ = this.imageService.getImagesByFolder(`images/${this.imageModel.folderName}`);
   }
 }

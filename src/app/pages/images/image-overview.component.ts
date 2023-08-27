@@ -8,8 +8,8 @@ import { SwiperModule } from 'swiper/angular';
 
 import { ImageModel } from '../../_models/image.model';
 import { ImageService } from '../../_services/image.service';
+import { FirestoreDbEnum } from './firestore-db.enum';
 import { ImageDetailsComponent } from './image-details/image-details.component';
-import { FirestoreDbEnum } from './shared/firestore-db.enum';
 // install Swiper modules
 SwiperCore.use([EffectCube, Pagination, Navigation, FreeMode]);
 
@@ -24,7 +24,6 @@ SwiperCore.use([EffectCube, Pagination, Navigation, FreeMode]);
 })
 export class ImageOverviewComponent implements OnInit {
   public imageCategories$: Observable<ImageModel[]>;
-  // public overviewImages$: Observable<string[]>;
 
   config: SwiperOptions = {
     effect: 'cube',
@@ -58,7 +57,6 @@ export class ImageOverviewComponent implements OnInit {
         );
       })
     );
-    // this.overviewImages$ = this.imageService.getImagesByFolder('image-overview/');
   }
 
   public openImageCategory(imageModel: ImageModel): void {
@@ -69,15 +67,4 @@ export class ImageOverviewComponent implements OnInit {
     const modalRef = this.modalService.open(ImageDetailsComponent, modalOptions);
     modalRef.componentInstance.imageModel = imageModel;
   }
-
-  // public addCategory(): void {
-  //   const imageModel: ImageModel = {
-  //     category: 'floors',
-  //     image: 'someIMAGE',
-  //     fileName: '7050.Jpg',
-  //     id: this.firestore.createId(),
-  //   };
-  //
-  //   this.imageService.addCategory(imageModel);
-  // }
 }

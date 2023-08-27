@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
-import { CardInfoModel } from '../../_models/card-info.model';
+import { CardInfoModel } from '../../../_models/card-info.model';
 
 @Component({
   selector: 'app-timeline',
@@ -37,7 +37,7 @@ export class TimelineComponent {
         '</br>' +
         'Dette skift i ledelse har ikke kun medført en ny retning for virksomheden, men også en fornyet energi og engagement i at skabe værdi for kunder og samfund. Navneændringen er et symbol på dette engagement og en beslutning om at gå videre med de stærke traditioner, som firmaet blev grundlagt på, samtidig med at man udforsker nye muligheder og udfordringer.',
       imgModel: {
-        imgSrc: 'assets/be_images/be_mark_contact.jpg',
+        imgSrc: 'assets/be_timeline/BE_Mark_Jens.jpg',
         imgAlt: 'Alt text',
         imgWidth: '200',
       },

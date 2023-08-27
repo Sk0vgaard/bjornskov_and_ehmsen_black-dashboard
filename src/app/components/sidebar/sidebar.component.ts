@@ -34,20 +34,12 @@ export const ROUTES: RouteInfo[] = [
     icon: 'icon-alert-circle-exc',
     class: '',
   },
-  // TODO: Add when timeline has been provided from the firm
-  // {
-  //   path: '/timeline',
-  //   title: 'Tidslinje',
-  //   icon: 'icon-spaceship',
-  //   class: '',
-  // },
-  // TODO: Add when images has been provided
-  // {
-  //   path: '/images',
-  //   title: 'Billeder',
-  //   icon: 'icon-image-02',
-  //   class: '',
-  // },
+  {
+    path: '/images',
+    title: 'Billeder',
+    icon: 'icon-image-02',
+    class: '',
+  },
   {
     path: '/customer-satisfaction',
     title: 'Kundetilfredhed',

@@ -2,41 +2,42 @@
   <h2 class="card-title" style="margin-bottom: 0">
     {{imageModel.category}}
   </h2>
-  <button type="button" class="close btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+  <button (click)="activeModal.dismiss('Cross click')" aria-label="Close" class="close btn-close" type="button">
     <i class="fa-solid fa-close"></i>
   </button>
 </div>
 
 <div class="background-color-white-content background-color-default">
   <swiper
-    style="--swiper-navigation-color: #fff;--swiper-pagination-color: #fff"
-    [spaceBetween]="10"
     [navigation]="true"
+    [spaceBetween]="10"
     [thumbs]="{ swiper: thumbsSwiper }"
     class="mySwiper2 swiper2"
+    style="--swiper-navigation-color: #fff;--swiper-pagination-color: #fff"
   >
     <ng-container *ngFor="let image of images$ | async">
-    <ng-template swiperSlide class="swiper-slide2"
-    ><img [src]="image" alt=""/>
-    </ng-template>
+      <ng-template class="swiper-slide2" swiperSlide
+      ><img [src]="image" alt=""/>
+      </ng-template>
     </ng-container>
   </swiper>
   <swiper
     (swiper)="thumbsSwiper = $event"
-    [spaceBetween]="10"
-    [slidesPerView]="8"
     [freeMode]="true"
+    [slidesPerView]="8"
+    [spaceBetween]="10"
     [watchSlidesProgress]="true"
     class="mySwiper"
   >
     <ng-container *ngFor="let image of images$ | async">
-    <ng-template swiperSlide class="swiper-slide-thumb">
-      <img [src]="image" alt=""/>
-    </ng-template>
+      <ng-template class="swiper-slide-thumb" swiperSlide>
+        <img [src]="image" alt=""/>
+      </ng-template>
     </ng-container>
   </swiper>
 </div>
 
 <div class="modal-footer padding-top background-color-white-content background-color">
-  <button ngbAutofocus type="button" class="btn btn-fill btn-danger" (click)="activeModal.close('Close click')">Close</button>
+  <button (click)="activeModal.close('Close click')" class="btn btn-fill btn-danger" ngbAutofocus type="button">Close
+  </button>
 </div>

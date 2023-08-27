@@ -9,6 +9,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { CollapsedComponent } from './_shared/collapsed/collapsed.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { TimelineComponent } from './about-us/timeline/timeline.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { FindUsComponent } from './contact-us/find-us/find-us.component';
 import { CustomerSatisfactionComponent } from './customer-satisfactions/customer-satisfaction/customer-satisfaction.component';
@@ -18,13 +19,12 @@ import { PrimaryWorkingAreaComponent } from './front-page/primary-working-area/p
 import { ValuesComponent } from './front-page/values/values.component';
 import { InfoComponent } from './info/info.component';
 import { PageRoutes } from './pages-routing.module';
-import { TimelineComponent } from './timeline/timeline.component';
+import { ServicesComponent } from './services/services.component';
 import { DashboardComponent } from './unused/dashboard/dashboard.component';
 import { IconsComponent } from './unused/icons/icons.component';
 import { NotificationsComponent } from './unused/notifications/notifications.component';
 import { TablesComponent } from './unused/tables/tables.component';
 import { TypographyComponent } from './unused/typography/typography.component';
-import { ServicesComponent } from './services/services.component';
 
 @NgModule({
   imports: [
