@@ -16,17 +16,28 @@
         (click)="callPhoneNo()"
         class="btn btn-icon btn-round navbar-toggler"
         style="margin-left: 0; margin-top: 5px"
-        id="phone-button" aria-label="phoneIcon"
+        id="phone-button"
+        aria-label="phoneIcon"
       >
         <i class="fa fa-phone"></i>
       </button>
-      <img
-        alt="'Bjørnskov & Ehmsen logo'"
-        class="navbar-nav navbar-toggler"
-        id="mobile-img"
-        src="./assets/be_icons/be_logo.png"
-        style="padding: 0; height: 50px"
-      />
+      <button
+        (click)="mailTo()"
+        class="btn btn-icon btn-round navbar-toggler"
+        style="margin-left: 0; margin-top: 5px"
+        id="mail-button"
+        aria-label="mail"
+      >
+        <i class="fa fa-envelope"></i>
+      </button>
+      <div routerLink="/front-page">
+        <img
+          alt="'Bjørnskov & Ehmsen logo'"
+          class="navbar-nav navbar-toggler img-mobile-be_logo"
+          id="mobile-img"
+          src="./assets/be_icons/be_logo.png"
+        />
+      </div>
     </div>
     <div [ngbCollapse]="isCollapsed" class="navbar-collapse">
       <div class="navbar-nav ml-auto" style="display: flex; align-items: center; justify-content: center;">
@@ -49,10 +60,10 @@
         >
           <i class="fa fa-envelope"></i>
         </button>
-        <div [ngStyle]="(isDarkTheme | async) ? {'background': 'none'} : {'background': '#27293D'}"
-             style="padding: 5px">
+        <div [ngStyle]="(isDarkTheme | async) ? {'background': 'none'} : {'background': '#27293D'}" class="img-web-be_logo" routerLink="/front-page">
           <img alt="'Bjørnskov & Ehmsen image'"
-               src="./assets/be_icons/be_web.png" style="border-radius: 0"/>
+               src="./assets/be_icons/be_web.png"
+               style="border-radius: 0"/>
         </div>
       </div>
     </div>

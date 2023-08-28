@@ -3,3 +3,13 @@
   align-items: center;
   justify-content: center;
 }
+
+.img-mobile-be_logo {
+  padding: 0;
+  height: 50px;
+}
+
+.img-web-be_logo {
+  padding: 5px;
+  cursor: pointer;
+}

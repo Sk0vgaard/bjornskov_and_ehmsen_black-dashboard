@@ -48,7 +48,7 @@ export const ROUTES: RouteInfo[] = [
   },
   {
     path: '/customer-satisfaction',
-    title: 'Kundetilfredhed',
+    title: 'Kundetilfredshed',
     icon: 'icon-satisfied',
     class: '',
   },
