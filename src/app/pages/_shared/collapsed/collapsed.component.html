@@ -4,7 +4,7 @@
     <h3 class="card-title">{{ cardInfoModel.title }}</h3>
   </div>
   <div (click)="$event.stopPropagation()" class="card-body">
-    <div [ngbCollapse]="!isCollapsed" class="typography-line">
+    <div [ngbCollapse]="collapseAsDefault" class="typography-line">
       <ng-container *ngIf="cardInfoModel.imgModel">
         <div class="card-body text-center no-padding-top">
           <img [ngStyle]="{'width': cardInfoModel.imgModel.imgWidth + 'px'}"

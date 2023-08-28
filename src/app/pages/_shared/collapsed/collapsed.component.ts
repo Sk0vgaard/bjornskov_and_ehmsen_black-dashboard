@@ -12,9 +12,10 @@ import { CardInfoModel } from '../../../_models/card-info.model';
 })
 export class CollapsedComponent {
   @Input() cardInfoModel: CardInfoModel;
+  @Input() collapseAsDefault: boolean = true;
+
+  public isCollapsed: boolean;
 
   faChevronUp = faChevronUp;
   faChevronDown = faChevronDown;
-
-  public isCollapsed: boolean;
 }
