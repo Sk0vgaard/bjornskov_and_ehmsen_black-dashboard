@@ -9,13 +9,13 @@
           <span class="navbar-toggler-bar bar3"> </span>
         </button>
       </div>
-      <h3 class="navbar-brand card-title" style="margin-bottom: 0;">{{ getTitle() }}</h3>
+      <h3 class="navbar-brand card-title">{{ getTitle() }}</h3>
     </div>
     <div class="ml-auto row">
       <button
         (click)="callPhoneNo()"
-        class="btn btn-icon btn-round navbar-toggler"
-        style="margin-left: 0; margin-top: 5px"
+        class="btn btn-icon btn-round navbar-toggler no-margin"
+        style="margin-top: 5px"
         id="phone-button"
         aria-label="phoneIcon"
       >
@@ -23,8 +23,8 @@
       </button>
       <button
         (click)="mailTo()"
-        class="btn btn-icon btn-round navbar-toggler"
-        style="margin-left: 0; margin-top: 5px"
+        class="btn btn-icon btn-round navbar-toggler no-margin"
+        style="margin-top: 5px"
         id="mail-button"
         aria-label="mail"
       >
