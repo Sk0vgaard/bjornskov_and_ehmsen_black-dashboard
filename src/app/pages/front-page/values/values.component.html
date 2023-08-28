@@ -1,17 +1,14 @@
-  <div class="card card-user no-shadow">
-    <div class="author">
-<!--      <div class="block block-one"></div>-->
-<!--      <div class="block block-two"></div>-->
-<!--      <div class="block block-three"></div>-->
-<!--      <div class="block block-four"></div>-->
-      <h2 class="title">
-        {{title}}
-      </h2>
+<div class="card-header">
+  <h3 class="card-title center-text margin-top"><strong>{{title}}</strong></h3>
+</div>
+<div class="card-body">
+  <div class="typography-line">
+    <div class="card-body-center author no-margin">
       <img alt="{{imageAlt}}"
            class="avatar img-value"
+           [ngStyle]="(isDarkTheme | async) ? {'color': '#27293D'} : {'color': '#FFFFFF'}"
            src="{{image}}">
-      <p class="description description-padding card-value-padding">
-        {{description}}
-      </p>
     </div>
+    <p [innerHTML]="description" class="description description-padding card-value-padding"></p>
   </div>
+</div>

@@ -1,24 +1,26 @@
 <div class="content">
   <div class="row">
-    <ng-container *ngFor="let info of infos">
-      <div class="col-lg-12">
-        <div class="card card-chart">
-          <div class="card-header">
-            <h3 class="card-title">{{ info.title }}</h3>
-          </div>
-          <div class="card-body">
-            <div class="typography-line">
-              <p [innerHTML]="info.description"></p>
-            </div>
+    <div class="col-lg-12">
+      <div class="card card-chart">
+        <div class="card-header">
+          <h2 class="card-title">Hvorfor vælge os?</h2>
+        </div>
+        <div class="card-body">
+          <div class="typography-line">
+            <p>
+              Vores tømrere har mange års erfaring i branchen og er dygtige i alle alle aspekter. Vi bredre os over et
+              stort område indenfor træfaget. Vi er jydskehåndværkere der har benene plantet solidt i den jyskemuld. Hos
+              os er en aftale en aftale. Vi er stolte af vores kundeservice, samt opmærksomhed på detaljer.
+            </p>
           </div>
         </div>
       </div>
-    </ng-container>
+    </div>
   </div>
 
   <div class="row">
     <ng-container *ngFor="let price of prices">
-      <app-collapsed class="col-lg-4" [cardInfoModel]="price"></app-collapsed>
+      <app-collapsed [cardInfoModel]="price" class="col-lg-4"></app-collapsed>
     </ng-container>
   </div>
 
@@ -32,13 +34,13 @@
         <div class="card-body" style="padding-top: 0">
           <div class="typography-line">
             <p></p>
-            <div class="row mt-4" *ngFor="let faq of faqs; let i = index">
-              <div class="col-12" (click)="isCollapsed[i] = !isCollapsed[i]">
-                <button class="btn btn-link btn-collapse" [attr.aria-expanded]="isCollapsed[i]">
+            <div *ngFor="let faq of faqs; let i = index" class="row mt-4">
+              <div (click)="isCollapsed[i] = !isCollapsed[i]" class="col-12">
+                <button [attr.aria-expanded]="isCollapsed[i]" class="btn btn-link btn-collapse">
                   {{ faq.title }}
                 </button>
                 <div [ngbCollapse]="!isCollapsed[i]">
-                  <p style="padding-left: 15px" [innerHTML]="faq.description"></p>
+                  <p [innerHTML]="faq.description" style="padding-left: 15px"></p>
                   <ng-container *ngIf="faq.route">
                     <a (click)="$event.stopPropagation()" routerLink="{{faq.route}}"><i>- Se mere her</i></a>
                   </ng-container>

@@ -10,14 +10,6 @@ import { CardInfoModel } from '../../_models/card-info.model';
 export class InfoComponent {
   public isCollapsed: boolean[] = [];
 
-  infos: CardInfoModel[] = [
-    {
-      title: 'Hvorfor vælge os?',
-      description:
-        'Vores tømrere har mange års erfaring i branchen og er dygtige i alle alle aspekter. Vi bredre os over et stort område indenfor træfaget. Vi er jydskehåndværkere der har benene plantet solidt i den jyskemuld. Hos os er en aftale en aftale. Vi er stolte af vores kundeservice, samt opmærksomhed på detaljer.',
-    },
-  ];
-
   prices: CardInfoModel[] = [
     {
       category: '07:00 - 15:45 / eller efter aftale',
