@@ -88,7 +88,7 @@ export class TimelineComponent {
         '· Opsætning af garderobe' +
         '</br>' +
         '</br>' +
-        'Vi vil gerne rette en stor tak til alle de dedikerede håndværkere, der gjorde dette projekt muligt. Trods en stram tidsplan har vi leveret et færdigt produkt, der ikke kun møder, men indfriet kundens forventninger.</br>',
+        'Vi vil gerne rette en stor tak til alle de dedikerede håndværkere, der gjorde dette projekt muligt. Selv med en stram tidsplan har vi ikke alene opnået at imødekomme kundens kriterier, men også udført et arbejde der går ud over det forventede.</br>',
       imgModel: {
         imgSrc: 'assets/be_timeline/sygeplejen_varde.jpg',
         imgAlt: 'Image of Sygeplejen Varde',
