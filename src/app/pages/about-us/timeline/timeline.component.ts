@@ -77,9 +77,9 @@ export class TimelineComponent {
       category: '15. September, 2023',
       title: 'Komplet Indflytningsombygning for Sygeplejen i Varde',
       description:
-        'Vi er stolte over at annoncere afslutningen af et andet vellykket projekt! Sygeplejen i Varde har nu flyttet ind i deres splinternye lokaler. Vores team har været ansvarlige for at omdanne rummene til funktionsdygtige kontorer, mødelokaler og velfærdsfaciliteter.</br>' +
+        'Vi er stolte over at annoncere afslutningen af et andet vellykket projekt! Sygeplejen i Varde er nu flyttet ind i deres splinternye lokaler. Vores team har været ansvarlige for at omdanne rummene til funktionsdygtige kontorer, mødelokaler og velfærdsfaciliteter.</br>' +
         '</br>' +
-        '<b>Tjenester Udført:</b></br>' +
+        '<b>Tjenester udført:</b></br>' +
         '· Installation af nye lofter</br>' +
         '· Etablering af nyt medicinrum</br>' +
         '· Installation af fast inventar</br>' +
@@ -88,7 +88,7 @@ export class TimelineComponent {
         '· Opsætning af garderobe' +
         '</br>' +
         '</br>' +
-        'Vi vil gerne rette en stor tak til alle de dedikerede håndværkere, der gjorde dette projekt muligt. Trods en stram tidsplan har vi leveret et færdigt produkt, der ikke kun møder, men overstiger kundens forventninger.</br>',
+        'Vi vil gerne rette en stor tak til alle de dedikerede håndværkere, der gjorde dette projekt muligt. Trods en stram tidsplan har vi leveret et færdigt produkt, der ikke kun møder, men indfriet kundens forventninger.</br>',
       imgModel: {
         imgSrc: 'assets/be_timeline/sygeplejen_varde.jpg',
         imgAlt: 'Image of Sygeplejen Varde',
