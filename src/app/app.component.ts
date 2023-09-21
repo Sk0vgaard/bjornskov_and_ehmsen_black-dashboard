@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
+import { AngularFireAnalytics } from '@angular/fire/compat/analytics';
 import {
   NgcCookieConsentService,
   NgcInitializationErrorEvent,
@@ -15,7 +16,6 @@ import { Subscription } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent implements OnInit, OnDestroy {
-  title = 'black-dashboard-angular';
   // keep refs to subscriptions to be able to unsubscribe later
   private popupOpenSubscription!: Subscription;
   private popupCloseSubscription!: Subscription;
@@ -25,7 +25,9 @@ export class AppComponent implements OnInit, OnDestroy {
   private statusChangeSubscription!: Subscription;
   private revokeChoiceSubscription!: Subscription;
   private noCookieLawSubscription!: Subscription;
-  constructor(private cookieService: NgcCookieConsentService) {}
+  constructor(private cookieService: NgcCookieConsentService, private analytics: AngularFireAnalytics) {
+    this.analytics.logEvent('app_open', { component: 'AppComponent' });
+  }
 
   public ngOnInit(): void {
     // subscribe to cookieconsent observables to react to main events

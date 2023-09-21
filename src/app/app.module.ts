@@ -2,6 +2,7 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAnalyticsModule } from '@angular/fire/compat/analytics';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -58,6 +59,7 @@ const cookieConfig: NgcCookieConsentConfig = {
     ToastrModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireStorageModule,
+    AngularFireAnalyticsModule,
   ],
   declarations: [AppComponent, PagesComponent],
   providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],

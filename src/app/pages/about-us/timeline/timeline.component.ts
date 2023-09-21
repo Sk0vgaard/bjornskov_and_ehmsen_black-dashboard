@@ -43,7 +43,7 @@ export class TimelineComponent {
       },
     },
     {
-      category: '11-20. August 2023',
+      category: '11-20. August, 2023',
       title: 'Esbjerg Festuge 2023',
       description:
         'Bjørnskov & Ehmsen og Esbjerg – Et Samarbejde i Fest og Kunst</br>' +
@@ -70,6 +70,34 @@ export class TimelineComponent {
         {
           link: 'https://www.facebook.com/EsbjergCity/posts/pfbid026AZ2gZrj9RhLzrST9b2iyQ6invF9WHEnKZqJeTRUszsZpBfSwQJoX64G34W95ERVl',
           linkText: 'Se de flotte lærreder - Esbjerg City',
+        },
+      ],
+    },
+    {
+      category: '15. September, 2023',
+      title: 'Komplet Indflytningsombygning for Sygeplejen i Varde',
+      description:
+        'Vi er stolte over at annoncere afslutningen af et andet vellykket projekt! Sygeplejen i Varde har nu flyttet ind i deres splinternye lokaler. Vores team har været ansvarlige for at omdanne rummene til funktionsdygtige kontorer, mødelokaler og velfærdsfaciliteter.</br>' +
+        '</br>' +
+        '<b>Tjenester Udført:</b></br>' +
+        '· Installation af nye lofter</br>' +
+        '· Etablering af nyt medicinrum</br>' +
+        '· Installation af fast inventar</br>' +
+        '· Opsætning af nyt køkken</br>' +
+        '· Konferencerum med 6 stk oplukkelige VELUX vinduer udstyret med udvendige elektroniske solgardiner</br>' +
+        '· Opsætning af garderobe' +
+        '</br>' +
+        '</br>' +
+        'Vi vil gerne rette en stor tak til alle de dedikerede håndværkere, der gjorde dette projekt muligt. Trods en stram tidsplan har vi leveret et færdigt produkt, der ikke kun møder, men overstiger kundens forventninger.</br>',
+      imgModel: {
+        imgSrc: 'assets/be_timeline/sygeplejen_varde.jpg',
+        imgAlt: 'Image of Sygeplejen Varde',
+        imgWidth: '200',
+      },
+      linkModels: [
+        {
+          link: 'https://www.linkedin.com/feed/update/urn:li:activity:7108442719730966528/',
+          linkText: 'Se opslaget på LinkedIn her',
         },
       ],
     },
