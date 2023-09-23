@@ -11,8 +11,16 @@
         <a class="nav-link" [routerLink]="'/info'"> Åbningstider </a>
       </li>
     </ul>
-    <div class="copyright">
-      © All rights reserved
+    <div>
+      <div class="copyright pointer" (click)="navigateToAddress()">
+        • Hededammen 9, Esbjerg Ø
+      </div>
+      <div class="copyright pointer" (click)="callPhoneNo()">
+        • Tlf. +45 22 33 76 08
+      </div>
+      <div class="copyright">
+        • CVR: 41701048
+      </div>
     </div>
   </div>
 </footer>
