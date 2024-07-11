@@ -83,7 +83,7 @@
             </div>
 
             <div class="row">
-              <div class="col-md-6 pr-md-1">
+              <div class="col-md-3 pr-md-1">
                 <div class="form-group">
                   <label> Telefonnummer* </label>
                   <input class="form-control" formControlName="phoneNumber" placeholder="Telefonnummer" required/>
@@ -98,6 +98,16 @@
                   <div *ngIf="phoneNumber.hasError('pattern') && phoneNumber.touched">
                     Telefonnummeret skal bestå af <u>tal</u>.
                   </div>
+                </div>
+              </div>
+              <div class="col-md-3 pl-md-1">
+                <div class="form-group">
+                  <label> Postnummer* </label>
+                  <input class="form-control" formControlName="zipCode" placeholder="Postnummer" autocomplete="postal-code"/>
+                </div>
+                <div *ngIf="zipCode.invalid && zipCode.touched" class="alert alert-danger">
+                  <div *ngIf="zipCode.errors.required">Formen skal indeholde et postnummer</div>
+                  <div *ngIf="zipCode.errors?.pattern">Postnummeret skal være på 4-tal</div>
                 </div>
               </div>
               <div class="col-md-6 pl-md-1">
@@ -141,7 +151,7 @@
                   <textarea
                     class="form-control"
                     formControlName="message"
-                    placeholder="Indsæt en beskrivelse af projektet"
+                    placeholder="Indsæt adresse og beskrivelse af projektet"
                   ></textarea>
                 </div>
               </div>

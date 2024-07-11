@@ -24,6 +24,7 @@ export class ContactUsComponent {
       Validators.minLength(8),
     ]),
     email: new FormControl('', [Validators.required, Validators.email]),
+    zipCode: new FormControl('', [Validators.required, Validators.pattern('^[0-9]{4}$')]),
     subject: new FormControl('', [Validators.required]),
     message: new FormControl(''),
   });
@@ -66,6 +67,10 @@ export class ContactUsComponent {
 
   public get message(): FormControl {
     return this.contactForm.get('message') as FormControl;
+  }
+
+  public get zipCode(): FormControl {
+    return this.contactForm.get('zipCode') as FormControl;
   }
 
   public get subject(): FormControl {
