@@ -4,7 +4,7 @@
   }
 
   swiper-slide img {
-    height: 700px !important;
+    height: 750px !important;
   }
 }
 
@@ -24,7 +24,7 @@ swiper-container {
 }
 
 swiper-slide {
-  height: 300px;
+  height: 350px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -32,7 +32,7 @@ swiper-slide {
 
 swiper-slide img {
   display: block;
-  height: 300px;
+  height: 350px;
   object-fit: cover;
 }
 

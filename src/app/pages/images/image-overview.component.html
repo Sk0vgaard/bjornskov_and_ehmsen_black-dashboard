@@ -10,9 +10,11 @@
             <p>
               Velkommen til Bjørnskov & Ehmsens billedgalleri!
               <br>
-              Vores galleri er inddelt i flere kategorier for at gøre det lettere for dig at finde præcis den type arbejde, du er interesseret i.
+              Vores galleri er inddelt i flere kategorier for at gøre det lettere for dig at finde præcis den type
+              arbejde, du er interesseret i.
               <br>
-              Hver kategori indeholder en række billeder, der giver dig et dybere indblik i den kvalitet og detalje, vi stræber efter i hvert enkelt projekt.
+              Hver kategori indeholder en række billeder, der giver dig et dybere indblik i den kvalitet og detalje, vi
+              stræber efter i hvert enkelt projekt.
               <br>
               <br>
               <a routerLink="/services"><i>- Se her hvad vi også tilbyder</i></a>
@@ -31,7 +33,8 @@
                           [config]="verticalSwiperConfig">
           <div class="image-category-wrapper">
             <h3>{{ image.category }}</h3>
-            <button *ngIf="!clickedState[i]" (click)="seeMoreImages(image.folderName, i)" class="btn btn-link btn-collapse" type="button"
+            <button *ngIf="!clickedState[i]" (click)="seeMoreImages(image.folderName, i)"
+                    class="btn btn-link btn-collapse" type="button"
                     aria-label="more images">
               Se flere billeder
             </button>

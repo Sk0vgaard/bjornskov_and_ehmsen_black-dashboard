@@ -71,7 +71,6 @@ export class ImageOverviewComponent implements OnInit {
     direction: 'vertical',
     pagination: true,
     slidesPerView: 'auto',
-    mousewheel: true,
     spaceBetween: 50,
     observeSlideChildren: true,
   };
