@@ -1,41 +1,48 @@
 // eslint-disable-next-line max-classes-per-file
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
-import { from, mergeMap, Observable } from 'rxjs';
+import { forkJoin, from, map, mergeMap, Observable, switchMap } from 'rxjs';
 
-import { FirestoreImageModel } from '../_models/firestore-image.model';
+import { FireStorageImageModel } from '../_models/fire-storage-image.model';
 import { FirestoreDbEnum } from '../pages/images/firestore-db.enum';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ImageService {
-  constructor(private http: HttpClient, private db: AngularFirestore, private afStorage: AngularFireStorage) {}
+  constructor(
+    private db: AngularFirestore,
+    private afStorage: AngularFireStorage
+  ) {}
 
-  // public getOverviewImages(): Observable<FirestoreImageModel[]> {
-  //   return this.http.get<FirestoreImageModel[]>('assets/images.json');
-  // }
+  public getOverviewImagesWithUrls(): Observable<FireStorageImageModel[]> {
+    return this.getOverviewImages().pipe(
+      switchMap((imageModels: FireStorageImageModel[]) =>
+        forkJoin(
+          imageModels.map((imageModel) =>
+            this.getFileUrl(`${FirestoreDbEnum.IMAGE_OVERVIEW}/${imageModel.fileName}`).pipe(
+              map((url) => ({
+                ...imageModel,
+                url,
+              }))
+            )
+          )
+        )
+      )
+    );
+  }
 
-  public getFileUrl(folderPath: string): Observable<any> {
+  private getFileUrl(folderPath: string): Observable<string> {
     const ref = this.afStorage.ref(folderPath);
     return ref.getDownloadURL();
   }
 
-  public getOverviewImages(): Observable<FirestoreImageModel[]> {
-    return this.db.collection<FirestoreImageModel>(FirestoreDbEnum.IMAGE_OVERVIEW).valueChanges();
+  public getOverviewImages(): Observable<FireStorageImageModel[]> {
+    return this.db.collection<FireStorageImageModel>(FirestoreDbEnum.IMAGE_OVERVIEW).valueChanges();
   }
 
-  public addCategory(imageModel: FirestoreImageModel): any {
-    return this.db
-      .collection<FirestoreImageModel>(FirestoreDbEnum.IMAGE_OVERVIEW)
-      .doc(imageModel.category)
-      .set(imageModel);
-  }
-
-  public getImagesByFolder(folderPath: string): Observable<string[]> {
-    // Create a reference to the Firebase storage
+  public getImagesByCategory(folderPath: string): Observable<string[]> {
     const storageRef = this.afStorage.storage.ref();
     // Get a reference to the folder containing the images
     const listRef = storageRef.child(folderPath);

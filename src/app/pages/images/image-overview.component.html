@@ -8,15 +8,11 @@
         <div class="card-body">
           <div class="typography-line">
             <p>
-              Velkommen til Bjørnskov & Ehmsens billedgalleri! Her kan du dykke ned i vores omfattende portefølje og se
-              nærmere på nogle af de projekter, vi har haft fornøjelsen af at arbejde på. Vores galleri er inddelt i
-              flere kategorier for at gøre det lettere for dig at finde præcis den type arbejde, du er interesseret i.
-              Fra snedkerarbejde og døre & vinduer til specialarbejde og renoveringer – vi har det hele.
+              Velkommen til Bjørnskov & Ehmsens billedgalleri!
               <br>
-              Klik på en af kategorierne nedenfor for at udforske mere.
+              Vores galleri er inddelt i flere kategorier for at gøre det lettere for dig at finde præcis den type arbejde, du er interesseret i.
               <br>
-              Hver kategori indeholder en række billeder, der giver dig et dybere indblik i den kvalitet og
-              detaljerigdom, vi stræber efter i hvert enkelt projekt.
+              Hver kategori indeholder en række billeder, der giver dig et dybere indblik i den kvalitet og detalje, vi stræber efter i hvert enkelt projekt.
               <br>
               <br>
               <a routerLink="/services"><i>- Se her hvad vi også tilbyder</i></a>
@@ -26,18 +22,33 @@
       </div>
     </div>
   </div>
+  <swiper-container appSwiper #swiper effect="coverflow" [config]="coverflowSwiperConfig">
+    <ng-container *ngFor="let image of overviewImages$ | async; let i = index">
+      <swiper-slide class="coverflow-slider">
+        <swiper-container appSwiper
+                          #swiper2
+                          pagination-clickable="true"
+                          [config]="verticalSwiperConfig">
+          <div class="image-category-wrapper">
+            <h3>{{ image.category }}</h3>
+            <button *ngIf="!clickedState[i]" (click)="seeMoreImages(image.folderName, i)" class="btn btn-link btn-collapse" type="button"
+                    aria-label="more images">
+              Se flere billeder
+            </button>
+            <swiper-slide>
+              <img [src]="image.url"
+                   [alt]="'category main image'"/>
+            </swiper-slide>
+          </div>
 
-  <swiper [config]="config"
-          class="swiper1">
-    <ng-container *ngFor="let image of imageCategories$ | async">
-      <ng-template class="swiper-slide1" swiperSlide>
-        <h3 class="card-title" style="margin-bottom: 10px">{{image.category}}</h3>
-        <img (click)="openImageCategory(image)"
-             [src]="image.url"
-             alt=""
-             class="swiper-img1 img-category"
-             style="cursor: pointer"/>
-      </ng-template>
+          <ng-container *ngFor="let url of (categoryImages$[i] | async)">
+            <swiper-slide>
+              <img [src]="url"
+                   [alt]="'category image'"/>
+            </swiper-slide>
+          </ng-container>
+        </swiper-container>
+      </swiper-slide>
     </ng-container>
-  </swiper>
+  </swiper-container>
 </div>

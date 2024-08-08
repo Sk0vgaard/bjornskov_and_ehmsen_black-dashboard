@@ -37,7 +37,7 @@ const cookieConfig: NgcCookieConsentConfig = {
   },
   type: 'info',
   content: {
-    message: 'This website uses cookies to ensure you get the best experience on our website.',
+    message: 'This website uses cookies for the contact form on our website.',
     dismiss: 'Got it!',
     deny: 'Refuse cookies',
     link: 'Learn more',

@@ -20,11 +20,10 @@ import { ValuesComponent } from './front-page/values/values.component';
 import { InfoComponent } from './info/info.component';
 import { PageRoutes } from './pages-routing.module';
 import { ServicesComponent } from './services/services.component';
-import { DashboardComponent } from './unused/dashboard/dashboard.component';
-import { IconsComponent } from './unused/icons/icons.component';
-import { NotificationsComponent } from './unused/notifications/notifications.component';
-import { TablesComponent } from './unused/tables/tables.component';
-import { TypographyComponent } from './unused/typography/typography.component';
+// import { IconsComponent } from './unused/icons/icons.component';
+// import { NotificationsComponent } from './unused/notifications/notifications.component';
+// import { TablesComponent } from './unused/tables/tables.component';
+// import { TypographyComponent } from './unused/typography/typography.component';
 
 @NgModule({
   imports: [
@@ -37,12 +36,7 @@ import { TypographyComponent } from './unused/typography/typography.component';
     FontAwesomeModule,
   ],
   declarations: [
-    DashboardComponent,
     ContactUsComponent,
-    TablesComponent,
-    IconsComponent,
-    TypographyComponent,
-    NotificationsComponent,
     FindUsComponent,
     AboutUsComponent,
     FrontPageComponent,

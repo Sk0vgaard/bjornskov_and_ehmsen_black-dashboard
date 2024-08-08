@@ -1,71 +1,78 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, OnInit, ViewEncapsulation } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  CUSTOM_ELEMENTS_SCHEMA,
+  ElementRef,
+  OnInit,
+  ViewChild,
+  ViewEncapsulation,
+} from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
-import { forkJoin, map, Observable, switchMap } from 'rxjs';
-// import Swiper core and required modules
-import SwiperCore, { EffectCube, FreeMode, Navigation, Pagination, SwiperOptions } from 'swiper';
-import { SwiperModule } from 'swiper/angular';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Observable } from 'rxjs';
+import { SwiperContainer } from 'swiper/swiper-element';
+import { SwiperOptions } from 'swiper/types';
 
-import { FirestoreImageModel } from '../../_models/firestore-image.model';
+import { SwiperDirective } from '../../_directives/swiper.directive';
+import { FireStorageImageModel } from '../../_models/fire-storage-image.model';
 import { ImageService } from '../../_services/image.service';
-import { FirestoreDbEnum } from './firestore-db.enum';
-import { ImageDetailsComponent } from './image-details/image-details.component';
-// install Swiper modules
-SwiperCore.use([EffectCube, Pagination, Navigation, FreeMode]);
 
 @Component({
   selector: 'app-about-us',
   templateUrl: './image-overview.component.html',
   styleUrls: ['./image-overview.component.scss'],
   standalone: true,
-  imports: [CommonModule, SwiperModule, ImageDetailsComponent, RouterLink],
+  imports: [CommonModule, RouterLink, SwiperDirective],
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class ImageOverviewComponent implements OnInit {
-  public imageCategories$: Observable<FirestoreImageModel[]>;
+  public overviewImages$: Observable<FireStorageImageModel[]>;
+  public categoryImages$: Observable<string[]>[] = [];
+  @ViewChild('swiper') swiper!: ElementRef<SwiperContainer>;
+  @ViewChild('swiper2') swiper2!: ElementRef<SwiperContainer>;
 
-  config: SwiperOptions = {
-    effect: 'cube',
-    grabCursor: true,
-    autoplay: true,
-    navigation: true,
-    pagination: true,
-    cubeEffect: {
-      shadow: true,
-      slideShadows: true,
-      shadowOffset: 20,
-      shadowScale: 0.94,
-    },
-    scrollbar: { draggable: true },
-  };
-
-  constructor(private imageService: ImageService, private modalService: NgbModal) {}
+  constructor(
+    private imageService: ImageService,
+    private modalService: NgbModal
+  ) {}
 
   public ngOnInit(): void {
-    this.imageCategories$ = this.imageService.getOverviewImages().pipe(
-      switchMap((imageModels: FirestoreImageModel[]) => {
-        return forkJoin(
-          imageModels.map((imageModel: FirestoreImageModel) => {
-            return this.imageService.getFileUrl(`${FirestoreDbEnum.IMAGE_OVERVIEW}/${imageModel.fileName}`).pipe(
-              map((url) => {
-                imageModel.url = url;
-                return imageModel;
-              })
-            );
-          })
-        );
-      })
-    );
+    this.overviewImages$ = this.imageService.getOverviewImagesWithUrls();
   }
 
-  public openImageCategory(imageModel: FirestoreImageModel): void {
-    const modalOptions: NgbModalOptions = {
-      size: 'lg',
-      centered: true,
-    };
-    const modalRef = this.modalService.open(ImageDetailsComponent, modalOptions);
-    modalRef.componentInstance.imageModel = imageModel;
+  public clickedState: boolean[] = [];
+
+  public seeMoreImages(folderName: string, categoryIndex: number): void {
+    this.categoryImages$[categoryIndex] = this.imageService.getImagesByCategory(`images/${folderName}`);
+    this.clickedState[categoryIndex] = true;
   }
+
+  public coverflowSwiperConfig: SwiperOptions = {
+    pagination: true,
+    effect: 'coverflow',
+    grabCursor: true,
+    centeredSlides: true,
+    spaceBetween: 20,
+    navigation: true,
+    slidesPerView: 'auto',
+    coverflowEffect: {
+      rotate: 50,
+      stretch: 0,
+      depth: 100,
+      modifier: 1,
+      slideShadows: true,
+    },
+  };
+
+  public verticalSwiperConfig: SwiperOptions = {
+    direction: 'vertical',
+    pagination: true,
+    slidesPerView: 'auto',
+    mousewheel: true,
+    spaceBetween: 50,
+    observeSlideChildren: true,
+  };
 }

@@ -1,4 +1,4 @@
-export interface FirestoreImageModel {
+export interface FireStorageImageModel {
   category: string;
   folderName: string;
   fileName: string;

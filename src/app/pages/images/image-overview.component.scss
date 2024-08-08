@@ -1,65 +1,49 @@
-@import "swiper/scss";
-@import "swiper/scss/effect-cube";
-@import "swiper/scss/pagination";
-@import 'swiper/scss/navigation';
+@media screen and (min-width: 800px) {
+  swiper-slide {
+    height: 750px !important;
+  }
 
-@media screen and (min-width: 1200px) {
-  .swiper1 {
-    width: 500px;
-    height: 500px;
-    left: 40%;
-    position: absolute;
+  swiper-slide img {
+    height: 750px !important;
   }
 }
 
-.swiper-slide1 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-position: center;
-  background-size: cover;
-  flex-direction: column;
-  .swiper-img1 {
-    max-width: 100%;
-    max-height: 100%;
-    display: block;
-    width: 100%;
-  }
+:root {
+  --swiper-navigation-color: #EB7700;
+  --swiper-pagination-color: #EB7700;
 }
 
-.img-category:hover {
-  border: 2px solid #F39200;
-}
-
-.swiper-pagination-bullet {
-  background-color: #1A1E34;
-  opacity: unset;
-}
-
-.swiper-pagination-bullet-active {
-  background-color: #EB7700;
-}
-
-.swiper-button-next, .swiper-button-prev {
-  color: #EB7700;
-  border-radius: 100%;
-  opacity: 1;
-  transition: 0.5s ease-in-out;
-}
-
-.swiper-button-disabled {
-  visibility: hidden;
-  opacity: 0;
-  transition: 0.5s ease-in-out;
-}
-
-.swiper-wrapper {
-  position: relative;
+swiper-container {
   width: 100%;
   height: 100%;
-  z-index: 1;
+}
+
+.coverflow-slider {
+  background-position: center;
+  background-size: cover;
+}
+
+swiper-slide {
+  height: 300px;
   display: flex;
-  transition-property: transform;
-  box-sizing: content-box;
+  justify-content: center;
   align-items: center;
+}
+
+swiper-slide img {
+  display: block;
+  height: 300px;
+  object-fit: cover;
+}
+
+h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.image-category-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
 }
