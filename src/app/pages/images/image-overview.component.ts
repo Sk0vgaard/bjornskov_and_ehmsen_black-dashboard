@@ -32,11 +32,10 @@ export class ImageOverviewComponent implements OnInit {
   public overviewImages$: Observable<FireStorageImageModel[]>;
   public categoryImages$: Observable<string[]>[] = [];
   @ViewChild('swiper') swiper!: ElementRef<SwiperContainer>;
-  @ViewChild('swiper2') swiper2!: ElementRef<SwiperContainer>;
 
   constructor(
     private imageService: ImageService,
-    private modalService: NgbModal
+    private modal: NgbModal
   ) {}
 
   public ngOnInit(): void {
@@ -46,32 +45,20 @@ export class ImageOverviewComponent implements OnInit {
   public clickedState: boolean[] = [];
 
   public seeMoreImages(folderName: string, categoryIndex: number): void {
+    if (this.clickedState[categoryIndex] === true) {
+      return;
+    }
     this.categoryImages$[categoryIndex] = this.imageService.getImagesByCategory(`images/${folderName}`);
     this.clickedState[categoryIndex] = true;
   }
 
-  public coverflowSwiperConfig: SwiperOptions = {
-    pagination: true,
-    effect: 'coverflow',
-    grabCursor: true,
-    centeredSlides: true,
-    spaceBetween: 20,
-    navigation: true,
-    slidesPerView: 'auto',
-    coverflowEffect: {
-      rotate: 50,
-      stretch: 0,
-      depth: 100,
-      modifier: 1,
-      slideShadows: true,
-    },
-  };
-
   public verticalSwiperConfig: SwiperOptions = {
-    direction: 'vertical',
+    direction: 'horizontal',
+    grabCursor: true,
     pagination: true,
+    centeredSlides: true,
     slidesPerView: 'auto',
+    navigation: true,
     spaceBetween: 50,
-    observeSlideChildren: true,
   };
 }

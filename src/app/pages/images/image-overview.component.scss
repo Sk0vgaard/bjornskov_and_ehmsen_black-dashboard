@@ -13,27 +13,18 @@
   --swiper-pagination-color: #EB7700;
 }
 
-swiper-container {
-  width: 100%;
-  height: 100%;
-}
-
-.coverflow-slider {
-  background-position: center;
-  background-size: cover;
+.image-category-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
 }
 
 swiper-slide {
-  height: 350px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-}
-
-swiper-slide img {
-  display: block;
-  height: 350px;
-  object-fit: cover;
+  justify-content: center;
 }
 
 h3 {
@@ -41,9 +32,10 @@ h3 {
   padding: 0;
 }
 
-.image-category-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 50px;
+.is-clickable {
+  cursor: pointer;
+}
+
+.is-clicked {
+  cursor: grab;
 }

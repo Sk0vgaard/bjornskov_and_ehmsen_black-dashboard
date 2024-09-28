@@ -24,34 +24,36 @@
       </div>
     </div>
   </div>
-  <swiper-container appSwiper #swiper effect="coverflow" [config]="coverflowSwiperConfig">
-    <ng-container *ngFor="let image of overviewImages$ | async; let i = index">
-      <swiper-slide class="coverflow-slider">
-        <swiper-container appSwiper
-                          #swiper2
-                          pagination-clickable="true"
-                          [config]="verticalSwiperConfig">
-          <div class="image-category-wrapper">
-            <h3>{{ image.category }}</h3>
-            <button *ngIf="!clickedState[i]" (click)="seeMoreImages(image.folderName, i)"
-                    class="btn btn-link btn-collapse" type="button"
-                    aria-label="more images">
-              Se flere billeder
-            </button>
-            <swiper-slide>
-              <img [src]="image.url"
-                   [alt]="'category main image'"/>
-            </swiper-slide>
-          </div>
-
-          <ng-container *ngFor="let url of (categoryImages$[i] | async)">
-            <swiper-slide>
-              <img [src]="url"
-                   [alt]="'category image'"/>
-            </swiper-slide>
-          </ng-container>
-        </swiper-container>
+  <ng-container *ngFor="let image of overviewImages$ | async; let i = index">
+    <div class="image-category-header">
+      <h3>{{ image.category }}</h3>
+      <button (click)="seeMoreImages(image.folderName, i)"
+              class="btn btn-link btn-collapse" type="button"
+              aria-label="more images">
+        @if (!clickedState[i]) {
+          Se flere billeder
+        } @else {
+          Rul til <u>højre</u> for flere billeder
+        }
+      </button>
+    </div>
+    <swiper-container appSwiper
+                      #swiper
+                      [config]="verticalSwiperConfig">
+      <swiper-slide>
+        <img [src]="image.url"
+             [ngClass]="{'is-clickable': !clickedState[i], 'is-clicked': clickedState[i]}"
+             (click)="seeMoreImages(image.folderName, i)"
+             [alt]="'category main image'"/>
       </swiper-slide>
-    </ng-container>
-  </swiper-container>
+
+      <ng-container *ngFor="let url of (categoryImages$[i] | async)">
+        <swiper-slide>
+          <img class="is-clicked image-series"
+               [src]="url"
+               [alt]="'category image'"/>
+        </swiper-slide>
+      </ng-container>
+    </swiper-container>
+  </ng-container>
 </div>
