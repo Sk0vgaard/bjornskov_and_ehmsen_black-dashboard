@@ -11,7 +11,7 @@ import { ContactService } from '../../../_services/contact.service';
 export class FindUsComponent {
   address = 'Hededammen 9, Esbjerg Ø';
   facebookUrl = 'https://www.facebook.com/profile.php?id=100089879839188';
-  instagramUrl = 'https://www.instagram.com/';
+  instagramUrl = 'https://www.instagram.com/bjornskovogehmsen/';
   linkedinUrl = 'https://www.linkedin.com/company/bjornskov-ehmsen';
 
   constructor(private contactService: ContactService) {}

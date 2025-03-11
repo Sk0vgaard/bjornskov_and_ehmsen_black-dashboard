@@ -46,12 +46,12 @@ export const ROUTES: RouteInfo[] = [
     icon: 'icon-alert-circle-exc',
     class: '',
   },
-  {
-    path: '/customer-satisfaction',
-    title: 'Kundetilfredshed',
-    icon: 'icon-satisfied',
-    class: '',
-  },
+  // {
+  //   path: '/customer-satisfaction',
+  //   title: 'Kundetilfredshed',
+  //   icon: 'icon-satisfied',
+  //   class: '',
+  // },
   // {
   //   path: '/',
   //   title: '-------------------',
