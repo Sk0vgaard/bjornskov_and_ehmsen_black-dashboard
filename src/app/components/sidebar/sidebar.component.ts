@@ -34,24 +34,24 @@ export const ROUTES: RouteInfo[] = [
     icon: 'icon-settings',
     class: '',
   },
-  {
-    path: '/images',
-    title: 'Billeder',
-    icon: 'icon-image-02',
-    class: '',
-  },
+  // {
+  //   path: '/images',
+  //   title: 'Billeder',
+  //   icon: 'icon-image-02',
+  //   class: '',
+  // },
   {
     path: '/info',
     title: 'FAQ',
     icon: 'icon-alert-circle-exc',
     class: '',
   },
-  {
-    path: '/customer-satisfaction',
-    title: 'Kundetilfredshed',
-    icon: 'icon-satisfied',
-    class: '',
-  },
+  // {
+  //   path: '/customer-satisfaction',
+  //   title: 'Kundetilfredshed',
+  //   icon: 'icon-satisfied',
+  //   class: '',
+  // },
   // {
   //   path: '/',
   //   title: '-------------------',
